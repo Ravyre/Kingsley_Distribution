@@ -1,0 +1,111 @@
+@import "../base/colours";
+@import "../utils/placeholders";
+@import "../utils/mixins";
+@import "../layout/grid";
+
+
+/*--------------------------------------------------------------
+  Carnevale
+--------------------------------------------------------------*/
+.dropzone {
+
+  /* Hero
+  ================================================== */
+  @include e(hero) {
+    @include m(colour) {
+      background: $dzc-grn;
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 1.6vw));
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 1.6vw));
+    }
+    @include m(img) {
+      @extend %range__hero;
+      background: url("/wp-content/uploads/ranges/dropzone/dzc_bg_01.jpg") center center / auto auto repeat fixed padding-box border-box $color-wht;
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 3vw));
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 3vw));
+    }
+    @include m(logo) {
+      max-width: 650px;
+    }
+  } // hero
+
+  /* Introduction
+  ================================================== */
+  @include e(intro) {
+    @include container($margin:0, $width:750px);
+    @include vertical-align($justify:center);
+    background: url("/wp-content/uploads/ranges/dropzone/dzc_gather-strength_01.jpg") center center / cover no-repeat fixed padding-box border-box;
+    color: $color-wht;
+    height: 100vh;
+    -webkit-box-pack: end;
+    -moz-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    margin: -40px 0 0;
+
+    @include m(txt) {
+      background: rgba($color-blk, .65);
+      padding: 2.5rem;
+    }
+
+    [class^="letter"] {
+      &::before {
+        color: rgba($color-wht, .15);
+      }
+    }
+  } // intro
+
+  /* About
+  ================================================== */
+  @include e(about) {
+    // @include grid(2);
+    @include m(txt) {
+      @include container;
+    }
+  }
+
+  @include e(gameboard) {
+    width: 100%;
+  }
+
+  /* Miniatures
+  ================================================== */
+  @include e(minis) {
+    @include grid(2);
+
+    @include m(txt) {
+      @include container;
+      text-align: center;
+    }
+    @include m(img) {
+      height: 100%;
+      margin: -7rem 0 0;
+      max-width: 700px;
+    }
+  }
+
+  /* Scenery
+  ================================================== */
+  @include e(scen) {
+    @include vertical-align($justify:flex-start);
+    background: url("/wp-content/uploads/ranges/dropzone/dzc_scen_01.jpg") center center / cover no-repeat scroll padding-box border-box;
+    height: 90vh;
+    @include m(txt) {
+      background: $color-gry;
+      color: #e6e6e6;
+      margin: 5rem;
+      padding: 3rem;
+      width: 500px;
+    }
+  }
+
+  /* Art
+  ================================================== */
+  @include e(art) {
+    @include m(ucm) {
+      img {
+        width: 100%;
+      }
+    }
+  } // art
+
+} // dropzone

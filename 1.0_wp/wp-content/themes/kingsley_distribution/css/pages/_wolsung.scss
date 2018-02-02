@@ -1,0 +1,84 @@
+@import "../base/colours";
+@import "../utils/placeholders";
+@import "../utils/mixins";
+@import "../layout/grid";
+
+
+/*--------------------------------------------------------------
+  Wolsung
+--------------------------------------------------------------*/
+.wolsung {
+
+  /* Hero
+  ================================================== */
+  @include e(hero) {
+    @include m(colour) {
+      background: $wolsung;
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 1.6vw));
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 1.6vw));
+    }
+    @include m(img) {
+      @extend %range__hero;
+      background: -webkit-gradient(linear, left top, left bottom, from(rgba($color-wht, .3)), to(rgba($color-wht, .3))), url("../img/ranges/wolsung/pexels-photo-235985.jpeg") center center / cover no-repeat scroll padding-box border-box $color-wht;
+      background: linear-gradient(rgba($color-wht, .3), rgba($color-wht, .3)), url("../img/ranges/wolsung/pexels-photo-235985.jpeg") center center / cover no-repeat scroll padding-box border-box $color-wht;
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 3vw));
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 3vw)); // was  6vw
+    }
+    @include m(logo) {
+      max-width: 400px;
+    }
+  } // hero
+
+  /* Introduction
+  ================================================== */
+  @include e(intro) {
+    @include container;
+  } // intro
+
+  /* About
+  ================================================== */
+  @include e(about) {
+    @include container;
+
+    @include m(img) {
+      background: radial-gradient(ellipse at center, rgba($color-blk, 0) 0%, rgba($color-blk, .6) 100%), url("../img/ranges/wolsung/pexels-photo-235985.jpeg") center center / cover no-repeat scroll padding-box border-box;
+      height: 365px;
+      margin: 100px 0 0;
+      text-align: center;
+    }
+    @include m(starter) {
+      max-width: 1100px;
+      position: relative;
+      top: 50%;
+      -webkit-transform: translate(0, -50%);
+      transform: translate(0, -50%);
+      width: 100%;
+    }
+  } // about
+
+  /* Miniatures
+  ================================================== */
+  @include e(minis) {
+    @include container;
+    text-align: center;
+  } // minis
+
+  /* Scenery
+  ================================================== */
+  @include e(scen) {
+    @include m(container) {
+      @include container;
+    }
+    @include m(img) {
+      text-align: center;
+      width: 100%;
+    }
+  } // scenery
+
+  /* Artwork
+  ================================================== */
+  @include e(art) {
+    background: url("../img/ranges/wolsung/art_01.png") center center / cover no-repeat fixed padding-box border-box;
+    height: 80vh;
+  }
+}

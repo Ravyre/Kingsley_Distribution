@@ -1,0 +1,57 @@
+@import "../base/colours";
+@import "../utils/placeholders";
+@import "../utils/mixins";
+@import "../layout/grid";
+
+
+/*--------------------------------------------------------------
+  Infinity
+--------------------------------------------------------------*/
+.dragon {
+
+  /* Hero
+  ================================================== */
+  @include e(hero) {
+    @include m(colour) {
+      background: $dragon-ylw;
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 1.6vw));
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 1.6vw));
+    }
+    @include m(img) {
+      @extend %range__hero;
+      background: url("../img/ranges/dragon-shield/bg_groan_01.jpg") bottom center / cover no-repeat fixed padding-box border-box;
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 3vw));
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 3vw));
+    }
+    @include m(logo) {
+      max-width: 350px;
+    }
+  } // hero
+
+  /* About
+  ================================================== */
+  @include e(about) {
+    @include container;
+  }
+
+  /* Sleeves
+  ================================================== */
+  @include e(sleeve) {
+    @include container;
+    @include grid(2);
+  }
+
+  /* Album
+  ================================================== */
+  @include e(album) {
+    @include container;
+  }
+
+  /* Artwork
+  ================================================== */
+  @include e(art) {
+    background: url("../img/ranges/dragon-shield/bg_tanur_01.jpg") center center / cover no-repeat fixed padding-box border-box;
+    height: 90vh;
+  }
+
+} // Dragon Shield

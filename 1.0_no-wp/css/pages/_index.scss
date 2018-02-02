@@ -1,0 +1,309 @@
+@import "../base/colours";
+@import "../utils/mixins";
+@import "../layout/grid";
+
+/*--------------------------------------------------------------
+  Index
+--------------------------------------------------------------*/
+.home {
+
+  /* Hero
+  ================================================== */
+  @include e(hero) {
+    @include vertical-align($justify:center);
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba($color-blk, .6)), to(rgba($color-blk, .6))), url("/wp-content/uploads/bg/bg_hero-carne_01.jpg") center center / cover no-repeat fixed padding-box border-box;
+    background: linear-gradient(rgba($color-blk, .6), rgba($color-blk, .6)), url("/wp-content/uploads/bg/bg_hero-carne_01.jpg") center center / cover no-repeat fixed padding-box border-box;
+    color: $color-wht;
+    height: 100vh;
+    text-align: center;
+
+    @include m(head) {
+      font-weight: 400;
+
+      div {
+        font-weight: 700;
+      }
+    } // head
+    @include m(sub) {
+      font-size: 15px;
+      font-weight: 300;
+      margin: 1em 0;
+      text-transform: none;
+    } // sub
+
+    h1 {
+      > div {
+        color: $color-ylw;
+      }
+    }
+
+    hr {
+      margin: 2em auto;
+      width: calc(100% / 1.2);
+    }
+
+    .btn__blu, .btn__wht {
+      border-radius: 5px;
+      margin: 3em 1em;
+    }
+  } // hero
+
+  /* About
+  ================================================== */
+  @include e(about) {
+    @include container;
+    position: relative;
+    text-align: center;
+    span {
+      position: relative;
+    }
+  } // about
+
+  /* Why Choose Kingsley
+  ================================================== */
+  @include e(why-us) {
+    @include container;
+    background: $color-blu;
+    color: $color-wht;
+    text-align: center;
+    [class^="letter"] {
+      &::before {
+        color: rgba($color-wht, .1);
+      }
+    }
+    .row {
+      @include grid(3, 5rem);
+      max-width: 1200px;
+      .col-3 {
+        min-width: 300px;
+      }
+    }
+
+    .icon-thumbs-up, .icon-clock-o, .icon-handshake-o {
+      display: inline-block;
+      font-size: 3em;
+      margin: 0 0 .5em;
+    }
+  } // why us
+
+  /* Ranges
+  ================================================== */
+  @include e(ranges) {
+    text-align: center;
+    .row {
+      @include grid(5);
+    }
+    .col-4 {
+      // max-width: 400px;
+      // min-width: 256px;
+      a {
+        display: block;
+        position: relative;
+        &::before {
+          background: rgba($color-wht, .3);
+          bottom: 0;
+          content: "";
+          left: 0;
+          position: absolute;
+          right: 0;
+          top: 0;
+          -webkit-transition: .3s linear;
+          transition: .3s linear;
+        }
+        &:hover::before {
+          background: rgba($color-wht, 0);
+        }
+      }
+      img {
+        width: 100%;
+      }
+    }
+  } // ranges
+
+  /* Blog
+  ================================================== */
+  @include e(blog) {
+    @include container;
+    @include m(date) {
+      font-size: 14px;
+    } // date
+    .head::before {
+      color: rgba($color-blk, .1);
+      content: "L";
+    }
+    .row {
+      @include grid(3, 4rem);
+      .col-3 {
+        min-width: 250px;
+      }
+      h4 {
+        font-weight: 900;
+      }
+    } // row
+  } // blog
+
+  /* FAQ
+  ================================================== */
+  @include e(faq) {
+    @include container;
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba($color-blk, .6)), to(rgba($color-blk, .6))), url("/wp-content/uploads/bg/bg_office_01.jpg") center center / cover no-repeat fixed padding-box border-box;
+    background: linear-gradient(rgba($color-blk, .6), rgba($color-blk, .6)), url("/wp-content/uploads/bg/bg_office_01.jpg") center center / cover no-repeat fixed padding-box border-box;
+    color: $color-wht;
+    text-align: center;
+    [class^="letter"] {
+      &::before {
+        color: rgba($color-wht, .1);
+      }
+    }
+  } // faq
+
+  /* Accordion
+  ================================================== */
+  @include e(acc) {
+    margin: 0 auto;
+    max-width: 800px;
+
+    @include m(card) {
+      margin: 2em;
+      position: relative;
+    } // card
+    @include m(title) {
+      background: $color-wht;
+      -webkit-box-shadow: 0 0 20px rgba($color-blk, .2);
+      box-shadow: 0 0 20px rgba($color-blk, .2);
+      color: $color-gry;
+      cursor: pointer;
+      display: block;
+      padding: 1em 1.5em;
+      position: relative;
+      text-align: left;
+
+      &::after {
+        @include vertical-align($justify:center);
+        color: $color-gry666;
+        content: "\e902";
+        font-family: "icomoon";
+        height: 100%;
+        position: absolute;
+        right: 1rem;
+        top: 0;
+        -webkit-transition: .2s linear;
+        transition: .2s linear;
+      }
+      &.active::after {
+        -webkit-transform: rotate(-180deg);
+        transform: rotate(-180deg);
+      }
+    } // title
+    @include m(panel) {
+      background: $color-wht;
+      color: $color-gry;
+      display: none;
+      margin: 0;
+      padding: 1em 2em;
+      text-align: left;
+    } // panel
+  } // acc
+
+  /* Open an Account
+  ================================================== */
+  @include e(open-account) {
+    @include container;
+    background: $color-blu;
+    color: $color-wht;
+    text-align: center;
+    [class^="letter"] {
+      &::before {
+        color: rgba($color-wht, .1);
+      }
+    }
+    form {
+      max-width: 700px !important;
+      padding: 3rem 0;
+      .col-2 {
+        @include grid(2, 2rem);
+        .form__message, .form__address {
+          width: 100%;
+        }
+      }
+      input, textarea {
+        background: transparent;
+        border: 1px solid rgba($color-wht, .5);
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        color: $color-wht;
+        padding: .5em 1em;
+        &::-webkit-input-placeholder {
+          color: rgba($color-wht, .8);
+        }
+        &::-moz-placeholder {
+          color: rgba($color-wht, .8);
+        }
+        &:-ms-input-placeholder {
+          color: rgba($color-wht, .8);
+        }
+        &::-ms-input-placeholder {
+          color: rgba($color-wht, .8);
+        }
+        &::placeholder {
+          color: rgba($color-wht, .8);
+        }
+      }
+    } // form
+  } // open an account
+
+  /* Contact
+  ================================================== */
+  @include e(contact) {
+    @include container;
+    @include parallax;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba($color-blk, .7)), to(rgba($color-blk, .7))), url("/wp-content/uploads/bg/bg_desk_01.jpg");
+    background-image: linear-gradient(rgba($color-blk, .7), rgba($color-blk, .7)), url("/wp-content/uploads/bg/bg_desk_01.jpg");
+    color: $color-wht;
+    text-align: center;
+
+    @include m(info) {
+      padding: 2rem;
+
+      div {
+        margin: 2rem;
+      }
+
+      div:nth-child(1), div:nth-child(2) {
+        display: inline-block;
+      }
+
+      .a-wht {
+        color: $color-wht;
+        -webkit-transition: .3s linear;
+        transition: .3s linear;
+
+        &:hover {
+          color: $color-ylw;
+        }
+      }
+    } // info
+
+    [class^="letter"] {
+      &::before {
+        color: rgba($color-wht, .1);
+      }
+    }
+    .icon {
+      display: inline-block;
+      font-size: 20px;
+      margin: 0 1rem;
+      &::before {
+        background: $color-blu;
+        border-radius: 100%;
+        display: block;
+        height: 20px;
+        padding: 10px;
+        text-align: center;
+        width: 20px;
+      }
+    }
+  } // contact
+
+} // Home

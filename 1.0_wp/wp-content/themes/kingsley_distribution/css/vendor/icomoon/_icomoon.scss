@@ -1,0 +1,101 @@
+$icomoon-font-path: "../fonts/icomoon/" !default;
+
+$icon-phone: "\e909";
+$icon-location: "\e907";
+$icon-envelope: "\e90d";
+$icon-phone2: "\e90a";
+$icon-map-marker: "\e908";
+$icon-handshake-o: "\e906";
+$icon-clock-o: "\e900";
+$icon-thumbs-up: "\e901";
+$icon-chevron-down: "\e902";
+$icon-chevron-up: "\e903";
+$icon-chevron-down2: "\e904";
+$icon-chevron-up2: "\e905";
+
+@font-face {
+  font-family: "icomoon";
+  src: url("#{$icomoon-font-path}/icomoon.eot?pj4skw");
+  src: url("#{$icomoon-font-path}/icomoon.eot?pj4skw#iefix") format("embedded-opentype"),
+       url("#{$icomoon-font-path}/icomoon.ttf?pj4skw") format("truetype"),
+      url("#{$icomoon-font-path}/icomoon.woff?pj4skw") format("woff"),
+      url("#{$icomoon-font-path}/icomoon.svg?pj4skw#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "icomoon" !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-phone {
+  &::before {
+    content: $icon-phone;
+  }
+}
+.icon-location {
+  &::before {
+    content: $icon-location;
+  }
+}
+.icon-envelope {
+  &::before {
+    content: $icon-envelope;
+  }
+}
+.icon-phone2 {
+  &::before {
+    content: $icon-phone2;
+  }
+}
+.icon-map-marker {
+  &::before {
+    content: $icon-map-marker;
+  }
+}
+.icon-handshake-o {
+  &::before {
+    content: $icon-handshake-o;
+  }
+}
+.icon-clock-o {
+  &::before {
+    content: $icon-clock-o;
+  }
+}
+.icon-thumbs-up {
+  &::before {
+    content: $icon-thumbs-up;
+  }
+}
+.icon-chevron-down {
+  &::before {
+    content: $icon-chevron-down;
+  }
+}
+.icon-chevron-up {
+  &::before {
+    content: $icon-chevron-up;
+  }
+}
+.icon-chevron-down2 {
+  &::before {
+    content: $icon-chevron-down2;
+  }
+}
+.icon-chevron-up2 {
+  &::before {
+    content: $icon-chevron-up2;
+  }
+}

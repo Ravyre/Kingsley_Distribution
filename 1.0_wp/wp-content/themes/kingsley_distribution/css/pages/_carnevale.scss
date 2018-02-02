@@ -1,0 +1,132 @@
+@import "../base/colours";
+@import "../utils/placeholders";
+@import "../utils/mixins";
+@import "../layout/grid";
+
+
+/*--------------------------------------------------------------
+  Carnevale
+--------------------------------------------------------------*/
+.carnevale {
+
+  /* Hero
+  ================================================== */
+  @include e(hero) {
+    @include m(colour) {
+      background: $carne-red;
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 1.6vw));
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 1.6vw));
+    }
+    @include m(img) {
+      @extend %range__hero;
+      background: radial-gradient(ellipse at center, rgba($color-blk, .8) 0%, rgba($color-blk, 1) 100%), url("/wp-content/uploads/ranges/carnevale/carnevale_bg_01.svg") center center / auto auto repeat fixed padding-box border-box $color-wht;
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 3vw));
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 3vw)); // was  6vw
+    }
+    @include m(logo) {
+      max-width: 300px;
+    }
+  } // hero
+
+  /* Introduction
+  ================================================== */
+  @include e(intro) {
+    @include container($margin:0, $width:600px);
+    background: -webkit-gradient(linear, right top, left top, from(rgba($color-wht, 0)), to(rgba($color-blk, 1))), url("/wp-content/uploads/ranges/carnevale/carnevale_bg-kiss_01.jpg") center center / cover no-repeat fixed padding-box border-box;
+    background: linear-gradient(270deg, rgba($color-wht, 0) 0%, rgba($color-blk, 1) 100%), url("/wp-content/uploads/ranges/carnevale/carnevale_bg-kiss_01.jpg") center center / cover no-repeat fixed padding-box border-box;
+    color: $color-wht;
+    height: 800px;
+    margin: -40px 0 0;
+    z-index: -1;
+
+    @include m(txt) {
+      left: 70px;
+      position: relative;
+      top: 80px;
+      [class^="letter"] {
+        &::before {
+          color: rgba($color-wht, .1);
+        }
+      }
+    }
+  } // intro
+
+  /* About the Game
+  ================================================== */
+  @include e(about) {
+    @include container;
+
+    @include m(img) {
+      // @extend %range__image;
+      background: radial-gradient(ellipse at center, rgba($color-blk, 0) 0%, rgba($color-blk, 1) 100%), url("/wp-content/uploads/ranges/carnevale/carnevale_bg_01.jpg");
+      height: 365px;
+      margin: 100px 0 0;
+      text-align: center;
+    }
+    @include m(starter) {
+      max-width: 1100px;
+      position: relative;
+      top: 50%;
+      -webkit-transform: translate(0, -50%);
+      transform: translate(0, -50%);
+      width: 100%;
+    }
+  } // about
+
+
+
+  /* Miniatures
+  ================================================== */
+  @include e(minis) {
+    @include container;
+    // @include grid(2);
+    // @include vertical-align;
+    @include m(img) {
+      @include container;
+      background: radial-gradient(ellipse at center, rgba($color-blk, 0) 0%, rgba($color-blk, 1) 100%), url("/wp-content/uploads/ranges/carnevale/carnevale_bg_01.jpg");
+      height: 250px;
+      margin: 60px auto;
+      position: relative;
+      text-align: center;
+      width: 100%;
+    }
+    @include m(pat) {
+      position: relative;
+      top: 50%;
+      -webkit-transform: translate(0, -50%);
+      transform: translate(0, -50%);
+      width: 100%;
+    }
+  }
+
+  /* Scenery
+  ================================================== */
+  @include e(scenery) {
+    @include grid(2);
+    @include vertical-align($justify:center);
+    @include m(txt) {
+      @include container;
+    }
+    @include m(link) {
+      text-align: center;
+    }
+    @include m(img) {
+      padding: 5rem;
+    }
+  } // scenery
+
+  /* Art (maybe a gallery?)
+  ================================================== */
+  @include e(art) {
+    @include m(atnight) {
+      background: url("/wp-content/uploads/ranges/carnevale/carnevale_minis-night_01.jpg") center center / cover no-repeat scroll padding-box border-box;
+      height: 80vw;
+      max-height: 80vh;
+    }
+    @include m(patrice) {
+      background: url("/wp-content/uploads/ranges/carnevale/carnevale_bg-battle_01.jpg") center center / cover no-repeat fixed padding-box border-box;
+      height: 90vh;
+    }
+  } // art
+
+} // carnevale

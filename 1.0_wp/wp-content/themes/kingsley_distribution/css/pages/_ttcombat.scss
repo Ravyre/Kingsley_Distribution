@@ -1,0 +1,38 @@
+@import "../base/colours";
+@import "../utils/placeholders";
+@import "../utils/mixins";
+@import "../layout/grid";
+
+
+/*--------------------------------------------------------------
+  TTCombat
+--------------------------------------------------------------*/
+.ttc {
+
+  /* Hero
+  ================================================== */
+  @include e(hero) {
+    @include m(colour) {
+      background: $color-ylw;
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 1.6vw));
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 1.6vw));
+    }
+    @include m(img) {
+      @extend %range__hero;
+      background: -webkit-gradient(linear, left top, left bottom, from(rgba($color-blk, .6)), to(rgba($color-blk, .6))), url("../img/ranges/ttcombat/grunge-danger.jpg") center center / auto auto repeat fixed padding-box border-box $color-wht;
+      background: linear-gradient(rgba($color-blk, .6), rgba($color-blk, .6)), url("../img/ranges/ttcombat/grunge-danger.jpg") center center / auto auto repeat fixed padding-box border-box $color-wht;
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 3vw));
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 3vw)); // was  6vw
+    }
+    @include m(logo) {
+      max-width: 400px;
+    }
+  } // hero
+
+  /* About TTCombat
+  ================================================== */
+  @include e(about) {
+    @include container;
+  }
+
+} // ttcombat

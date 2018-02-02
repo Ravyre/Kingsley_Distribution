@@ -1,0 +1,144 @@
+/*
+*/
+
+@import "../css/base/colours";
+
+/* Navigation
+============================================= */
+// elegantthemes.com/blog/divi-resources/free-divi-custom-login-page-extension-allows-you-to-easily-create-a-beautiful-login-experience-for-site-visitors
+// github.com/andyhqtran/Divi-100-Login-Page/blob/master/assets/css/style.css
+
+/*--------------------------------------------------------------
+  Pages
+--------------------------------------------------------------*/
+.login {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(100%, rgba($color-bludrk, .85)), to(rgba($color-bludrk, .85))), url("https://kingsleydistribution.co.uk/wp-content/uploads/bg/bg_office_01.jpg") center center / cover no-repeat fixed padding-box border-box;
+  background: linear-gradient(rgba($color-bludrk, .85) 100%, rgba($color-bludrk, .85) 100%), url("https://kingsleydistribution.co.uk/wp-content/uploads/bg/bg_office_01.jpg") center center / cover no-repeat fixed padding-box border-box;
+
+  /* ---------- Error Loggin in ---------- */
+  .message, #login_error {
+    border: 0;
+    border-radius: 4px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0 0 40px;
+    padding: 20px;
+  }
+  /* ---------- Login Contents ---------- */
+  #login {
+    max-width: 360px;
+    width: 100%;
+    h1 {
+      a {
+        background-image: none, url("https://kingsleydistribution.co.uk/wp-content/uploads/logo/kd_logo-shield_01.svg");
+        background-size: 120px;
+        height: 150px;
+        margin: 0 auto 40px;
+        width: 360px;
+      }
+    }
+  } // login
+
+  /* ---------- Back to Blog ---------- */
+  #backtoblog {
+    a {
+      color: rgba($color-wht, .2);
+      &:hover {
+        color: rgba($color-wht, .5);
+      }
+    }
+  }
+
+} // login
+p#backtoblog {
+  position: fixed;
+  top: 40px;
+  left: 40px;
+  margin: 0;
+  padding: 0;
+  a {
+    color: $color-wht;
+    font-size: rem(18);
+    font-weight: 600;
+    &:focus,
+    &:hover {
+      color: $color-wht;
+    }
+  }
+}
+.divi-login {
+  background: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  margin: 0 0 20px;
+  padding: 0;
+  &__input {
+    position: relative;
+    color: #FFF;
+    .icon {
+      position: absolute;
+      top: 50%;
+      left: 20px;
+      color: inherit;
+      font-size: 24px;
+      -webkit-transform: translateY(-50%);
+      transform: translateY(-50%);
+      pointer-events: none;
+    }
+    input {
+      outline: none;
+      background: none;
+      width: 100%;
+      border: 0;
+      -webkit-box-shadow: none;
+      box-shadow: none;
+      margin: 0;
+      color: inherit;
+      font-size: 16px;
+      font-weight: 600;
+      padding: 20px;
+      padding-left: 60px;
+    }
+  }
+  &__submit {
+    input {
+      float: none;
+      -webkit-transition: 0.2s ease;
+      transition: 0.2s ease;
+      &:active {
+        margin: 0;
+        -webkit-transform: scale(0.99);
+        transform: scale(0.99);
+      }
+    }
+  }
+  &__remember {
+    color: #FFF;
+    font-size: 14px;
+    font-weight: 600 !important;
+    float: none !important;
+    input {
+      background: #FFF;
+      border: 0;
+    }
+    label {
+      color: inherit !important;
+      font-size: inherit !important;
+      font-weight: inherit !important;
+    }
+  }
+}
+#nav {
+  margin: 0;
+  padding: 0 0 40px;
+  color: #FFF;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: center;
+  a {
+    color: inherit;
+  }
+}

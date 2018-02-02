@@ -1,0 +1,91 @@
+@import "../base/colours";
+@import "../utils/placeholders";
+@import "../utils/mixins";
+@import "../layout/grid";
+
+
+/*--------------------------------------------------------------
+  Carnevale
+--------------------------------------------------------------*/
+.rumbleslam {
+
+  /* Hero
+  ================================================== */
+  @include e(hero) {
+    @include m(colour) {
+      background: $carne-red;
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 1.6vw));
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 1.6vw));
+    }
+    @include m(img) {
+      @extend %range__hero;
+      background: url("/wp-content/uploads/ranges/rumbleslam/rumbleslam_bg_01.jpg") center center / auto auto repeat fixed padding-box border-box $color-wht;
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 3vw));
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 3vw));
+    }
+    @include m(logo) {
+      max-width: 550px;
+    }
+  } // hero
+
+  /* Introduction
+  ================================================== */
+  @include e(intro) {
+    @include grid(2);
+    margin: -200px 0 0;
+    @include m(img) {
+      max-width: 900px;
+      position: relative;
+      width: 100%;
+    }
+    @include m(txt) {
+      @include container;
+      margin: 200px 0 0;
+      text-align: center;
+    }
+  } // intro
+
+  /* About
+  ================================================== */
+  @include e(about) {
+    @include container($padding:8rem, $width:800px);
+    background: url("/wp-content/uploads/ranges/rumbleslam/rumbleslam_art-big-brawl_01.jpg") top center / auto auto repeat fixed padding-box border-box;
+    color: $color-wht;
+
+    @include m(txt) {
+      background: $rs-blu;
+      padding: 2em;
+      text-align: center;
+    }
+
+    [class^="letter"] {
+      &::before {
+        color: rgba($color-wht, .1);
+      }
+    }
+  }
+
+  /* Miniatures
+  ================================================== */
+  @include e(minis) {
+    @include container;
+    text-align: center;
+  }
+
+  /* Big Images
+  ================================================== */
+  @include e(img) {
+    @include m(minis) {
+      display: block;
+      margin: 0 auto;
+      max-width: 1200px;
+      width: 100%;
+    }
+    @include m(grave) {
+      display: block;
+      width: 100%;
+    }
+  } // img
+
+
+} // carnevale
