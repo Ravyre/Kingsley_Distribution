@@ -1,32 +1,19 @@
-$icomoon-font-path: "../fonts/icomoon/" !default;
-
-$icon-phone: "\e909";
-$icon-location: "\e907";
-$icon-envelope: "\e90d";
-$icon-phone2: "\e90a";
-$icon-map-marker: "\e908";
-$icon-handshake-o: "\e906";
-$icon-clock-o: "\e900";
-$icon-thumbs-up: "\e901";
-$icon-chevron-down: "\e902";
-$icon-chevron-up: "\e903";
-$icon-chevron-down2: "\e904";
-$icon-chevron-up2: "\e905";
+@import "variables";
 
 @font-face {
   font-family: "icomoon";
-  src: url("#{$icomoon-font-path}/icomoon.eot?pj4skw");
-  src: url("#{$icomoon-font-path}/icomoon.eot?pj4skw#iefix") format("embedded-opentype"),
-       url("#{$icomoon-font-path}/icomoon.ttf?pj4skw") format("truetype"),
-      url("#{$icomoon-font-path}/icomoon.woff?pj4skw") format("woff"),
-      url("#{$icomoon-font-path}/icomoon.svg?pj4skw#icomoon") format("svg");
+  src: url("#{$icomoon-font-path}/icomoon.eot?ajj1yw");
+  src: url("#{$icomoon-font-path}/icomoon.eot?ajj1yw#iefix") format("embedded-opentype"),
+       url("#{$icomoon-font-path}/icomoon.ttf?ajj1yw") format("truetype"),
+      url("#{$icomoon-font-path}/icomoon.woff?ajj1yw") format("woff"),
+      url("#{$icomoon-font-path}/icomoon.svg?ajj1yw#icomoon") format("svg");
   font-weight: normal;
   font-style: normal;
 }
 
 [class^="icon-"], [class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: "icomoon" !important;
+  font-family: 'icomoon' !important;
   speak: none;
   font-style: normal;
   font-weight: normal;
@@ -39,63 +26,268 @@ $icon-chevron-up2: "\e905";
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-phone {
-  &::before {
-    content: $icon-phone;
-  }
-}
-.icon-location {
-  &::before {
-    content: $icon-location;
-  }
-}
-.icon-envelope {
-  &::before {
-    content: $icon-envelope;
-  }
-}
-.icon-phone2 {
-  &::before {
-    content: $icon-phone2;
-  }
-}
-.icon-map-marker {
-  &::before {
-    content: $icon-map-marker;
-  }
-}
-.icon-handshake-o {
-  &::before {
-    content: $icon-handshake-o;
-  }
-}
-.icon-clock-o {
-  &::before {
-    content: $icon-clock-o;
+.icon-thumbs-down {
+  &:before {
+    content: $icon-thumbs-down;
   }
 }
 .icon-thumbs-up {
-  &::before {
+  &:before {
     content: $icon-thumbs-up;
   }
 }
+.icon-user {
+  &:before {
+    content: $icon-user;
+  }
+}
 .icon-chevron-down {
-  &::before {
+  &:before {
     content: $icon-chevron-down;
   }
 }
+.icon-chevron-thin-down {
+  &:before {
+    content: $icon-chevron-thin-down;
+  }
+}
+.icon-chevron-thin-up {
+  &:before {
+    content: $icon-chevron-thin-up;
+  }
+}
 .icon-chevron-up {
-  &::before {
+  &:before {
     content: $icon-chevron-up;
   }
 }
+.icon-clock3 {
+  &:before {
+    content: $icon-clock3;
+  }
+}
+.icon-email {
+  &:before {
+    content: $icon-email;
+  }
+}
+.icon-location {
+  &:before {
+    content: $icon-location;
+  }
+}
+.icon-location-pin {
+  &:before {
+    content: $icon-location-pin;
+  }
+}
+.icon-lock-open {
+  &:before {
+    content: $icon-lock-open;
+  }
+}
+.icon-lock3 {
+  &:before {
+    content: $icon-lock3;
+  }
+}
+.icon-mail2 {
+  &:before {
+    content: $icon-mail2;
+  }
+}
+.icon-map {
+  &:before {
+    content: $icon-map;
+  }
+}
+.icon-paper-plane {
+  &:before {
+    content: $icon-paper-plane;
+  }
+}
+.icon-phone3 {
+  &:before {
+    content: $icon-phone3;
+  }
+}
+.icon-thumbs-down2 {
+  &:before {
+    content: $icon-thumbs-down2;
+  }
+}
+.icon-thumbs-up2 {
+  &:before {
+    content: $icon-thumbs-up2;
+  }
+}
+.icon-at-sign {
+  &:before {
+    content: $icon-at-sign;
+  }
+}
 .icon-chevron-down2 {
-  &::before {
+  &:before {
     content: $icon-chevron-down2;
   }
 }
 .icon-chevron-up2 {
-  &::before {
+  &:before {
     content: $icon-chevron-up2;
+  }
+}
+.icon-clock4 {
+  &:before {
+    content: $icon-clock4;
+  }
+}
+.icon-lock4 {
+  &:before {
+    content: $icon-lock4;
+  }
+}
+.icon-mail3 {
+  &:before {
+    content: $icon-mail3;
+  }
+}
+.icon-map-pin {
+  &:before {
+    content: $icon-map-pin;
+  }
+}
+.icon-map2 {
+  &:before {
+    content: $icon-map2;
+  }
+}
+.icon-phone4 {
+  &:before {
+    content: $icon-phone4;
+  }
+}
+.icon-send {
+  &:before {
+    content: $icon-send;
+  }
+}
+.icon-unlock {
+  &:before {
+    content: $icon-unlock;
+  }
+}
+.icon-user2 {
+  &:before {
+    content: $icon-user2;
+  }
+}
+.icon-handshake-o {
+  &:before {
+    content: $icon-handshake-o;
+  }
+}
+.icon-thumbs-o-down {
+  &:before {
+    content: $icon-thumbs-o-down;
+  }
+}
+.icon-thumbs-o-up {
+  &:before {
+    content: $icon-thumbs-o-up;
+  }
+}
+.icon-thumbs-down3 {
+  &:before {
+    content: $icon-thumbs-down3;
+  }
+}
+.icon-thumbs-up3 {
+  &:before {
+    content: $icon-thumbs-up3;
+  }
+}
+.icon-at {
+  &:before {
+    content: $icon-at;
+  }
+}
+.icon-chevron-down3 {
+  &:before {
+    content: $icon-chevron-down3;
+  }
+}
+.icon-chevron-up3 {
+  &:before {
+    content: $icon-chevron-up3;
+  }
+}
+.icon-clock-o {
+  &:before {
+    content: $icon-clock-o;
+  }
+}
+.icon-envelope {
+  &:before {
+    content: $icon-envelope;
+  }
+}
+.icon-envelope-o {
+  &:before {
+    content: $icon-envelope-o;
+  }
+}
+.icon-envelope-open {
+  &:before {
+    content: $icon-envelope-open;
+  }
+}
+.icon-envelope-open-o {
+  &:before {
+    content: $icon-envelope-open-o;
+  }
+}
+.icon-location-arrow {
+  &:before {
+    content: $icon-location-arrow;
+  }
+}
+.icon-lock5 {
+  &:before {
+    content: $icon-lock5;
+  }
+}
+.icon-map-marker2 {
+  &:before {
+    content: $icon-map-marker2;
+  }
+}
+.icon-paper-plane-o {
+  &:before {
+    content: $icon-paper-plane-o;
+  }
+}
+.icon-paper-plane2 {
+  &:before {
+    content: $icon-paper-plane2;
+  }
+}
+.icon-phone5 {
+  &:before {
+    content: $icon-phone5;
+  }
+}
+.icon-unlock-alt {
+  &:before {
+    content: $icon-unlock-alt;
+  }
+}
+.icon-unlock2 {
+  &:before {
+    content: $icon-unlock2;
+  }
+}
+.icon-user3 {
+  &:before {
+    content: $icon-user3;
   }
 }

@@ -2,6 +2,9 @@
 */
 
 @import "../css/base/colours";
+@import "../css/utils/mixins";
+@import "../css/vendor/icomoon/icomoon";
+@import "../css/vendor/fontello/fontello";
 
 /* Navigation
 ============================================= */
@@ -14,20 +17,10 @@
 .login {
   background: -webkit-gradient(linear, left top, left bottom, color-stop(100%, rgba($color-bludrk, .85)), to(rgba($color-bludrk, .85))), url("https://kingsleydistribution.co.uk/wp-content/uploads/bg/bg_office_01.jpg") center center / cover no-repeat fixed padding-box border-box;
   background: linear-gradient(rgba($color-bludrk, .85) 100%, rgba($color-bludrk, .85) 100%), url("https://kingsleydistribution.co.uk/wp-content/uploads/bg/bg_office_01.jpg") center center / cover no-repeat fixed padding-box border-box;
+  overflow: hidden;
 
-  /* ---------- Error Loggin in ---------- */
-  .message, #login_error {
-    border: 0;
-    border-radius: 4px;
-    -webkit-box-shadow: none;
-    box-shadow: none;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    margin: 0 0 40px;
-    padding: 20px;
-  }
-  /* ---------- Login Contents ---------- */
+
+  /* ---------- Login Contents (#login) ---------- */
   #login {
     max-width: 360px;
     width: 100%;
@@ -36,109 +29,180 @@
         background-image: none, url("https://kingsleydistribution.co.uk/wp-content/uploads/logo/kd_logo-shield_01.svg");
         background-size: 120px;
         height: 150px;
-        margin: 0 auto 40px;
-        width: 360px;
+        margin: 3rem auto 0;
+        width: 300px;
+        &:focus {
+          color: transparent;
+          -webkit-box-shadow: none;
+          box-shadow: none;
+        }
       }
     }
-  } // login
 
-  /* ---------- Back to Blog ---------- */
-  #backtoblog {
-    a {
-      color: rgba($color-wht, .2);
-      &:hover {
-        color: rgba($color-wht, .5);
-      }
-    }
-  }
-
-} // login
-p#backtoblog {
-  position: fixed;
-  top: 40px;
-  left: 40px;
-  margin: 0;
-  padding: 0;
-  a {
-    color: $color-wht;
-    font-size: rem(18);
-    font-weight: 600;
-    &:focus,
-    &:hover {
-      color: $color-wht;
-    }
-  }
-}
-.divi-login {
-  background: 0;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-  margin: 0 0 20px;
-  padding: 0;
-  &__input {
-    position: relative;
-    color: #FFF;
-    .icon {
-      position: absolute;
-      top: 50%;
-      left: 20px;
-      color: inherit;
-      font-size: 24px;
-      -webkit-transform: translateY(-50%);
-      transform: translateY(-50%);
-      pointer-events: none;
-    }
-    input {
-      outline: none;
-      background: none;
-      width: 100%;
+    /* ---------- Error Loggin in ---------- */
+    .message, #login_error {
       border: 0;
+      border-radius: 4px;
       -webkit-box-shadow: none;
       box-shadow: none;
-      margin: 0;
-      color: inherit;
-      font-size: 16px;
-      font-weight: 600;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      margin: 0 auto;
       padding: 20px;
-      padding-left: 60px;
     }
-  }
-  &__submit {
-    input {
-      float: none;
-      -webkit-transition: 0.2s ease;
-      transition: 0.2s ease;
-      &:active {
-        margin: 0;
-        -webkit-transform: scale(0.99);
-        transform: scale(0.99);
+
+
+    /* ---------- Form for filling out Login Credentials (#loginform) ---------- */
+    #loginform.login__form, #lostpasswordform.login__form {
+      background: transparent;
+      -webkit-box-shadow: none;
+      box-shadow: none;
+      margin: 0 auto;
+      padding: 2rem;
+
+      .login__form--input {
+        margin: 1rem auto;
+        position: relative;
+
+        [class^="icon"] {
+          color: rgba($color-wht, .8);
+          font-size: 20px;
+          left: 8px;
+          position: absolute;
+          top: 50%;
+          -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+        }
+
+        .input {
+          background: rgba($color-wht, .15);
+          border: 0;
+          border-radius: 4px;
+          -webkit-box-shadow: none;
+          box-shadow: none;
+          color: $color-wht;
+          font-size: 20px;
+          margin: 0 auto;
+          padding: .5rem 35px;
+          -webkit-transition: all .3s ease-out;
+          transition: all .3s ease-out;
+          width: 100%;
+          &:focus {
+            border-color: transparent;
+            -webkit-box-shadow: 0 0 2px rgba($color-wht, .8);
+            box-shadow: 0 0 2px rgba($color-wht, .8);
+          }
+        }
+
+        #wp-submit.login__form--submit {
+          background: $color-blu;
+          border: 0;
+          border-radius: 2px;
+          -webkit-box-shadow: none;
+          box-shadow: none;
+          -webkit-box-sizing: border-box;
+          -moz-box-sizing: border-box;
+          box-sizing: border-box;
+          color: $color-wht;
+          display: block;
+          float: none;
+          font-size: 18px;
+          font-weight: 600;
+          height: auto;
+          margin: 0 auto;
+          padding: 12px 20px;
+          text-shadow: none;
+          width: 100%;
+        }
+      } // login__form--input
+    } // login__form
+
+    /* ---------- lost / Forgotten Password? (#nav) ---------- */
+    #nav.lost-pass {
+      font-weight: 600;
+      margin: 0;
+      text-align: center;
+      a {
+        color: rgba($color-wht, .2);
+        &:hover, &:active, &:focus, &:visited {
+          color: rgba($color-wht, .5);
+          -webkit-transition: 1s ease;
+          transition: 1s ease;
+        }
+      }
+    } // #nav
+
+    /* ---------- Back to Blog (#backtoblog) ---------- */
+    #backtoblog.backtoblog {
+      left: 40px;
+      margin: 0;
+      padding: 0;
+      position: fixed;
+      top: 40px;
+      a {
+        color: rgba($color-wht, .2);
+        &:hover, &:active, &:focus, &:visited {
+          color: rgba($color-wht, .5);
+          -webkit-transition: 1s ease;
+          transition: 1s ease;
+        }
       }
     }
-  }
-  &__remember {
-    color: #FFF;
-    font-size: 14px;
-    font-weight: 600 !important;
-    float: none !important;
-    input {
-      background: #FFF;
-      border: 0;
-    }
-    label {
-      color: inherit !important;
-      font-size: inherit !important;
-      font-weight: inherit !important;
-    }
-  }
-}
-#nav {
-  margin: 0;
-  padding: 0 0 40px;
-  color: #FFF;
-  font-size: 12px;
-  font-weight: 600;
-  text-align: center;
-  a {
-    color: inherit;
-  }
-}
+
+    /* ---------- Little Message for Users ---------- */
+    .happymsg {
+      bottom: 40px;
+      color: rgba($color-wht, .25);
+      margin: 0;
+      padding: 0;
+      position: fixed;
+      right: 40px;
+      [class^="fontello"] {
+        padding: .5rem;
+      }
+    } // happymsg
+  } // #login
+} // .login
+
+
+/*--------------------------------------------------------------
+  Media Queries
+--------------------------------------------------------------*/
+$smartphone: "only screen and (max-width: 599px)";
+$tablet: "only screen and (min-width: 600px) and (max-width: 1279px)";
+$desktop: "only screen and (min-width: 1280px)";
+
+/*--------------------------------------------------------------
+  Smartphone
+--------------------------------------------------------------*/
+@media #{$smartphone} {
+  .login {
+    #login {
+      h1 {
+        a {
+          background-size: 80px;
+          height: 100px;
+        }
+      }
+      .message, #login_error {
+        margin: 1rem 1rem 0;
+        padding: .5rem;
+      }
+      #loginform.login__form, #lostpasswordform.login__form {
+        padding: .5rem 1rem;
+      }
+      #backtoblog.backtoblog {
+        left: 20px;
+        top: 20px;
+      }
+      .happymsg {
+        bottom: 20px;
+        left: 0;
+        right: 0;
+        text-align: center;
+        width: 100%;
+      }
+    } // #login
+  } // .login
+} // $smartphone

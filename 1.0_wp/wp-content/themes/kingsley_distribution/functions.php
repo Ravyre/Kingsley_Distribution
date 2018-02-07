@@ -14,18 +14,20 @@ function theme_styles() {
 }
 add_action( 'wp_enqueue_scripts', 'theme_styles');
 
-function login_css() {
+function login_page() {
   wp_enqueue_style( 'login_css', get_stylesheet_directory_uri() . '/login/style.min.css' );
+  wp_enqueue_script( 'login_jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js', array(), false, true);
+  wp_enqueue_script( 'login_js', get_stylesheet_directory_uri() . '/login/scripts.min.js', array(), false, true );
 }
-add_action( 'login_enqueue_scripts', 'login_css' );
+add_action( 'login_enqueue_scripts', 'login_page' );
 
 /*--------------------------------------------------------------*\
   JavaScript
 \*--------------------------------------------------------------*/
  function theme_js() {
  	global $wp_scripts;
- 	wp_enqueue_script( 'jquery_js', 'https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js');
- 	wp_enqueue_script('main_js', get_stylesheet_directory_uri() . '/js/scripts.min.js', array(), filemtime( get_stylesheet_directory() . '/js/scripts.min.js' ) );
+ 	wp_enqueue_script( 'jquery_js', 'https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js', array(), false, true);
+ 	wp_enqueue_script('main_js', get_stylesheet_directory_uri() . '/js/scripts.min.js', array(), filemtime( get_stylesheet_directory() . '/js/scripts.min.js' ), true );
  }
  add_action( 'wp_enqueue_scripts', 'theme_js');
 
@@ -71,22 +73,33 @@ function theme_setup() {
 }
  add_action( 'after_setup_theme', 'theme_setup' );
 
- /*--------------------------------------------------------------*\
-   Use Minified Styles instead
- \*--------------------------------------------------------------*/
- function style_or_min_style() {
-   $located = locate_template( 'style.min.css' );
-   if ($located != '' ) {
-     echo '<link rel="stylesheet" href="'.get_template_directory_uri().'/style.min.css" />';
-   } else {
-     echo '<link rel="stylesheet" href="'.get_template_directory_uri().'/style.css" />';
-   }
- }
- add_action( 'wp_head', 'style_or_min_style');
+/*--------------------------------------------------------------*\
+  Use Minified Styles instead
+\*--------------------------------------------------------------*/
+function style_or_min_style() {
+  $located = locate_template( 'style.min.css' );
+  if ($located != '' ) {
+    echo '<link rel="stylesheet" href="'.get_template_directory_uri().'/style.min.css" />';
+  } else {
+    echo '<link rel="stylesheet" href="'.get_template_directory_uri().'/style.css" />';
+  }
+}
+add_action( 'wp_head', 'style_or_min_style');
 
- /*--------------------------------------------------------------*\
-   SVG Images
- \*--------------------------------------------------------------*/
+/*--------------------------------------------------------------*\
+  Defer Parsing of JS
+\*--------------------------------------------------------------*/
+function defer_parsing_of_js ( $url ) {
+  if ( FALSE === strpos( $url, '.js' ) ) return $url;
+  if ( strpos( $url, 'jquery.js' ) ) return $url;
+  return "$url' defer ";
+}
+add_filter( 'clean_url', 'defer_parsing_of_js', 11, 1 );
+
+
+/*--------------------------------------------------------------*\
+ SVG Images
+\*--------------------------------------------------------------*/
 function add_file_types_to_uploads($file_types) {
   $new_filetypes = array();
   $new_filetypes['svg'] = 'image/svg+xml';

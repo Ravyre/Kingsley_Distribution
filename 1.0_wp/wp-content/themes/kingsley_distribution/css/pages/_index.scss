@@ -79,7 +79,7 @@
       }
     }
 
-    .icon-thumbs-up, .icon-clock-o, .icon-handshake-o {
+    [class^="icon"] {
       display: inline-block;
       font-size: 3em;
       margin: 0 0 .5em;
