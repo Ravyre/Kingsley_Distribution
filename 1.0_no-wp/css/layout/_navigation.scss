@@ -167,7 +167,7 @@
 
 } // nav
 
-.logo, .hero, .content, [class*="__hero"],  {
+.logo, .hero, .home__hero, .content, [class*="__hero--colour"], footer {
   -webkit-transition: all .4s ease-in-out;
   transition: all .4s ease-in-out;
   &.active {
