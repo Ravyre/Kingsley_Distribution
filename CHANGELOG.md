@@ -1,3 +1,11 @@
+## 1.1.1 - 2018-02-08
+
+### Updated
+- Header (stopped all contents were flying away)
+- Footer (added active class)
+
+------------------------------------------------------------
+
 ## 1.1.0 - 2018-02-07
 
 ### Added
