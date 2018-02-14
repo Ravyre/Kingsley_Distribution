@@ -14,28 +14,110 @@ function theme_styles() {
 }
 add_action( 'wp_enqueue_scripts', 'theme_styles');
 
-function login_page() {
-  wp_enqueue_style( 'login_css', get_stylesheet_directory_uri() . '/login/style.min.css' );
-  wp_enqueue_script( 'login_jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js', array(), false, true);
-  wp_enqueue_script( 'login_js', get_stylesheet_directory_uri() . '/login/scripts.min.js', array(), false, true );
-}
-add_action( 'login_enqueue_scripts', 'login_page' );
+  /* Use Minified Styles instead
+  ============================================= */
+  function style_or_min_style() {
+    $located = locate_template( 'style.min.css' );
+    if ($located != '' ) {
+      echo '<link rel="stylesheet" href="'.get_template_directory_uri().'/style.min.css" />';
+    } else {
+      echo '<link rel="stylesheet" href="'.get_template_directory_uri().'/style.css" />';
+    }
+  }
+  add_action( 'wp_head', 'style_or_min_style');
+
 
 /*--------------------------------------------------------------*\
   JavaScript
 \*--------------------------------------------------------------*/
- function theme_js() {
- 	global $wp_scripts;
+function theme_js() {
+  global $wp_scripts;
  	wp_enqueue_script( 'jquery_js', 'https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js', array(), false, true);
  	wp_enqueue_script('main_js', get_stylesheet_directory_uri() . '/js/scripts.min.js', array(), filemtime( get_stylesheet_directory() . '/js/scripts.min.js' ), true );
- }
- add_action( 'wp_enqueue_scripts', 'theme_js');
+}
+add_action( 'wp_enqueue_scripts', 'theme_js');
+
+  /* Defer Parsing
+  ============================================= */
+  function defer_parsing_of_js ( $url ) {
+    if ( FALSE === strpos( $url, '.js' ) ) return $url;
+    if ( strpos( $url, 'jquery.js' ) ) return $url;
+    return "$url' defer onload='";
+  }
+  add_filter( 'clean_url', 'defer_parsing_of_js', 11, 1 );
+
+
+  /* Remove Type Attr from JS
+  ============================================= */
+  function remove_type_attr($tag, $handle) {
+    return preg_replace( "/type=['\"]text\/(javascript|css)['\"]/", '', $tag );
+  }
+  add_filter('style_loader_tag', 'remove_type_attr', 10, 2);
+  add_filter('script_loader_tag', 'remove_type_attr', 10, 2);
+
+
+/*--------------------------------------------------------------*\
+  Login Page
+\*--------------------------------------------------------------*/
+function login_page() {
+  wp_enqueue_style( 'login_css', get_stylesheet_directory_uri() . '/login/style.min.css' );
+  wp_enqueue_script( 'login_jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js');
+  wp_enqueue_script( 'login_js', get_stylesheet_directory_uri() . '/login/scripts.min.js');
+}
+add_action( 'login_enqueue_scripts', 'login_page' );
+
+
+/*--------------------------------------------------------------*\
+ 	wp_head()
+\*--------------------------------------------------------------*/
+  /* Clean up
+  ============================================= */
+  remove_action('wp_head', 'wp_generator');
+  remove_action('wp_head', 'wp_shortlink_wp_head', 10, 0);
+
+  // Move all JS from <head> to end of <body>
+    // Causes page to load awkwardly
+  // remove_action('wp_head', 'wp_print_scripts');
+  // remove_action('wp_head', 'wp_print_head_scripts', 9);
+  // remove_action('wp_head', 'wp_enqueue_scripts', 1);
+  // add_action('wp_footer', 'wp_print_scripts', 5);
+  // add_action('wp_footer', 'wp_enqueue_scripts', 5);
+  // add_action('wp_footer', 'wp_print_head_scripts', 5);
+
+  /* Hooks
+  ============================================= */
+  function favicon() {
+    echo '<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />';
+  }
+  add_action('wp_head', 'favicon');
+  function manifest() {
+    echo '<link rel="manifest" href="/manifest.json">';
+  }
+  add_action('wp_head', 'manifest');
+
+/*--------------------------------------------------------------*\
+ 	Last Modified Headers
+\*--------------------------------------------------------------*/
+// https://wordpress.stackexchange.com/questions/172966/if-modified-since-http-header
+function cyb_add_last_modified_header($headers) {
+  if( is_singular() ) {
+    $post_id = get_queried_object_id();
+    if( $post_id ) {
+      $post_mtime = get_the_modified_time("D, d M Y H:i:s", $post_id);
+      $post_mtime_unix = strtotime( $post_mtime );
+      $header_last_modified_value = str_replace( '+0000', 'GMT', gmdate('r', $post_mtime_unix) );
+      header("Last-Modified: " . $header_last_modified_value );
+    }
+  }
+}
+add_action('template_redirect', 'cyb_add_last_modified_header');
+
 
 /*--------------------------------------------------------------*\
  	Theme Setup
 \*--------------------------------------------------------------*/
 function theme_setup() {
-	load_theme_textdomain( 'carnevale' );
+	load_theme_textdomain( 'kingsley' );
 	add_theme_support( 'automatic-feed-links' );
 	add_theme_support( 'title-tag' );
 	add_theme_support( 'post-thumbnails' );
@@ -73,29 +155,6 @@ function theme_setup() {
 }
  add_action( 'after_setup_theme', 'theme_setup' );
 
-/*--------------------------------------------------------------*\
-  Use Minified Styles instead
-\*--------------------------------------------------------------*/
-function style_or_min_style() {
-  $located = locate_template( 'style.min.css' );
-  if ($located != '' ) {
-    echo '<link rel="stylesheet" href="'.get_template_directory_uri().'/style.min.css" />';
-  } else {
-    echo '<link rel="stylesheet" href="'.get_template_directory_uri().'/style.css" />';
-  }
-}
-add_action( 'wp_head', 'style_or_min_style');
-
-/*--------------------------------------------------------------*\
-  Defer Parsing of JS
-\*--------------------------------------------------------------*/
-function defer_parsing_of_js ( $url ) {
-  if ( FALSE === strpos( $url, '.js' ) ) return $url;
-  if ( strpos( $url, 'jquery.js' ) ) return $url;
-  return "$url' defer ";
-}
-add_filter( 'clean_url', 'defer_parsing_of_js', 11, 1 );
-
 
 /*--------------------------------------------------------------*\
  SVG Images
@@ -107,6 +166,7 @@ function add_file_types_to_uploads($file_types) {
   return $file_types;
 }
 add_action('upload_mimes', 'add_file_types_to_uploads');
+
 
 /*--------------------------------------------------------------*\
  Admin Bar Overlap
@@ -134,6 +194,7 @@ function adminOverlap() {
 }
 add_action( 'wp_head', 'adminOverlap' );
 
+
 /*--------------------------------------------------------------*\
  	Prevent Wordpress Media Library from Generating Alternative Sizes
 \*--------------------------------------------------------------*/
@@ -146,12 +207,14 @@ function add_image_insert_override($sizes){
 }
 add_filter('intermediate_image_sizes_advanced', 'add_image_insert_override' );
 
+
 /*--------------------------------------------------------------*\
  	Importing Media
 \*--------------------------------------------------------------*/
 add_filter( 'wp_http_accept_encoding', function( $type, $url, $args ) {
   return array();
 }, 10, 3 );
+
 
 /*--------------------------------------------------------------*\
 	Stop Auto Adding P Tags
@@ -193,6 +256,7 @@ add_filter('the_content','my_custom_formatting');
       return $meta_caps;
   }
   add_filter('flamingo_map_meta_cap', 'fl_map_meta_cap');
+
 
 /*--------------------------------------------------------------*\
 	META BOXES

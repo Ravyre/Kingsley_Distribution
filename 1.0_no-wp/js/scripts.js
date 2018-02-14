@@ -185,5 +185,13 @@ $(function() {
       j.preventDefault();
     });
 
+  /* Contact Form 7
+  ================================================== */
+    /* ---------- Insert Label ---------- */
+    var findInput = $('.wpcf7-form-control');
+
+    $(findInput).each(function() {
+      $(this).parent('.wpcf7-form-control-wrap').prepend('<label for="' + this.id + '"><span class="screen-reader">' + this.id + '</span></label>');
+    });
 
 }); // end

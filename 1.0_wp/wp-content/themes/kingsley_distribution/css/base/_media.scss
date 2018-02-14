@@ -80,11 +80,11 @@ $desktop: "only screen and (min-width: 1280px)";
     width: 100%;
   }
 
-  [class*="__intro"] {
+  [class$="__intro"] {
     height: 100%;
     margin: -1px auto;
   }
-  [class*="txt"] {
+  [class$="__intro--txt"] {
     left: 0;
     top: 0;
   }
@@ -361,6 +361,57 @@ $desktop: "only screen and (min-width: 1280px)";
     @include e(minis) {
       @include m(img) {
         @include grid(1);
+      }
+    }
+  }
+
+  /* Range: Aristeia
+  ================================================== */
+  .aristeia {
+    @include e(intro) {
+      @include m(img) {
+        height: auto;
+        margin: 0 auto;
+      }
+      @include m(characters) {
+        -webkit-transform: translate(0, 0);
+        transform: translate(0, 0);
+      }
+    }
+    @include e(about) {
+      @include m(container) {
+        @include grid(1);
+      }
+    }
+    @include e(minis) {
+      @include container($margin:0 auto);
+      @include m(container) {
+        @include grid(1);
+      }
+      @include m(art) {
+        // display: -webkit-box;
+        // display: -moz-box;
+        // display: -ms-flexbox;
+        // display: flex;
+        // -webkit-box-ordinal-group: 3;
+        // -moz-box-ordinal-group: 3;
+        // -ms-flex-order: 2;
+        // order: 2;
+        display: none;
+      }
+      @include m(musa) {
+        position: relative;
+        top: 0;
+        -webkit-transform: translate(0, 0);
+        transform: translate(0, 0);
+      }
+      @include m(img) {
+        height: auto;
+        margin: 0 auto;
+      }
+      @include m(set) {
+        -webkit-transform: translate(0, 0);
+        transform: translate(0, 0);
       }
     }
   }
