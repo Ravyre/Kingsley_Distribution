@@ -19,7 +19,7 @@
     }
     @include m(img) {
       @extend %range__hero;
-      background: url("/wp-content/uploads/ranges/bushido/bushido_bg_01.jpg") center center / cover no-repeat scroll padding-box border-box $color-wht;
+      background: url("https://res.cloudinary.com/kingsley/image/upload/ranges/bushido/bushido_bg_01.jpg") center center / cover no-repeat scroll padding-box border-box $color-wht;
       -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 3vw));
       clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 3vw)); // was  6vw
     }
@@ -37,7 +37,7 @@
       @include grid(2);
     }
     @include m(img) {
-      img {
+      picture {
         position: absolute;
         top: -250px;
       }
@@ -73,9 +73,6 @@
     @include m(img) {
       margin: 0 auto;
       max-width: 1200px;
-      img {
-        width: 100%;
-      }
     }
   } // minis
 
@@ -85,9 +82,6 @@
     @include container;
     @include m(img) {
       @include grid(2);
-      img {
-        height: 100%;
-      }
     }
   } // scenery
 
@@ -95,7 +89,7 @@
   ================================================== */
   @include e(art) {
     @include m(monk) {
-      background: url("/wp-content/uploads/ranges/bushido/bushido_art-warrior-monk_01.jpg") center right / cover no-repeat fixed padding-box border-box;
+      background: url("https://res.cloudinary.com/kingsley/image/upload/ranges/bushido/bushido_art-warrior-monk_01.jpg") center right / cover no-repeat fixed padding-box border-box;
       height: 85vh;
     }
   } // art

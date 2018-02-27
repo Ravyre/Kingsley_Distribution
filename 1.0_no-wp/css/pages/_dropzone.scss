@@ -19,7 +19,7 @@
     }
     @include m(img) {
       @extend %range__hero;
-      background: url("/wp-content/uploads/ranges/dropzone/dzc_bg_01.jpg") center center / auto auto repeat fixed padding-box border-box $color-wht;
+      background: url("https://res.cloudinary.com/kingsley/image/upload/ranges/dropzone/dzc_bg_01.jpg") center center / auto auto repeat fixed padding-box border-box $color-wht;
       -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 3vw));
       clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 3vw));
     }
@@ -33,7 +33,7 @@
   @include e(intro) {
     @include container($margin:0, $width:750px);
     @include vertical-align($justify:center);
-    background: url("/wp-content/uploads/ranges/dropzone/dzc_gather-strength_01.jpg") center center / cover no-repeat fixed padding-box border-box;
+    background: url("https://res.cloudinary.com/kingsley/image/upload/ranges/dropzone/dzc_gather-strength_01.jpg") center center / cover no-repeat fixed padding-box border-box;
     color: $color-wht;
     height: 100vh;
     -webkit-box-pack: end;
@@ -61,10 +61,10 @@
     @include m(txt) {
       @include container;
     }
-  }
-
-  @include e(gameboard) {
-    width: 100%;
+    @include m(gameboard) {
+      display: block;
+      width: 100%;
+    }
   }
 
   /* Miniatures
@@ -77,9 +77,11 @@
       text-align: center;
     }
     @include m(img) {
-      height: 100%;
-      margin: -7rem 0 0;
       max-width: 700px;
+    }
+    picture {
+      margin: -7rem 0 0;
+      overflow: visible
     }
   }
 
@@ -87,7 +89,7 @@
   ================================================== */
   @include e(scen) {
     @include vertical-align($justify:flex-start);
-    background: url("/wp-content/uploads/ranges/dropzone/dzc_scen_01.jpg") center center / cover no-repeat scroll padding-box border-box;
+    background: url("https://res.cloudinary.com/kingsley/image/upload/ranges/dropzone/dzc_scen_01.jpg") center center / cover no-repeat scroll padding-box border-box;
     height: 90vh;
     @include m(txt) {
       background: $color-gry;
@@ -100,12 +102,6 @@
 
   /* Art
   ================================================== */
-  @include e(art) {
-    @include m(ucm) {
-      img {
-        width: 100%;
-      }
-    }
-  } // art
+
 
 } // dropzone

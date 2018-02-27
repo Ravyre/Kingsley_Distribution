@@ -11,36 +11,32 @@
   ================================================== */
   @include e(hero) {
     @include vertical-align($justify:center);
-    background: -webkit-gradient(linear, left top, left bottom, from(rgba($color-blk, .6)), to(rgba($color-blk, .6))), url("/wp-content/uploads/bg/bg_hero-carne_01.jpg") center center / cover no-repeat fixed padding-box border-box;
-    background: linear-gradient(rgba($color-blk, .6), rgba($color-blk, .6)), url("/wp-content/uploads/bg/bg_hero-carne_01.jpg") center center / cover no-repeat fixed padding-box border-box;
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba($color-blk, .6)), to(rgba($color-blk, .6))), url("https://res.cloudinary.com/kingsley/image/upload/q_auto,f_auto/bg/bg_hero-carne_01.jpg") center center / cover no-repeat fixed padding-box border-box;
+    background: linear-gradient(rgba($color-blk, .6), rgba($color-blk, .6)), url("https://res.cloudinary.com/kingsley/image/upload/q_auto,f_auto/bg/bg_hero-carne_01.jpg") center center / cover no-repeat fixed padding-box border-box;
     color: $color-wht;
     height: 100vh;
     text-align: center;
 
     @include m(head) {
       font-weight: 400;
+      margin: 0 auto 2rem;
 
-      div {
+      span {
+        color: $color-ylw;
         font-weight: 700;
+      }
+
+      hr {
+        margin: 2em auto;
+        width: calc(100% / 1.2);
       }
     } // head
     @include m(sub) {
       font-size: 15px;
       font-weight: 300;
-      margin: 1em 0;
+      margin: 2em 0 0;
       text-transform: none;
     } // sub
-
-    h1 {
-      > div {
-        color: $color-ylw;
-      }
-    }
-
-    hr {
-      margin: 2em auto;
-      width: calc(100% / 1.2);
-    }
 
     .btn__blu, .btn__wht {
       border-radius: 5px;
@@ -114,7 +110,7 @@
           background: rgba($color-wht, 0);
         }
       }
-      img {
+      img, source {
         width: 100%;
       }
     }
@@ -146,8 +142,8 @@
   ================================================== */
   @include e(faq) {
     @include container;
-    background: -webkit-gradient(linear, left top, left bottom, from(rgba($color-blk, .6)), to(rgba($color-blk, .6))), url("/wp-content/uploads/bg/bg_office_01.jpg") center center / cover no-repeat fixed padding-box border-box;
-    background: linear-gradient(rgba($color-blk, .6), rgba($color-blk, .6)), url("/wp-content/uploads/bg/bg_office_01.jpg") center center / cover no-repeat fixed padding-box border-box;
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba($color-blk, .6)), to(rgba($color-blk, .6))), url("https://res.cloudinary.com/kingsley/image/upload/q_auto,f_auto/bg/bg_office_01.jpg") center center / cover no-repeat fixed padding-box border-box;
+    background: linear-gradient(rgba($color-blk, .6), rgba($color-blk, .6)), url("https://res.cloudinary.com/kingsley/image/upload/q_auto,f_auto/bg/bg_office_01.jpg") center center / cover no-repeat fixed padding-box border-box;
     color: $color-wht;
     text-align: center;
     [class^="letter"] {
@@ -181,7 +177,7 @@
       &::after {
         @include vertical-align($justify:center);
         color: $color-gry666;
-        content: "\e902";
+        content: "\e90d";
         font-family: "icomoon";
         height: 100%;
         position: absolute;
@@ -258,8 +254,8 @@
   @include e(contact) {
     @include container;
     @include parallax;
-    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba($color-blk, .7)), to(rgba($color-blk, .7))), url("/wp-content/uploads/bg/bg_desk_01.jpg");
-    background-image: linear-gradient(rgba($color-blk, .7), rgba($color-blk, .7)), url("/wp-content/uploads/bg/bg_desk_01.jpg");
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba($color-blk, .7)), to(rgba($color-blk, .7))), url("https://res.cloudinary.com/kingsley/image/upload/q_auto,f_auto/bg/bg_desk_01.jpg");
+    background-image: linear-gradient(rgba($color-blk, .7), rgba($color-blk, .7)), url("https://res.cloudinary.com/kingsley/image/upload/q_auto,f_auto/bg/bg_desk_01.jpg");
     color: $color-wht;
     text-align: center;
 

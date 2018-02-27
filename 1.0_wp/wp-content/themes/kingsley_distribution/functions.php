@@ -10,7 +10,7 @@
 \*--------------------------------------------------------------*/
 function theme_styles() {
   wp_enqueue_style('main_css', get_stylesheet_directory_uri() . '/css/style.min.css', array(), filemtime( get_stylesheet_directory() . '/css/style.min.css' ));
-  wp_enqueue_style('dashicons');
+  // wp_enqueue_style('dashicons');
 }
 add_action( 'wp_enqueue_scripts', 'theme_styles');
 
@@ -76,13 +76,13 @@ add_action( 'login_enqueue_scripts', 'login_page' );
   remove_action('wp_head', 'wp_shortlink_wp_head', 10, 0);
 
   // Move all JS from <head> to end of <body>
-    // Causes page to load awkwardly
-  // remove_action('wp_head', 'wp_print_scripts');
-  // remove_action('wp_head', 'wp_print_head_scripts', 9);
+    // Improved performance, but causes page to load awkwardly
+  remove_action('wp_head', 'wp_print_scripts');
+  remove_action('wp_head', 'wp_print_head_scripts', 9);
   // remove_action('wp_head', 'wp_enqueue_scripts', 1);
-  // add_action('wp_footer', 'wp_print_scripts', 5);
+  add_action('wp_footer', 'wp_print_scripts', 5);
+  add_action('wp_footer', 'wp_print_head_scripts', 5);
   // add_action('wp_footer', 'wp_enqueue_scripts', 5);
-  // add_action('wp_footer', 'wp_print_head_scripts', 5);
 
   /* Hooks
   ============================================= */
@@ -264,5 +264,11 @@ add_filter('the_content','my_custom_formatting');
 // https://www.smashingmagazine.com/2011/10/create-custom-post-meta-boxes-wordpress/
   /* Remove Span
   ================================================== */
+
+
+/*--------------------------------------------------------------*\
+  Shortcode
+\*--------------------------------------------------------------*/
+get_template_part('shortcodes', get_post_format());
 
 ?>

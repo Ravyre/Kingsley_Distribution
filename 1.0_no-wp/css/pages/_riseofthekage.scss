@@ -19,7 +19,7 @@
     }
     @include m(img) {
       @extend %range__hero;
-      background: url("/wp-content/uploads/ranges/kage/kage_bg-outside_01.jpg") center center / cover no-repeat scroll padding-box border-box $color-wht;
+      background: url("https://res.cloudinary.com/kingsley/image/upload/ranges/kage/kage_bg-outside_01.jpg") center center / cover no-repeat scroll padding-box border-box $color-wht;
       -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 3vw));
       clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 3vw)); // was  6vw
     }
@@ -43,6 +43,7 @@
       img {
         position: absolute;
         top: -250px;
+        width: auto;
       }
     }
   } // intro
@@ -58,8 +59,8 @@
       @include grid(2);
     }
     @include m(img) {
-      background: -webkit-gradient(linear, left top, left bottom, color-stop(100%, rgba($color-wht, .1)), to(rgba($color-wht, .1))), url("/wp-content/uploads/ranges/kage/kage_bg-outside_01.jpg") center center / cover no-repeat fixed padding-box border-box;
-      background: linear-gradient(rgba($color-wht, .1) 100%, rgba($color-wht, .1) 100%), url("/wp-content/uploads/ranges/kage/kage_bg-outside_01.jpg") center center / cover no-repeat fixed padding-box border-box;
+      background: -webkit-gradient(linear, left top, left bottom, color-stop(100%, rgba($color-wht, .1)), to(rgba($color-wht, .1))), url("https://res.cloudinary.com/kingsley/image/upload/ranges/kage/kage_bg-outside_01.jpg") center center / cover no-repeat fixed padding-box border-box;
+      background: linear-gradient(rgba($color-wht, .1) 100%, rgba($color-wht, .1) 100%), url("https://res.cloudinary.com/kingsley/image/upload/ranges/kage/kage_bg-outside_01.jpg") center center / cover no-repeat fixed padding-box border-box;
       height: 365px;
       margin: 150px 0;
       text-align: center;
@@ -84,9 +85,6 @@
     @include m(img) {
       margin: 0 auto;
       max-width: 1200px;
-      img {
-        width: 100%;
-      }
     }
   } // minis
 
@@ -103,7 +101,7 @@
   ================================================== */
   @include e(art) {
     @include m(monk) {
-      background: url("/wp-content/uploads/ranges/kage/kage_bg-ryu_01.jpg") center center / cover no-repeat fixed padding-box border-box;
+      background: url("https://res.cloudinary.com/kingsley/image/upload/ranges/kage/kage_bg-ryu_01.jpg") center center / cover no-repeat fixed padding-box border-box;
       height: 85vh;
     }
   } // art
