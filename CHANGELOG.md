@@ -1,3 +1,25 @@
+## 1.3.1 - 2018-02-27
+
+### Added
+- Cloudinary
+- Shortcodes.php
+- LazyLoad (footer)
+- TTCombat (html + css)
+- Dragon Shield (html + css)
+- Wolsung (html + css)
+
+### Updated
+- Pages (changed to php)
+- Images (now served over Cloudinary, <img> swapped for <picture> on all pages)
+
+### Changed
+- Header (typo in open graph description, see images)
+- Functions (remove render blocking JS, removed dashicons, added shortcodes)
+- Typography (change to import google font)
+- Navigation (remove padding)
+
+------------------------------------------------------------
+
 ## 1.2.1 - 2018-02-14
 
 ### Added
