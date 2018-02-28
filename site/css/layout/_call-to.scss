@@ -1,0 +1,14 @@
+@import "../base/colours";
+@import "../utils/mixins";
+@import "../layout/grid";
+
+/*--------------------------------------------------------------
+  Call to Action
+--------------------------------------------------------------*/
+.call-to {
+  @include container;
+  text-align: center;
+  p {
+    margin: 1rem auto;
+  }
+}

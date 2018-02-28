@@ -1,0 +1,252 @@
+@import "../base/colours";
+@import "../utils/placeholders";
+@import "../utils/mixins";
+@import "../layout/grid";
+
+
+/*--------------------------------------------------------------
+  TTCombat
+--------------------------------------------------------------*/
+div[class^="ttcombat"][class$="head-color"] {
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 1.6vw));
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 1.6vw));
+  text-align: center;
+}
+div[class^="ttcombat"][class$="head-bg"] {
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 3vw));
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 3vw));
+}
+img[class^="ttcombat"][class*="head-img"] {
+  margin: 5rem auto;
+  max-width: 200px;
+}
+div[class^=ttcombat][class$="txt"] {
+  padding: 2rem;
+  > div, p {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 500px;
+  }
+}
+
+.ttcombat {
+
+  /* Hero
+  ================================================== */
+  @include e(hero) {
+    @include m(colour) {
+      background: $ttc-orange;
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 1.6vw));
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 1.6vw));
+    }
+    @include m(img) {
+      @extend %range__hero;
+      background: -webkit-gradient(linear, left top, left bottom, from(rgba($color-blk, .6)), to(rgba($color-blk, .6))), url("https://res.cloudinary.com/kingsley/image/upload/ranges/ttcombat/ttcombat_bg_01.jpg") center center / auto auto repeat fixed padding-box border-box $color-wht;
+      background: linear-gradient(rgba($color-blk, .6), rgba($color-blk, .6)), url("https://res.cloudinary.com/kingsley/image/upload/ranges/ttcombat/ttcombat_bg_01.jpg") center center / auto auto repeat fixed padding-box border-box $color-wht;
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 3vw));
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 3vw)); // was  6vw
+    }
+    @include m(logo) {
+      max-width: 450px;
+    }
+  } // hero
+
+  /* About TTCombat
+  ================================================== */
+  @include e(about) {
+    @include container;
+  }
+
+  /* City Streets
+  ================================================== */
+  @include e(city) {
+    /* ---------- header ---------- */
+    @include m(head-color) {
+      background: $ttc-city;
+    }
+    @include m(head-bg) {
+      background: url("https://res.cloudinary.com/kingsley/image/upload/ranges/ttcombat/city-streets_bg_01.jpg") center center / cover no-repeat fixed padding-box border-box;
+    }
+    /* ---------- content ---------- */
+    @include m(container) {
+      @include grid(2);
+    }
+  } // city streets
+
+  /* Eastern Empire
+  ================================================== */
+  @include e(eastern) {
+    /* ---------- header ---------- */
+    @include m(head-color) {
+      background: $ttc-eastern;
+    }
+    @include m(head-bg) {
+      background: url("https://res.cloudinary.com/kingsley/image/upload/ranges/ttcombat/eastern-empires_bg_01.jpg") center center / cover no-repeat fixed padding-box border-box;
+    }
+    /* ---------- content ---------- */
+    @include m(container) {
+      @include grid(2);
+    }
+  } // eastern empires
+
+  /* Fantasy Realms
+  ================================================== */
+  @include e(fantasy) {
+    /* ---------- header ---------- */
+    @include m(head-color) {
+      background: $ttc-fantasy;
+    }
+    @include m(head-bg) {
+      background: url("https://res.cloudinary.com/kingsley/image/upload/ranges/ttcombat/fantasy-realms_bg_01.jpg") center center / cover no-repeat fixed padding-box border-box;
+    }
+    /* ---------- content ---------- */
+    @include m(container) {
+      @include grid(2);
+    }
+  } // fantasy realms
+
+  /* Gaming Accessories
+  ================================================== */
+  @include e(gaming) {
+    /* ---------- header ---------- */
+    @include m(head-color) {
+      background: $ttc-gaming;
+    }
+    @include m(head-bg) {
+      background: url("https://res.cloudinary.com/kingsley/image/upload/ranges/ttcombat/gaming_bg_01.jpg") center center / cover no-repeat fixed padding-box border-box;
+    }
+    /* ---------- content ---------- */
+    @include m(container) {
+      @include grid(2);
+    }
+  } // gaming accessories
+
+  /* Industrial Hive
+  ================================================== */
+  @include e(industrial) {
+    /* ---------- header ---------- */
+    @include m(head-color) {
+      background: $ttc-hive;
+    }
+    @include m(head-bg) {
+      background: url("https://res.cloudinary.com/kingsley/image/upload/ranges/ttcombat/industrial-hive_bg_01.jpg") center center / cover no-repeat fixed padding-box border-box;
+    }
+    /* ---------- content ---------- */
+    @include m(container) {
+      @include grid(2);
+    }
+  } // industrial hive
+
+  /* Landscaping Accessories
+  ================================================== */
+  @include e(landscape) {
+    /* ---------- header ---------- */
+    @include m(head-color) {
+      background: $ttc-landscape;
+    }
+    @include m(head-bg) {
+      background: url("https://res.cloudinary.com/kingsley/image/upload/ranges/ttcombat/landscape_bg_01.jpg") center center / cover no-repeat fixed padding-box border-box;
+    }
+    /* ---------- content ---------- */
+    @include m(container) {
+      @include grid(2);
+    }
+  } // landscaping accessories
+
+  /* Sci-Fi Gothic
+  ================================================== */
+  @include e(gothic) {
+    /* ---------- header ---------- */
+    @include m(head-color) {
+      background: $ttc-gothic;
+    }
+    @include m(head-bg) {
+      background: url("https://res.cloudinary.com/kingsley/image/upload/ranges/ttcombat/gothic_bg_01.jpg") center center / cover no-repeat fixed padding-box border-box;
+    }
+    /* ---------- content ---------- */
+    @include m(container) {
+      @include grid(2);
+    }
+  } // sci-fi gothic
+
+  /* Sci-Fi Utopia
+  ================================================== */
+  @include e(utopia) {
+    /* ---------- header ---------- */
+    @include m(head-color) {
+      background: $ttc-utopia;
+    }
+    @include m(head-bg) {
+      background: url("https://res.cloudinary.com/kingsley/image/upload/ranges/ttcombat/utopia_bg_01.jpg") center center / cover no-repeat fixed padding-box border-box;
+    }
+    /* ---------- content ---------- */
+    @include m(container) {
+      @include grid(2);
+    }
+  } // sci-fi utopia
+
+  /* Sci-Fi X
+  ================================================== */
+  @include e(scifi-x) {
+    /* ---------- header ---------- */
+    @include m(head-color) {
+      background: $ttc-scifix;
+    }
+    @include m(head-bg) {
+      background: url("https://res.cloudinary.com/kingsley/image/upload/ranges/ttcombat/scifi-x_bg_01.jpg") center center / cover no-repeat fixed padding-box border-box;
+    }
+    /* ---------- content ---------- */
+    @include m(container) {
+      @include grid(2);
+    }
+  } // sci-fi x
+
+  /* Streets of Venice
+  ================================================== */
+  @include e(venice) {
+    /* ---------- header ---------- */
+    @include m(head-color) {
+      background: $ttc-venice;
+    }
+    @include m(head-bg) {
+      background: url("https://res.cloudinary.com/kingsley/image/upload/ranges/ttcombat/venice_bg_01.jpg") center center / cover no-repeat fixed padding-box border-box;
+    }
+    /* ---------- content ---------- */
+    @include m(container) {
+      @include grid(2);
+    }
+  } // streets of venice
+
+  /* Wild West
+  ================================================== */
+  @include e(wild-west) {
+    /* ---------- header ---------- */
+    @include m(head-color) {
+      background: $ttc-wildwest;
+    }
+    @include m(head-bg) {
+      background: url("https://res.cloudinary.com/kingsley/image/upload/ranges/ttcombat/wild-west_bg_01.jpg") center center / cover no-repeat fixed padding-box border-box;
+    }
+    /* ---------- content ---------- */
+    @include m(container) {
+      @include grid(2);
+    }
+  } // wild west
+
+  /* World War
+  ================================================== */
+  @include e(war) {
+    /* ---------- header ---------- */
+    @include m(head-color) {
+      background: $ttc-war;
+    }
+    @include m(head-bg) {
+      background: url("https://res.cloudinary.com/kingsley/image/upload/ranges/ttcombat/world-war_bg_01.jpg") center center / cover no-repeat fixed padding-box border-box;
+    }
+    /* ---------- content ---------- */
+    @include m(container) {
+      @include grid(2);
+    }
+  } // world war
+
+} // ttcombat

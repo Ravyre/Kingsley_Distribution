@@ -1,0 +1,85 @@
+@import "../base/colours";
+@import "../utils/placeholders";
+@import "../utils/mixins";
+@import "../layout/grid";
+
+
+/*--------------------------------------------------------------
+  Infinity
+--------------------------------------------------------------*/
+.infinity {
+
+  /* Hero
+  ================================================== */
+  @include e(hero) {
+    @include m(colour) {
+      background: $infinity;
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 1.6vw));
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 1.6vw));
+    }
+    @include m(img) {
+      @extend %range__hero;
+      background: $infin-gry;
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 3vw));
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 3vw));
+    }
+    @include m(logo) {
+      max-width: 400px;
+    }
+  } // hero
+
+  /* Introduction
+  ================================================== */
+  @include e(intro) {
+    @include grid(2);
+
+    @include m(txt) {
+      @include container($padding:8rem);
+    }
+
+    @include m(img) {
+      overflow: visible;
+      position: relative;
+      img {
+        bottom: -3vw;
+        position: absolute;
+      }
+    }
+
+  } // intro
+
+  /* About
+  ================================================== */
+  @include e(about) {
+    @include container($margin:0);
+    @include vertical-align($justify:flex-end);
+    background: -webkit-gradient(linear, left top, right top, from(rgba($color-wht, 0)), color-stop(70%, rgba($color-wht, .8)), to(rgba($color-wht, 1))), url("https://res.cloudinary.com/kingsley/image/upload/ranges/infinity/infinity_art_01.jpg") center center / cover no-repeat scroll padding-box border-box $color-wht;
+    background: linear-gradient(to right, rgba($color-wht, 0) 0%, rgba($color-wht, .8) 70%, rgba($color-wht, 1) 100%), url("https://res.cloudinary.com/kingsley/image/upload/ranges/infinity/infinity_art_01.jpg") center center / cover no-repeat scroll padding-box border-box $color-wht;
+    height: 100vh;
+    position: relative;
+    z-index: 2;
+
+    @include m(txt) {
+      width: calc(100% / 2.5);
+    }
+  } // about
+
+  /* Minis
+  ================================================== */
+  @include e(minis) {
+    @include m(container) {
+      @include container;
+    }
+    @include m(img) {
+      @include grid(3);
+    }
+  } // minis
+
+  /* Artwork
+  ================================================== */
+  @include e(art) {
+    background: url("https://res.cloudinary.com/kingsley/image/upload/ranges/infinity/infinity_art_02.jpg") bottom center / cover no-repeat fixed padding-box border-box $color-wht;
+    height: 90vh;
+  }
+
+} // infinity

@@ -1,0 +1,70 @@
+// sitepoint.com/creative-grid-system-sass-calc
+// thesassway.com/intermediate/simple-grid-mixins
+// codepen.io/iamjoshellis/pen/wWVgVZ
+
+/* Grid
+================================================== */
+// http://krasimirtsonev.com/blog/article/SASS-universal-mixin-for-box-model-properties
+@mixin grid($cols, $margin:null, $marg-r:null, $marg-b:null, $marg-l:null) {
+  $width: (100% / $cols);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -moz-box;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -moz-box-pack: center;
+  justify-content: center;
+
+  img, source {
+    display: block;
+    // width: 100%;
+  }
+
+  >* {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    overflow: hidden;
+
+    // margin left
+    @if $marg-l == null {
+      margin-left: $marg-r;
+    } @else if $marg-r == null {
+      margin-left: $margin;
+    } @else {
+      margin-left: $margin;
+    }
+    // margin bottom
+    @if $marg-b == null {
+      margin-bottom: $margin;
+    } @else {
+      margin-bottom: $marg-b;
+    }
+    //margin right
+    @if $marg-r == null {
+      margin-right: $margin;
+    } @else {
+      margin-right: $marg-r;
+    }
+    // margin
+    @if ($margin != null) and ($marg-r != null) {
+      margin-left: calc(#{$marg-r} / 2);
+      margin-right: calc(#{$marg-r} / 2);
+      margin-top: $margin;
+      width: calc(#{$width} - #{$marg-r});
+    } @else if ($margin != null) {
+      margin: calc(#{$margin} / 2);
+      width: calc( #{$width} - #{$margin} );
+    } @else {
+      width: calc(100% / #{$cols});
+    }
+  }
+  // @media only screen and (max-width: 599px) {
+  //   > * {
+  //     width: 100%;
+  //   }
+  // }
+} //grid

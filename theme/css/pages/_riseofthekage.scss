@@ -1,0 +1,109 @@
+@import "../base/colours";
+@import "../utils/placeholders";
+@import "../utils/mixins";
+@import "../layout/grid";
+
+
+/*--------------------------------------------------------------
+  Rise of the Kage
+--------------------------------------------------------------*/
+.kage {
+
+  /* Hero
+  ================================================== */
+  @include e(hero) {
+    @include m(colour) {
+      background: $rotkage;
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 1.6vw));
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 1.6vw));
+    }
+    @include m(img) {
+      @extend %range__hero;
+      background: url("https://res.cloudinary.com/kingsley/image/upload/ranges/kage/kage_bg-outside_01.jpg") center center / cover no-repeat scroll padding-box border-box $color-wht;
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 3vw));
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 3vw)); // was  6vw
+    }
+    @include m(logo) {
+      max-width: 500px;
+    }
+  } // hero
+
+  /* Introduction
+  ================================================== */
+  @include e(intro) {
+    @include container;
+    position: relative;
+    @include m(container) {
+      @include grid(2);
+    }
+    @include m(txt) {
+      padding: 4rem 0;
+    }
+    @include m(img) {
+      img {
+        position: absolute;
+        top: -250px;
+        width: auto;
+      }
+    }
+  } // intro
+
+  /* About
+  ================================================== */
+  @include e(about) {
+    @include container;
+    background: $color-wht;
+    position: relative;
+    z-index: 2;
+    @include m(container) {
+      @include grid(2);
+    }
+    @include m(img) {
+      background: -webkit-gradient(linear, left top, left bottom, color-stop(100%, rgba($color-wht, .1)), to(rgba($color-wht, .1))), url("https://res.cloudinary.com/kingsley/image/upload/ranges/kage/kage_bg-outside_01.jpg") center center / cover no-repeat fixed padding-box border-box;
+      background: linear-gradient(rgba($color-wht, .1) 100%, rgba($color-wht, .1) 100%), url("https://res.cloudinary.com/kingsley/image/upload/ranges/kage/kage_bg-outside_01.jpg") center center / cover no-repeat fixed padding-box border-box;
+      height: 365px;
+      margin: 150px 0;
+      text-align: center;
+    }
+    @include m(starter) {
+      max-width: 900px;
+      position: relative;
+      top: 50%;
+      -webkit-transform: translate(0, -50%);
+      transform: translate(0, -50%);
+      width: 100%;
+      z-index: 2;
+    }
+  } // about
+
+  /* Miniatures
+  ================================================== */
+  @include e(minis) {
+    @include m(container) {
+      @include container;
+    }
+    @include m(img) {
+      margin: 0 auto;
+      max-width: 1200px;
+    }
+  } // minis
+
+  /* Scenery
+  ================================================== */
+  @include e(scen) {
+    @include container;
+    @include m(img) {
+      @include grid(2);
+    }
+  } // scenery
+
+  /* Art
+  ================================================== */
+  @include e(art) {
+    @include m(monk) {
+      background: url("https://res.cloudinary.com/kingsley/image/upload/ranges/kage/kage_bg-ryu_01.jpg") center center / cover no-repeat fixed padding-box border-box;
+      height: 85vh;
+    }
+  } // art
+
+} // kage

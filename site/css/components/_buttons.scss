@@ -1,0 +1,130 @@
+@import "../base/colours";
+
+/* Buttons
+================================================== */
+%btn {
+  // border-radius: 4px;
+  color: $color-wht;
+  display: inline-block;
+  font-size: 14px;
+  // font-family: 'PT Sans', sans-serif;
+  // margin: 3em 1em 0;
+  min-width: 170px;
+  padding: 1em;
+  text-decoration: none;
+  text-transform: uppercase;
+  -webkit-transition: .5s linear;
+  transition: .5s linear;
+}
+.btn {
+  @include e(blu) {
+    @extend %btn;
+    background: rgba($color-blu, .5);
+    border: 1px solid $color-blu;
+    &:hover {
+      background: rgba($color-blu, .9);
+    }
+  }
+  @include e(wht) {
+    @extend %btn;
+    background: rgba($color-wht, .0);
+    border: 1px solid $color-wht;
+    &:hover {
+      background: rgba($color-wht, .2);
+    }
+  }
+  @include e(order) {
+    @include m(ylw) {
+      @extend %btn;
+      background: $color-ylw;
+      font-weight: 700;
+      margin: 2rem auto !important;
+    }
+  }
+} // btn
+
+/* Omniscient "To the Top" Button
+================================================== */
+.to-top {
+  background: rgba($color-grylht, .5);
+  bottom: 0;
+  color: rgba($color-gry, .5);
+  display: block;
+  font-size: 30px;
+  height: 60px;
+  margin: 0 3rem 3rem;
+  opacity: 0;
+  position: fixed;
+  right: 0;
+  text-align: center;
+  -webkit-transition: .5s linear;
+  transition: .5s linear;
+  width: 60px;
+  z-index: 10;
+
+  &.active {
+    opacity: 1;
+  }
+
+  span {
+    display: block;
+    -webkit-transform: translate(0, 12px);
+    transform: translate(0, 12px);
+  }
+
+  &:hover {
+    background: rgba($color-grylht, 1);
+    color: rgba($color-gry, 1);
+    -webkit-transition: .5s linear;
+    transition: .5s linear;
+    span {
+      display: block;
+      -webkit-transform: translate(0, 5px);
+      transform: translate(0, 5px);
+      -webkit-transition: .5s linear;
+      transition: .5s linear;
+    }
+  }
+}
+
+/* Arrow
+================================================== */
+.arw {
+
+  @include e(rht) {
+    border: 2px solid rgba($color-ylw, 1);
+    border-radius: 100%;
+    display: inline-block;
+    height: 30px;
+    margin: 12px;
+    margin-left: 1.5em;
+    margin-top: .5em;
+    position: relative;
+    vertical-align: middle;
+    width: 30px;
+    &::before {
+      @include pseudo;
+      background-color: rgba($color-ylw, 1);
+      border-radius: 1px;
+      height: 2px;
+      left: -12px;
+      position: absolute;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+      transform: translateY(-50%);
+      width: 30px;
+    }
+    &::after {
+      @include pseudo;
+      border: 1px solid rgba($color-ylw, 1);
+      border-width: 3px 3px 0 0;
+      height: 6px;
+      left: 8px;
+      position: absolute;
+      top: 50%;
+      -webkit-transform: translateY(-50%) rotateZ(45deg);
+      transform: translateY(-50%) rotateZ(45deg);
+      width: 6px;
+    }
+  }
+} // arrow
