@@ -5,11 +5,7 @@
 ?>
 
 <?php
-  $protocol = isset($_SERVER["HTTPS"]) ? 'https://' : 'http://';
-  $url_base = $protocol . $_SERVER['HTTP_HOST'];
-  $local = $url_base . '/Kingsley_Distribution/1.0_no-wp/';
-
-  $namePage = basename($_SERVER['PHP_SELF'], '.php');
+  require_once $_SERVER['DOCUMENT_ROOT'] . ('/Kingsley_Distribution/site/parts/variables.php');
 ?>
 
 <!DOCTYPE html>

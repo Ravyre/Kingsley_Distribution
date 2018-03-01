@@ -5,11 +5,7 @@
 ?>
 
 <?php
-  $root_doc = $_SERVER['DOCUMENT_ROOT'] . '/Kingsley_Distribution/1.0_no-wp/';
-
-  $protocol = isset($_SERVER["HTTPS"]) ? 'https://' : 'http://';
-  $url_base = $protocol . $_SERVER['HTTP_HOST'];
-  $local = $url_base . '/Kingsley_Distribution/1.0_no-wp/';
+  require $_SERVER['DOCUMENT_ROOT'] . ('/Kingsley_Distribution/site/parts/variables.php');
 ?>
 
   <?php include $root_doc . ('parts/call-to/newsletter.php') ?>

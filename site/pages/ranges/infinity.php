@@ -2,7 +2,10 @@
 /**
  * Corvus Belli - Infinity;
  */
-$root_doc = $_SERVER['DOCUMENT_ROOT'] . '/Kingsley_Distribution/1.0_no-wp/';
+?>
+
+<?php
+  require_once $_SERVER['DOCUMENT_ROOT'] . ('/Kingsley_Distribution/site/parts/variables.php');
 ?>
 
 <!-- Headder -->
