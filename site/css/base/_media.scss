@@ -620,6 +620,66 @@ $desktop: "only screen and (min-width: 1280px)";
     }
   }
 
+  /* Range: Micro Art Studios
+  ================================================== */
+  .microart {
+    @include e(bases) {
+      @include m(container) {
+        @include grid(1, 0rem);
+      }
+      @include m(img) {
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-ordinal-group: 3;
+        -moz-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+        order: 2;
+        margin: 0;
+      }
+    }
+    @include e(discworld) {
+      @include m(container) {
+        @include grid(1, 0rem);
+      }
+    }
+    @include e(infinity) {
+      @include m(img) {
+        @include grid(1);
+        picture:nth-child(1), picture:nth-child(3) {
+          display: none;
+        }
+      }
+    }
+    @include e(scen) {
+      @include grid(1);
+      @include m(txt) {
+        padding: 1rem;
+      }
+    }
+    @include e(mats) {
+      @include m(img) {
+        @include grid(1);
+        picture:nth-child(1), picture:nth-child(3) {
+          display: none;
+        }
+      }
+    }
+    @include e(wwx) {
+      @include grid(1, 0rem);
+      @include m(txt) {
+        padding: 1rem;
+      }
+    }
+    @include e(art) {
+      @include grid(1);
+      picture:nth-child(1), picture:nth-child(3) {
+        display: none;
+      }
+    }
+  }
+
   /* Range: Wolsung
   ================================================== */
   .wolsung {
