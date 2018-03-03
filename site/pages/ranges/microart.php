@@ -153,6 +153,7 @@
     <div>
       <p>Wild West Exodus is a dynamic, fast-paced tabletop miniatures game pitting a cast of heroic characters against each other in a brutal world - very much a twisted reflection of our own.</p>
       <p>No Ninteenth Centuary battleground would be complete without the impressive HDF buildings and hardfoam scenery pieces expertly designed at Microart.</p>
+      <p>The houses and other buildings that you’re seeing here are all a slightly larger scale than you might have seen from Micro Art Studios in the past, especially with their Infinity buildings. This is because the whole scale of Wild West Exodus is bigger coming in at 35mm, so it had to be!</p>
     </div>
   </div>
   <div class="microart__wwx--img">
