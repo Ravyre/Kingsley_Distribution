@@ -1,0 +1,65 @@
+@import "../../base/colours";
+@import "../../utils/placeholders";
+@import "../../utils/mixins";
+@import "../../layout/grid";
+
+
+/*--------------------------------------------------------------
+  Kromlech
+--------------------------------------------------------------*/
+.kromlech {
+
+  /* Hero
+  ================================================== */
+  @include e(hero) {
+    @include m(colour) {
+      background: $kromlech;
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 1.6vw));
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 1.6vw));
+    }
+    @include m(img) {
+      @extend %range__hero;
+      background: url("../img/ranges/kromlech/bg_01.jpg") center center / cover no-repeat scroll padding-box border-box $color-wht;
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 3vw));
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 3vw)); // was  6vw
+    }
+    @include m(logo) {
+      max-width: 400px;
+    }
+  } // hero
+
+  /* About
+  ================================================== */
+  @include e(about)   {
+    @include container;
+  }
+
+  /* Miniatures
+  ================================================== */
+  @include e(minis) {
+
+  } // minis
+
+
+  /* Bits
+  ================================================== */
+  @include e(bits) {
+
+  } // bits
+
+
+  /* Hobby
+  ================================================== */
+  @include e(hobby) {
+
+  } // hobby
+
+
+  /* Resin Bases
+  ================================================== */
+  @include e(bases) {
+
+  } // bases
+
+
+} // kromlech

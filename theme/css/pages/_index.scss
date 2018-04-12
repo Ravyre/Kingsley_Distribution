@@ -89,7 +89,10 @@
     .row {
       @include grid(5);
     }
-    .col-4 {
+    .row-3 {
+      @include grid(6);
+    }
+    .col-5 {
       // max-width: 400px;
       // min-width: 256px;
       a {

@@ -22,10 +22,14 @@
 	<body <?php body_class(); ?>>
 	<!-- Header -->
   <header>
-    <!-- Navigation -->
-    <?php get_template_part( '/template-parts/navigation/nav__main', get_post_format() ); ?>
-		<!-- Hero -->
-    <?php get_template_part( '/template-parts/header/hero', get_post_format() ); ?>
+		
+		<?php if (!is_404()) :
+			?> <!-- Navigation --> <?php
+	    get_template_part( '/template-parts/navigation/nav__main', get_post_format() );
+			?> <!-- Hero --> <?php
+	    get_template_part( '/template-parts/header/hero', get_post_format() );
+		endif; ?>
+
   </header>
 	<!-- content -->
 	<div class="content">

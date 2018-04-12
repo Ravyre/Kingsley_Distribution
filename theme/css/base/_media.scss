@@ -20,6 +20,34 @@ $desktop: "only screen and (min-width: 1280px)";
   [class^="dragon__hero"] {
     padding: 0;
   }
+
+  /* Error Pages
+  ================================================== */
+  .error-fof {
+    @include e(overlay) {
+      @include m(inner) {
+        padding: 3rem;
+        h1 {
+          font: 700 55px 'Lato', sans-serif;
+        }
+        p {
+          display: inline-block;
+          font: 400 16px 'Lato', sans-serif;
+          max-width: 350px;
+        }
+      }
+    }
+    @include e(logo) {
+      max-width: 300px;
+    }
+    @include e(buttons) {
+      a {
+        display: block;
+        margin: 1.5rem auto;
+        max-width: 200px;
+      }
+    }
+  }
 } // tablet
 
 
@@ -123,6 +151,43 @@ $desktop: "only screen and (min-width: 1280px)";
         span {
           display: none;
         }
+      }
+    }
+  }
+
+  /* Error Pages
+  ================================================== */
+  .error-fof {
+    height: 100vh;
+    text-align: left;
+    @include e(overlay) {
+      -webkit-clip-path: unset;
+      clip-path: unset;
+      display: block;
+      height: 100vh;
+      @include m(inner) {
+        padding: .5rem;
+        text-align: center;
+        h1 {
+          font: 700 50px 'PT sans', sans-serif;
+          padding: 1rem 0;
+          text-align: left;
+        }
+        p {
+          font: 400 16px 'Lato', sans-serif;
+          margin: 0 0 1.5rem;
+          text-align: left;
+        }
+      }
+    }
+    @include e(logo) {
+      max-width: 220px;
+    }
+    @include e(buttons) {
+      a {
+        font: 700 14px 'Lato', sans-serif;
+        margin: 1rem;
+        padding: 1rem;
       }
     }
   }

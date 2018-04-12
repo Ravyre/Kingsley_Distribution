@@ -1,0 +1,53 @@
+@import "../../base/colours";
+@import "../../utils/placeholders";
+@import "../../utils/mixins";
+@import "../../layout/grid";
+
+
+/*--------------------------------------------------------------
+  Bushido
+--------------------------------------------------------------*/
+.error-fof {
+  background: url("https://res.cloudinary.com/kingsley/image/upload/bg/bg_boxes_01.jpg") center center / cover no-repeat scroll padding-box border-box;
+  color: $color-wht;
+  height: 100vh;
+  text-align: right;
+
+  @include e(overlay) {
+    @include vertical-align($justify:flex-end);
+    background: rgba($color-blu, .75);
+    -webkit-clip-path: polygon(30% 0, 100% 0, 100% 100%, 60% 100%);
+    clip-path: polygon(30% 0, 100% 0, 100% 100%, 55% 100%);
+    height: 100vh;
+
+    @include m(inner) {
+      padding: 5rem;
+
+      h1 {
+        font: 700 66px "PT Sans", sans-serif;
+        padding: 1.5rem 0 1.5rem;
+        span {
+          color: $color-ylw;
+        }
+      }
+
+      p {
+        font: 400 18px 'Lato', sans-serif;
+        max-width: 650px;
+      }
+
+      a {
+        font: 700 16px 'Lato', sans-serif;
+        margin: 1.5rem;
+        text-align: center;
+      }
+      .btn__blu {
+        background: #3498db;
+      }
+    }
+  }
+
+  @include e(logo) {
+    max-width: 400px;
+  }
+}

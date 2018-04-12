@@ -2,7 +2,7 @@
 Theme Name: Kingsley Distribution
 Author: Siobhan Depper
 Author URI: https://shibbled.io/
-Version: 1.4.1
+Version: 1.4.2
 Description: This theme is made soley and uniquely for TTCombat.
 */
 
@@ -48,24 +48,27 @@ Description: This theme is made soley and uniquely for TTCombat.
   Pages
 --------------------------------------------------------------*/
 @import "pages/index";
+@import "pages/about";
 @import "vendor/cf7";
 @import "layout/ranges";
+/* --------------- Errors --------------- */
+@import "pages/errors/404";
 /* --------------- TTCombat --------------- */
-@import "pages/ttcombat";
-@import "pages/carnevale";
-@import "pages/rumbleslam";
-@import "pages/dropzone";
-@import "pages/dropfleet";
+@import "pages/ranges/ttcombat";
+@import "pages/ranges/carnevale";
+@import "pages/ranges/rumbleslam";
+@import "pages/ranges/dropzone";
+@import "pages/ranges/dropfleet";
 /* --------------- Ranges --------------- */
-@import "pages/bushido";
-@import "pages/riseofthekage";
-@import "pages/dragon";
-@import "pages/kromlech";
-@import "pages/aristeia";
-@import "pages/infinity";
-@import "pages/microart";
-@import "pages/armypaint";
-@import "pages/wolsung";
+@import "pages/ranges/bushido";
+@import "pages/ranges/riseofthekage";
+@import "pages/ranges/dragon";
+@import "pages/ranges/kromlech";
+@import "pages/ranges/aristeia";
+@import "pages/ranges/infinity";
+@import "pages/ranges/microart";
+@import "pages/ranges/armypaint";
+@import "pages/ranges/wolsung";
 
 /*--------------------------------------------------------------
   Media Queries
