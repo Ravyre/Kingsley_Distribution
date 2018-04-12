@@ -1,3 +1,20 @@
+## 1.4.3 - 2018-04-12
+
+### Added
+- Error page 404 (404.php)
+- Template - ranges: grid for index
+- Template - blog: latest posts for index
+- Head - if else statements to automate headers
+
+### Changed
+- relocated css, img, js to assets
+- parts renamed to template-parts
+- header.php changed to head.php
+- hero.php changed to hero__index.php
+- index; added the rest of the ranges
+
+------------------------------------------------------------
+
 ## 1.4.2 - 2018-03-03
 
 ### Changed
