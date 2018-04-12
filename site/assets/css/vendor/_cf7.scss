@@ -1,0 +1,121 @@
+@import "../base/colours";
+@import "../utils/mixins";
+@import "../layout/grid";
+
+/*--------------------------------------------------------------
+  Contact Form 7
+--------------------------------------------------------------*/
+.wpcf7 {
+  margin: 0 auto !important;
+
+  .wpcf7-form {
+    margin: 0 auto;
+
+    /* Additional Styling
+    ================================================== */
+    .home__address, .home__message {
+      width: calc(100% - 2rem) !important;
+    }
+    .wpcf7-submit {
+      padding: 1em;
+      width: auto;
+    }
+    input {
+      width: 100%;
+    }
+
+    /* Message Not Sent (highlghts where errors are)
+    ================================================== */
+    .wpcf7-not-valid {
+      border: 1px solid #da5050;
+    }
+    .wpcf7-not-valid-tip {
+      background: #da5050;
+      border-radius: .5rem;
+      color: $color-wht;
+      margin: .5rem 0 0;
+      padding: .2rem;
+      &::before {
+        @include pseudo;
+        bottom: 19px;
+        border-bottom: 23px solid #da5050;
+        border-left: 15px solid transparent;
+        border-right: 15px solid transparent;
+        left: 10px;
+        position: absolute;
+      }
+    }
+
+    /* Message Not Sent (not filled out correctly)
+    ================================================== */
+    .wpcf7-validation-errors {
+      background: #da5050;
+      border: 0;
+      // color: #d8000c;
+      color: $color-wht;
+      padding: 10px;
+      &::before {
+        content: "\f158";
+        font: 26px/30px dashicons;
+        margin-right: 16px;
+        vertical-align: middle;
+      }
+    }
+
+    /* Message Not Sent (error)
+    ================================================== */
+    .wpcf7-mail-sent-ng {
+      background: #da5050;
+      border: 0;
+      // color: #d8000c;
+      color: $color-wht;
+      padding: 10px;
+      &::before {
+        content: "\f158";
+        font: 26px/30px dashicons;
+        margin-right: 16px;
+        vertical-align: middle;
+      }
+    }
+
+    /* Message Not Sent (spam block)
+    ================================================== */
+    .wpcf7-spam-blocked {
+      background: #da5050;
+      border: 0;
+      // color: #d8000c;
+      color: $color-wht;
+      padding: 10px;
+      &::before {
+        content: "\f158";
+        font: 26px/30px dashicons;
+        margin-right: 16px;
+        vertical-align: middle;
+      }
+    }
+
+    /* Message Sent
+    ================================================== */
+    .wpcf7-mail-sent-ok {
+      // background-color: #dff2bf;
+      background: #4f8a10;
+      border: 0;
+      color: $color-wht;
+      padding: 10px;
+      &::before {
+        content: "\f147";
+        font: 26px/30px dashicons;
+        margin-right: 16px;
+        vertical-align: middle;
+      }
+    }
+
+  } // CF7 Form (div)
+
+} // contact form 7
+
+.wpcf7-form-control-wrap {
+  display: inline-block;
+  margin-top: 2rem;
+  position: relative;
+}

@@ -5,11 +5,11 @@
 ?>
 
 <?php
-  require_once $_SERVER['DOCUMENT_ROOT'] . ('/Kingsley_Distribution/site/parts/variables.php');
+  require_once $_SERVER['DOCUMENT_ROOT'] . ('/Kingsley_Distribution/site/template-parts/variables.php');
 ?>
 
 <!-- Headder -->
-<?php include $root_doc . ('parts/header/header.php'); ?>
+<?php include $root_doc . ('template-parts/header/head.php'); ?>
 
 <!-- About -->
 <div class="ttcombat__about">
@@ -32,8 +32,8 @@
   <div class="ttcombat__city--head-color">
     <div class="ttcombat__city--head-bg">
       <picture>
-        <source data-srcset="https://res.cloudinary.com/kingsley/image/upload/ranges/ttcombat/city-streets_logo_01.webp" type="image/webp">
-        <img class="ttcombat__city--head-img" data-src="https://res.cloudinary.com/kingsley/image/upload/ranges/ttcombat/city-streets_logo_01.svg" alt="ttcombat tabletop scenics city streets logo">
+        <source data-srcset="https://res.cloudinary.com/kingsley/image/upload/q_auto/ranges/ttcombat/city-streets_logo_01.webp" type="image/webp">
+        <img class="ttcombat__city--head-img" data-src="https://res.cloudinary.com/kingsley/image/upload/q_auto/ranges/ttcombat/city-streets_logo_01.svg" alt="ttcombat tabletop scenics city streets logo">
       </picture>
     </div>
   </div>
@@ -374,4 +374,4 @@
 </div> -->
 
 <!-- Footer -->
-<?php include $root_doc . ('parts/footer/footer.php'); ?>
+<?php include $root_doc . ('template-parts/footer/footer.php'); ?>

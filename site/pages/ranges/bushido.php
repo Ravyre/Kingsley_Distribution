@@ -5,11 +5,11 @@
 ?>
 
 <?php
-  require_once $_SERVER['DOCUMENT_ROOT'] . ('/Kingsley_Distribution/site/parts/variables.php');
+  require_once $_SERVER['DOCUMENT_ROOT'] . ('/Kingsley_Distribution/site/template-parts/variables.php');
 ?>
 
 <!-- Header -->
-<?php include $root_doc . ('parts/header/header.php'); ?>
+<?php include $root_doc . ('template-parts/header/head.php'); ?>
 
 <!-- Introduction -->
 <div class="bushido__intro">
@@ -103,4 +103,4 @@
 <div class="bushido__art--monk"></div>
 
 <!-- Footer -->
-<?php include $root_doc . ('parts/footer/footer.php'); ?>
+<?php include $root_doc . ('template-parts/footer/footer.php'); ?>

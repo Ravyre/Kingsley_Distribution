@@ -1,0 +1,105 @@
+@import "../../base/colours";
+@import "../../utils/placeholders";
+@import "../../utils/mixins";
+@import "../../layout/grid";
+
+
+/*--------------------------------------------------------------
+  Wolsung
+--------------------------------------------------------------*/
+.wolsung {
+
+  /* Hero
+  ================================================== */
+  @include e(hero) {
+    @include m(colour) {
+      background: $wolsung;
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 1.6vw));
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 1.6vw));
+    }
+    @include m(img) {
+      @extend %range__hero;
+      background: -webkit-gradient(linear, left top, left bottom, from(rgba($color-wht, .3)), to(rgba($color-wht, .3))), url("https://res.cloudinary.com/kingsley/image/upload/ranges/wolsung/wolsung_bg-pexels_01.jpg") center center / cover no-repeat scroll padding-box border-box $color-wht;
+      background: linear-gradient(rgba($color-wht, .3), rgba($color-wht, .3)), url("https://res.cloudinary.com/kingsley/image/upload/ranges/wolsung/wolsung_bg-pexels_01.jpg") center center / cover no-repeat scroll padding-box border-box $color-wht;
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 3vw));
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 3vw)); // was  6vw
+    }
+    @include m(logo) {
+      max-width: 500px;
+    }
+  } // hero
+
+  /* Introduction
+  ================================================== */
+  @include e(intro) {
+    @include grid(2);
+    @include m(txt) {
+      padding-top: 5rem;
+      > div, p {
+        margin: 0 auto;
+        max-width: 700px;
+      }
+    }
+    picture {
+      margin-top: -250px;
+      z-index: 2;
+    }
+  } // intro
+
+  /* About
+  ================================================== */
+  @include e(about) {
+    @include container;
+
+    @include m(img) {
+      background: radial-gradient(ellipse at center, rgba($color-blk, 0) 0%, rgba($color-blk, .6) 100%), url("https://res.cloudinary.com/kingsley/image/upload/ranges/wolsung/wolsung_bg-pexels_01.jpg") center center / cover no-repeat scroll padding-box border-box;
+      height: 300px;
+      margin: 100px 0;
+      text-align: center;
+    }
+    @include m(starter) {
+      max-width: 1000px;
+      position: relative;
+      top: 50%;
+      -webkit-transform: translate(0, -50%);
+      transform: translate(0, -50%);
+      width: 100%;
+    }
+  } // about
+
+  /* Miniatures
+  ================================================== */
+  @include e(minis) {
+    @include grid(2);
+    @include m(txt) {
+      padding: 5rem;
+    }
+    @include m(golem) {
+      margin: 0 auto;
+      max-width: 800px;
+    }
+  } // miniatures
+
+  /* Scenery
+  ================================================== */
+  @include e(scen) {
+    @include container;
+    text-align: center;
+    @include m(img) {
+      text-align: center;
+      img {
+        max-width: 680px;
+        width: calc(100% / 2);
+      }
+    }
+  } // scenery
+
+  /* Artwork
+  ================================================== */
+  @include e(art) {
+    background: url("https://res.cloudinary.com/kingsley/image/upload/ranges/wolsung/wolsung_art_01.jpg") bottom center / cover no-repeat fixed padding-box border-box $color-wht;
+    height: 90vh;
+    max-height: 100vw;
+  }
+
+}

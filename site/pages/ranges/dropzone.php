@@ -5,11 +5,11 @@
 ?>
 
 <?php
-  require_once $_SERVER['DOCUMENT_ROOT'] . ('/Kingsley_Distribution/site/parts/variables.php');
+  require_once $_SERVER['DOCUMENT_ROOT'] . ('/Kingsley_Distribution/site/template-parts/variables.php');
 ?>
 
 <!-- Headder -->
-<?php include $root_doc . ('parts/header/header.php'); ?>
+<?php include $root_doc . ('template-parts/header/head.php'); ?>
 
 <!-- Introduction -->
 <div class="dropzone__intro">
@@ -86,4 +86,4 @@
 </div>
 
 <!-- Footer -->
-<?php include $root_doc . ('parts/footer/footer.php'); ?>
+<?php include $root_doc . ('template-parts/footer/footer.php'); ?>
