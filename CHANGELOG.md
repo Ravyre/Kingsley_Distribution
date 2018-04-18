@@ -1,3 +1,20 @@
+## 1.4.4 - 2018-04-18
+
+### Added
+- browserconfig.xml
+- icons for iOS, OSX, Windows
+- input bar newsletter
+
+### Changed
+- cookie consent wasn't appearing on live site (whooooops); header.php footer.php
+- relocated icons from icons/ to icons/{sub_folder}/
+- letters; not displaying properly on iOS - added translate(x,y)
+- ranges grid; added image optimization with cloudinary
+- media queries; background attachment issues on iOS - added @/supports webkit-overflow
+- main navigation; made logo into a link back to index
+
+------------------------------------------------------------
+
 ## 1.4.3 - 2018-04-12
 
 ### Added
