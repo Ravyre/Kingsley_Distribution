@@ -37,6 +37,7 @@ $alphabet: (
 @each $id, $letter in $alphabet {
   .letter-#{$id} {
     @include vertical-align($justify:center);
+    position: relative;
     &::before {
       color: rgba($color-blk, .1);
       content: "#{$letter}";
@@ -45,10 +46,13 @@ $alphabet: (
       z-index: 1;
     }
     h2 {
-      // left: 0;
+      left: 50%;
       margin: 0 auto;
       position: absolute;
       // right: 0;
+      top: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
       z-index: 2;
     }
   }

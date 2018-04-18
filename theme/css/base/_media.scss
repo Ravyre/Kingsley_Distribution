@@ -52,6 +52,44 @@ $desktop: "only screen and (min-width: 1280px)";
 
 
 /*--------------------------------------------------------------
+  CSS for iOS
+--------------------------------------------------------------*/
+@supports (-webkit-overflow-scrolling: touch) {
+  /* ---------- ranges template ---------- */
+  [class*="__hero--img"],
+  /* ---------- home ---------- */
+  .home__hero,
+  .home__faq,
+  .home__contact,
+  /* ---------- ttcombat ---------- */
+  div[class^="ttcombat"][class$="head-bg"],
+  /* ---------- rumbleslam ---------- */
+  .rumbleslam__about,
+  /* ---------- carnevale ---------- */
+  .carnevale__intro,
+  .carnevale__about--img,
+  .carnevale__minis--img,
+  .carnevale__art--patrice,
+  /* ---------- dropfleet ---------- */
+  .dropfleet__minis--cont,
+  .dropfleet__art--box,
+  /* ---------- dropzone ---------- */
+  .dropzone__intro,
+  /* ---------- bushido ---------- */
+  .bushido__art--monk,
+  /* ---------- rot kage ---------- */
+  .kage__about--img,
+  /* ---------- infinity ---------- */
+  .infinity__art,
+  /* ---------- infinity ---------- */
+  .dragon__art--tanur,
+  /* ---------- wolsung ---------- */
+  .wolsung__art  {
+    background-attachment: local;
+  }
+}
+
+/*--------------------------------------------------------------
   Smartphone
 --------------------------------------------------------------*/
 @media only screen and (min-width: 600px) and (max-width: 1177px) {
@@ -107,7 +145,7 @@ $desktop: "only screen and (min-width: 1280px)";
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   }
   [class*="__hero--img"] {
-    background-attachment: scroll;
+    // background-attachment: scroll;
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 4vw));
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 4vw));
     height: auto;
@@ -197,7 +235,7 @@ $desktop: "only screen and (min-width: 1280px)";
   .home {
     /* --------------- Hero --------------- */
     @include e(hero) {
-      background-attachment: scroll;
+      // background-attachment: scroll;
       height: 100%;
       @include m(cont) {
         margin: 100px 0 0;
@@ -214,7 +252,7 @@ $desktop: "only screen and (min-width: 1280px)";
     }
     /* --------------- FAQ --------------- */
     @include e(faq) {
-      background-attachment: scroll;
+      // background-attachment: scroll;
     }
     @include e(acc) {
       @include m(card) {
@@ -231,7 +269,7 @@ $desktop: "only screen and (min-width: 1280px)";
     }
     /* --------------- Contact --------------- */
     @include e(contact) {
-      background-attachment: scroll;
+      // background-attachment: scroll;
       @include m(info) {
         padding: 0;
         div {
@@ -249,9 +287,9 @@ $desktop: "only screen and (min-width: 1280px)";
 
   /* Range: TTCombat
   ================================================== */
-  div[class^="ttcombat"][class$="head-bg"] {
-    background-attachment: scroll;
-  }
+  // div[class^="ttcombat"][class$="head-bg"] {
+  //   background-attachment: scroll;
+  // }
   img[class^="ttcombat"][class*="head-img"] {
     margin: 2rem auto;
     max-width: 100px;
@@ -366,7 +404,7 @@ $desktop: "only screen and (min-width: 1280px)";
       }
     }
     @include e(intro) {
-      background-attachment: scroll;
+      // background-attachment: scroll;
     }
     @include e(scenery) {
       @include grid(1);
@@ -395,7 +433,7 @@ $desktop: "only screen and (min-width: 1280px)";
     }
     @include e(minis) {
       @include m(cont) {
-        background-attachment: scroll;
+        // background-attachment: scroll;
         height: auto;
         margin: 0 auto;
         padding: 0;
@@ -408,7 +446,7 @@ $desktop: "only screen and (min-width: 1280px)";
     }
     @include e(art) {
       @include m(box) {
-        background-attachment: scroll;
+        // background-attachment: scroll;
       }
     }
   }
@@ -416,7 +454,7 @@ $desktop: "only screen and (min-width: 1280px)";
   ================================================== */
   .dropzone {
     @include e(intro) {
-      background-attachment: scroll;
+      // background-attachment: scroll;
       padding: 0;
     }
     @include e(minis) {
@@ -510,7 +548,7 @@ $desktop: "only screen and (min-width: 1280px)";
     }
     @include e(about) {
       @include m(img) {
-        background-attachment: scroll;
+        // background-attachment: scroll;
         height: auto;
         margin: 0;
       }
@@ -521,7 +559,7 @@ $desktop: "only screen and (min-width: 1280px)";
     }
     @include e(art) {
       @include m(monk) {
-        background-attachment: scroll;
+        // background-attachment: scroll;
       }
     }
   }
@@ -569,7 +607,7 @@ $desktop: "only screen and (min-width: 1280px)";
       }
     }
     @include e(art) {
-      background-attachment: scroll;
+      // background-attachment: scroll;
     }
   }
 
@@ -793,7 +831,7 @@ $desktop: "only screen and (min-width: 1280px)";
       }
     }
     @include e(art) {
-      background-attachment: scroll;
+      // background-attachment: scroll;
     }
   }
 

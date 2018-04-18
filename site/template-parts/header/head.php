@@ -12,13 +12,13 @@
 <!DOCTYPE html>
 <html lang="en-GB">
   <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#11749c">
-    <meta name="description" content="">
+    <meta name="description" content="Kingsley Distribution are an honest, fast and reliable distributor with an incredible catalogue of ranges for the warming and tabletop industry. Since our start in 2009 we have quickly become etablished as one of the best in our field.">
     <meta name="referrer" content="no-referrer">
-    <?php include $root_doc . ('template-parts/header/open-graph.php') ?>
+    <?php include $root_doc . ('template-parts/header/social.php') ?>
 
     <title>TEST • KD • <?php echo $namePage ?></title>
 

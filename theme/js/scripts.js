@@ -31,7 +31,11 @@ $(function() {
         }
       },
       "position": "top",
-      "static": true
+      // "static": true,
+      "content": {
+        "link": "Read more here"
+        // "rel": "noopener"      currently not a working function
+      }
     });
   });
 

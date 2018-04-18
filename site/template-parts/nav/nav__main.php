@@ -21,7 +21,7 @@
     <li class="nav__item"><a href="//localhost/Kingsley_Distribution/1.0_no-wp/#contact">Contact</a></li>
   </ul>
   <div class="nav__mobile">
-    <img class="logo" data-src="https://res.cloudinary.com/kingsley/image/upload/q_auto,f_auto/logo/logo-txt_01.svg" alt="kingsley distribution logo">
+    <a href="<?php echo $local ?>"><img class="logo" data-src="https://res.cloudinary.com/kingsley/image/upload/q_auto,f_auto/logo/logo-txt_01.svg" alt="kingsley distribution logo"></a>
     <div class="nav__burger">
       <div class="nav__burger--bun-top"></div>
       <div class="nav__burger--filling"></div>

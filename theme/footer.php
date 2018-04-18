@@ -21,7 +21,7 @@
       wp_footer();
       wp_enqueue_style('dashicons');
     ?>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/10.4.1/lazyload.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/10.4.1/lazyload.min.js"></script>
     <script>
       (function() {
         new LazyLoad({

@@ -20,8 +20,8 @@ function rangeGrid($imageName, $imageAlt='') {
   $htmlOutput = <<<HTML
   <div class="col-5"><a href="{$_SERVER['REQUEST_URI']}{$imageName}">
     <picture>
-      <source data-srcset="https://res.cloudinary.com/kingsley/image/upload/gallery/home_{$imageName}_01.webp" type="image/webp">
-      <img data-src="https://res.cloudinary.com/kingsley/image/upload/gallery/home_{$imageName}_01.jpg" alt="{$imageName} {$imageAlt} logo">
+      <source data-srcset="https://res.cloudinary.com/kingsley/image/upload/q_auto/w_auto/dpr_auto/gallery/home_{$imageName}_01.webp" type="image/webp">
+      <img data-src="https://res.cloudinary.com/kingsley/image/upload/q_auto/w_auto/dpr_auto/gallery/home_{$imageName}_01.jpg" alt="{$imageName} {$imageAlt} logo">
     </picture>
   </a></div>
 HTML;
@@ -94,14 +94,14 @@ echo $htmlOutput;
   <!-- mantic-->
   <?php
   rangeGrid("kow", "kings of war");
-  rangeGrid("dungeon", "saga");
-  rangeGrid("deadzone");
   rangeGrid("twd", "walking dead");
-  rangeGrid("marsattacks", "mars attacks");
-  rangeGrid("warpath");
-  rangeGrid("battlezones");
   rangeGrid("star-saga", "star saga");
+  rangeGrid("battlezones");
+  rangeGrid("warpath");
+  rangeGrid("deadzone");
+  rangeGrid("dungeon", "saga");
   rangeGrid("terrain", "crate");
+  rangeGrid("marsattacks", "mars attacks");
   ?>
   <!-- mantic end -->
 
@@ -115,8 +115,8 @@ echo $htmlOutput;
   <?php
   rangeGrid("vallejo", "av vallejo");
   rangeGrid("plast", "past craft");
-  rangeGrid("max", "protection");
   rangeGrid("army-painter", "the army painter");
+  rangeGrid("max", "protection");
   rangeGrid("battlefoam");
   rangeGrid("testors");
   ?>

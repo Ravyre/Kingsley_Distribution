@@ -22,7 +22,7 @@
 	<body <?php body_class(); ?>>
 	<!-- Header -->
   <header>
-		
+
 		<?php if (!is_404()) :
 			?> <!-- Navigation --> <?php
 	    get_template_part( '/template-parts/navigation/nav__main', get_post_format() );

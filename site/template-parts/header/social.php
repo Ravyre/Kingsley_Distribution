@@ -1,4 +1,4 @@
-<!-- open graph -->
+<!-- facebook; open graph -->
 <meta property="og:url" content="https://kingsleydistribution.co.uk/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Kingsley Distribution">
@@ -17,14 +17,10 @@
 <meta name="twitter:image:alt" content="The Kingsley Distribution logo on a blue background">
 <!-- apple; iOS -->
   <!-- https://developer.apple.com/library/content/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html -->
-  <link rel="apple-touch-icon" href="touch-icon-iphone.png">
-  <link rel="apple-touch-icon" sizes="152x152" href="touch-icon-ipad.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="touch-icon-iphone-retina.png">
-  <link rel="apple-touch-icon" sizes="167x167" href="touch-icon-ipad-retina.png">
-  <link rel="apple-touch-startup-image" href="/launch.png">
-  <meta name="apple-mobile-web-app-title" content="AppTitle">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-<!-- apply; OSX -->
-  <link rel="mask-icon" href="website_icon.svg" color="#11749c">
-    <!-- The SVG file must be a single layer and the viewBox attribute must be set to "0 0 16 16". -->
-<!-- Windows -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/icons/ios/touch-icon-180.png">
+<!-- apple; OSX -->
+  <!-- https://developer.apple.com/library/content/documentation/AppleApplications/Reference/SafariWebContent/pinnedTabs/pinnedTabs.html -->
+  <link rel="mask-icon" href="/icons/osx/website_icon.svg" color="#11749c">
+  <meta name="msapplication-TileImage" content="/icons/windows/mstile-144x144.png">
+<!-- windows; 8, 10 -->
+<meta name="msapplication-TileColor" content="#0199ff">
