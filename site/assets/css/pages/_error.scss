@@ -1,0 +1,33 @@
+@import "../base/colours";
+@import "../utils/placeholders";
+@import "../utils/mixins";
+@import "../layout/grid";
+
+
+/*--------------------------------------------------------------
+  Error: Offline
+--------------------------------------------------------------*/
+@include error(offline) {
+  h2 {
+    a {
+      font-weight: 900;
+    }
+    span {
+      margin-left: .5rem;
+    }
+  }
+}
+
+/*--------------------------------------------------------------
+  Error: 404
+--------------------------------------------------------------*/
+@include error(fof) {
+  a {
+    font: 700 16px 'Lato', sans-serif;
+    margin: 1.5rem;
+    text-align: center;
+  }
+  .btn__blu {
+    background: $color-blulht;
+  }
+}

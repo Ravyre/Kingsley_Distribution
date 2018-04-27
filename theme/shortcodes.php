@@ -17,8 +17,8 @@
     ), $atts);
     return
     '<picture' . esc_attr($imgBits['class']) . '>
-      <source data-srcset="https://res.cloudinary.com/kingsley/image/upload/q_auto/' . esc_attr($imgBits['url']) . '.webp" type="image/webp">
-      <img class="' . esc_attr($imgBits['imgclass']) . '" data-src="https://res.cloudinary.com/kingsley/image/upload/q_auto/' . esc_attr($imgBits['url']) . '.' . esc_attr($imgBits['type']) . '" alt="' . esc_attr($imgBits['alt']) . '">
+      <source data-srcset="https://res.cloudinary.com/kingsley/image/upload/q_auto/' . esc_attr($imgBits['url']) . '.webp" srcset="#" type="image/webp">
+      <img class="' . esc_attr($imgBits['imgclass']) . '" data-src="https://res.cloudinary.com/kingsley/image/upload/q_auto/' . esc_attr($imgBits['url']) . '.' . esc_attr($imgBits['type']) . '" src="#" alt="' . esc_attr($imgBits['alt']) . '">
     </picture>';
   }
 add_shortcode('picture', 'picture_shortcode');

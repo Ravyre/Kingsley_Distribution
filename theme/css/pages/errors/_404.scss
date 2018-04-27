@@ -5,7 +5,7 @@
 
 
 /*--------------------------------------------------------------
-  Bushido
+  Error 404
 --------------------------------------------------------------*/
 .error-fof {
   background: url("https://res.cloudinary.com/kingsley/image/upload/bg/bg_boxes_01.jpg") center center / cover no-repeat scroll padding-box border-box;
@@ -25,7 +25,7 @@
 
       h1 {
         font: 700 66px "PT Sans", sans-serif;
-        padding: 1.5rem 0 1.5rem;
+        padding: 1.5rem 0;
         span {
           color: $color-ylw;
         }
@@ -42,7 +42,7 @@
         text-align: center;
       }
       .btn__blu {
-        background: #3498db;
+        background: $color-blulht;
       }
     }
   }

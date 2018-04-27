@@ -3,6 +3,7 @@
  * Template: Hero - Ranges
  */
 ?>
+
 <?php $namePage = basename($_SERVER['PHP_SELF'], '.php'); ?>
 <div class="<?php echo $namePage ?>__hero--colour">
   <div class="<?php echo $namePage ?>__hero--img">

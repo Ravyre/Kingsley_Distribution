@@ -19,13 +19,12 @@
     <meta name="description" content="Kingsley Distribution are an honest, fast and reliable distributor with an incredible catalogue of ranges for the warming and tabletop industry. Since our start in 2009 we have quickly become etablished as one of the best in our field.">
     <meta name="referrer" content="no-referrer">
     <?php include $root_doc . ('template-parts/header/social.php') ?>
-
     <title>TEST • KD • <?php echo $namePage ?></title>
-
     <link rel="shortcut icon" href="<?php echo $local ?>favicon.ico" type="image/x-icon">
     <link rel="manifest" href="<?php echo $local ?>manifest.json">
     <link rel="stylesheet" href="<?php echo $local ?>assets/css/style.min.css">
-    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="<?php echo $local ?>assets/css/cookieconsent.min.css" /> -->
   </head>
   <body>
 
@@ -43,12 +42,37 @@
       ============================================= */
       $url = 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
 
-      if (strpos($_SERVER['SCRIPT_NAME'], 'index.php') !== false):
+      /* Functions
+      ============================================= */
+      function pagesHead($page, $head, $subHead) {
+        $htmlOutput = <<<HTML
+        <!-- hero -->
+        <div class="{$page}__hero">
+          <div class="{$page}__hero--colour">
+            <div class="{$page}__hero--img">
+              <div class="{$page}__hero--txt">
+                <h1>{$head}</h1>
+                <h4>{$subHead}</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+HTML;
+        echo $htmlOutput;
+      }
+
+      /* Statements
+      ============================================= */
+      if (strpos($_SERVER['SCRIPT_NAME'], 'index') !== false):
         include $root_doc . ('template-parts/nav/nav__main.php');
         include $root_doc . ('template-parts/header/hero__index.php');
 
-        elseif (strpos($_SERVER['SCRIPT_NAME'], '404.php') !== false):
-          echo '';
+      elseif (strpos($_SERVER['SCRIPT_NAME'], '404') !== false):
+        echo '';
+
+      elseif (strpos($_SERVER['SCRIPT_NAME'], 'about') !== false):
+          include $root_doc . ('template-parts/nav/nav__main.php');
+          pagesHead("about", "World Class Wargaming Distribution", "Because we believe that the customer comes first, we will do our very best to ensure customer satisfacton at all times");
 
       elseif (strpos($_SERVER['REQUEST_URI'], 'ranges') == true):
         include $root_doc . ('template-parts/nav/nav__main.php');
@@ -56,23 +80,8 @@
 
       endif;
 
-      function doSomethingErrorPage() {
-        $doc = new DomDocument;
-        $dom->loadHTMLfile('http://localhost/Kingsley_Distribution/site/');
-        $error = $dom->getElementById('error');
-
-        if ($error == 1) {
-          echo "<h1>woop</h1>";
-        }
-      }
-
-      // https://www.binarytides.com/php-tutorial-parsing-html-with-domdocument/
-
-
       ?>
     </header>
-
-
 
     <!-- content -->
     <div class="content">

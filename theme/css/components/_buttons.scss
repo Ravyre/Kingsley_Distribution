@@ -41,6 +41,13 @@
       margin: 2rem auto !important;
     }
   }
+
+  @include e(contact) {
+    @extend %btn;
+    background: $color-ylw;
+    font-weight: 900;
+    text-transform: uppercase;
+  }
 } // btn
 
 /* Omniscient "To the Top" Button

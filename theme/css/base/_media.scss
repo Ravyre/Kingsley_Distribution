@@ -23,24 +23,22 @@ $desktop: "only screen and (min-width: 1280px)";
 
   /* Error Pages
   ================================================== */
-  .error-fof {
-    @include e(overlay) {
-      @include m(inner) {
-        padding: 3rem;
-        h1 {
-          font: 700 55px 'Lato', sans-serif;
-        }
-        p {
-          display: inline-block;
-          font: 400 16px 'Lato', sans-serif;
-          max-width: 350px;
-        }
+  @each $error in fof, offline {
+    .error-#{$error}__overlay--inner {
+      padding: 3rem;
+      h1 {
+        font: 700 55px 'Lato', sans-serif;
+      }
+      p {
+        display: inline-block;
+        font: 400 16px 'Lato', sans-serif;
+        max-width: 350px;
       }
     }
-    @include e(logo) {
+    .error-#{$error}__logo {
       max-width: 300px;
     }
-    @include e(buttons) {
+    .error-#{$error}__buttons {
       a {
         display: block;
         margin: 1.5rem auto;
@@ -48,6 +46,7 @@ $desktop: "only screen and (min-width: 1280px)";
       }
     }
   }
+
 } // tablet
 
 
@@ -84,10 +83,10 @@ $desktop: "only screen and (min-width: 1280px)";
   /* ---------- infinity ---------- */
   .dragon__art--tanur,
   /* ---------- wolsung ---------- */
-  .wolsung__art  {
+  .wolsung__art {
     background-attachment: local;
   }
-}
+} // ios
 
 /*--------------------------------------------------------------
   Smartphone
@@ -195,40 +194,43 @@ $desktop: "only screen and (min-width: 1280px)";
 
   /* Error Pages
   ================================================== */
-  .error-fof {
-    height: 100vh;
-    text-align: left;
-    @include e(overlay) {
-      -webkit-clip-path: unset;
-      clip-path: unset;
-      display: block;
+  @each $error in fof, offline {
+    .error-#{$error} {
       height: 100vh;
-      @include m(inner) {
-        padding: .5rem;
-        text-align: center;
-        h1 {
-          font: 700 50px 'PT sans', sans-serif;
-          padding: 1rem 0;
-          text-align: left;
-        }
-        p {
-          font: 400 16px 'Lato', sans-serif;
-          margin: 0 0 1.5rem;
-          text-align: left;
+      text-align: left;
+
+      &__overlay {
+        -webkit-clip-path: unset;
+        clip-path: unset;
+        display: block;
+        height: 100vh;
+
+        &--inner {
+          padding: .5rem;
+          text-align: center;
+          h1 {
+            font: 700 50px 'PT sans', sans-serif;
+            padding: 1rem 0;
+          }
+          p {
+            font: 400 16px 'Lato', sans-serif;
+            margin: 0 0 1.5rem;
+          }
         }
       }
-    }
-    @include e(logo) {
-      max-width: 220px;
-    }
-    @include e(buttons) {
-      a {
-        font: 700 14px 'Lato', sans-serif;
-        margin: 1rem;
-        padding: 1rem;
+      &__logo {
+        max-width: 220px;
+      }
+      &__buttons {
+        a {
+          font: 700 14px 'Lato', sans-serif;
+          margin: 1rem;
+          padding: 1rem;
+        }
       }
     }
   }
+
 
   /* Index
   ================================================== */
@@ -242,6 +244,12 @@ $desktop: "only screen and (min-width: 1280px)";
       }
       .btn__blu, .btn__wht {
         margin: 0 auto 2em;
+      }
+    }
+    /* --------------- Hero --------------- */
+    @include e(why-us) {
+      .row {
+        @include grid(1, 2rem);
       }
     }
     /* --------------- Products --------------- */
@@ -285,6 +293,33 @@ $desktop: "only screen and (min-width: 1280px)";
     }
   } // home
 
+  /* About
+  ================================================== */
+  .about {
+    @include e(hero) {
+      @include m(img) {
+        padding: 0;
+      }
+      @include m(txt) {
+        bottom: 0;
+        margin: 0 auto;
+        padding: 1rem;
+        position: relative;
+        text-align: left;
+        top: 80px;
+        width: auto;
+        h1 {
+          font-size: 25px;
+        }
+      }
+    }
+    @include e(why-us) {
+      .row {
+        @include grid(1, 2rem);
+      }
+    }
+  }
+
   /* Range: TTCombat
   ================================================== */
   // div[class^="ttcombat"][class$="head-bg"] {
@@ -299,9 +334,6 @@ $desktop: "only screen and (min-width: 1280px)";
   }
   .ttcombat {
     @include e(city) {
-      @include m(container) {
-        @include grid(1);
-      }
       @include m(img) {
         display: -webkit-box;
         display: -moz-box;
@@ -318,61 +350,10 @@ $desktop: "only screen and (min-width: 1280px)";
         -ms-flex-order: 2;
         order: 2;
       }
-    } // city streets
-    @include e(eastern) {
-      @include m(container) {
-        @include grid(1);
-      }
     }
-    @include e(fantasy) {
-      @include m(container) {
-        @include grid(1);
-      }
-    }
-    @include e(gaming) {
-      @include m(container) {
-        @include grid(1);
-      }
-    }
-    @include e(industrial) {
-      @include m(container) {
-        @include grid(1);
-      }
-    }
-    @include e(landscape) {
-      @include m(container) {
-        @include grid(1);
-      }
-    }
-    @include e(gothic) {
-      @include m(container) {
-        @include grid(1);
-      }
-    }
-    @include e(utopia) {
-      @include m(container) {
-        @include grid(1);
-      }
-    }
-    @include e(scifi-x) {
-      @include m(container) {
-        @include grid(1);
-      }
-    }
-    @include e(venice) {
-      @include m(container) {
-        @include grid(1);
-      }
-    }
-    @include e(wild-west) {
-      @include m(container) {
-        @include grid(1);
-      }
-    }
-    @include e(war) {
-      @include m(container) {
-        @include grid(1);
-      }
+  @each $range in city, eastern, fantasy, gaming, industrial, landscape, gothic, utopia, scifi-x, venice, wild-west, war {
+    .ttcombat__#{$range}--container {
+      @include grid(1);
     }
   }
 
@@ -844,3 +825,4 @@ $desktop: "only screen and (min-width: 1280px)";
     }
   }
 }
+} // why this curly bracket???

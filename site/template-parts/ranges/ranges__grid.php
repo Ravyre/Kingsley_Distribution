@@ -20,8 +20,8 @@ function rangeGrid($imageName, $imageAlt='') {
   $htmlOutput = <<<HTML
   <div class="col-5"><a href="{$_SERVER['REQUEST_URI']}{$imageName}">
     <picture>
-      <source data-srcset="https://res.cloudinary.com/kingsley/image/upload/q_auto/w_auto/dpr_auto/gallery/home_{$imageName}_01.webp" type="image/webp">
-      <img data-src="https://res.cloudinary.com/kingsley/image/upload/q_auto/w_auto/dpr_auto/gallery/home_{$imageName}_01.jpg" alt="{$imageName} {$imageAlt} logo">
+      <source data-srcset="https://res.cloudinary.com/kingsley/image/upload/q_auto/w_auto/dpr_auto/gallery/home_{$imageName}_01.webp" srcset="#" type="image/webp">
+      <img data-src="https://res.cloudinary.com/kingsley/image/upload/q_auto/w_auto/dpr_auto/gallery/home_{$imageName}_01.jpg" src="#" alt="{$imageName} {$imageAlt} logo">
     </picture>
   </a></div>
 HTML;

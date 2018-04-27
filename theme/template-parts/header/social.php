@@ -16,11 +16,9 @@
 <meta name="twitter:image" content="https://res.cloudinary.com/kingsley/image/upload/social/twitter_01.jpg">
 <meta name="twitter:image:alt" content="The Kingsley Distribution logo on a blue background">
 <!-- apple; iOS -->
-  <!-- https://developer.apple.com/library/content/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html -->
   <link rel="apple-touch-icon" sizes="180x180" href="/icons/ios/touch-icon-180.png">
 <!-- apple; OSX -->
-  <!-- https://developer.apple.com/library/content/documentation/AppleApplications/Reference/SafariWebContent/pinnedTabs/pinnedTabs.html -->
-  <link rel="mask-icon" href="/icons/osx/website_icon.svg" color="#11749c">
+  <link rel="mask-icon" href="/icons/osx/website_icon.svg" color="#0199ff">
   <meta name="msapplication-TileImage" content="/icons/windows/mstile-144x144.png">
 <!-- windows; 8, 10 -->
 <meta name="msapplication-TileColor" content="#0199ff">

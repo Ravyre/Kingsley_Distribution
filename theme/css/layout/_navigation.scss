@@ -33,7 +33,10 @@
   } // cont
 
   @include e(desktop) {
+    @include grid(5);
     display: block;
+    margin: 0 auto;
+    max-width: 1000px;
     padding: 0;
   }
 
@@ -41,7 +44,7 @@
     display: inline-block;
     position: relative;
     text-align: center;
-    width: calc(100% / 7);
+    // width: calc(100% / 7);
     > a {
       color: rgba($color-wht, .5);
       -webkit-transition: .5s linear;
@@ -71,7 +74,7 @@
 
   @include e(mobile) {
     @include vertical-align($justify:center);
-    display: none;
+    // display: none;
     height: 80px;
     padding: 0 1rem;
     position: relative;
