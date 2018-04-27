@@ -1,3 +1,22 @@
+## 1.5.4 - 2018-04-26
+
+### Added
+- about page
+- service worker (currently not responding with status 200 when offline)
+- schema; added via template in header folder
+- templates; lazyload and serviceworker in footer folder
+- about hero function and template
+
+### Changed
+- changed "newsletter" folder to "call-to"
+- "open-graph" folder changed to "social"
+- separated index and ranges heroes into separate template files
+- media file; added "each" function for errors pages and ttcombat
+- shortcodes and templates; index grid missing srcset and src - was giving w3c validation errors
+- footer; relocated lazyload and sw into php template
+
+------------------------------------------------------------
+
 ## 1.4.4 - 2018-04-18
 
 ### Added
