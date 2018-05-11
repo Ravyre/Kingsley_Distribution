@@ -1,4 +1,28 @@
-## 1.5.4 - 2018-04-26
+## 1.6.4 - 2018-05-11
+
+### Added
+- faq page (html + css)
+- contact page (html + css)
+- navigation (new)
+- grey button style
+- forms template (general enquiries & open account)
+- forms partial
+- variables partial
+
+### Changed
+- removed some files from repo (tidied up)
+- css optimized (deleted redundant styles)
+- js; dropping jQuery dependency
+- mixins; pages styles automated
+- header; added script for "faq" and "contact"
+- newsletter; tidy styles
+- letters; added text-align
+- functions; remove minify styles doing nothing, deleted
+- changed icomoon icons
+
+------------------------------------------------------------
+
+## 1.5.4 - 2018-04-27
 
 ### Added
 - about page
