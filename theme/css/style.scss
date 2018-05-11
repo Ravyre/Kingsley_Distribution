@@ -19,7 +19,7 @@ Description: This theme is made soley and uniquely for TTCombat.
 --------------------------------------------------------------*/
 @import "vendor/normalize/normalize";
 @import "vendor/icomoon/icomoon";
-@import "vendor/fontello/fontello";
+// @import "vendor/fontello/fontello";
 
 /*--------------------------------------------------------------
   Utils
@@ -31,6 +31,7 @@ Description: This theme is made soley and uniquely for TTCombat.
   Components
 --------------------------------------------------------------*/
 @import "components/buttons";
+@import "components/forms";
 @import "components/letters";
 
 /*--------------------------------------------------------------
@@ -40,7 +41,7 @@ Description: This theme is made soley and uniquely for TTCombat.
 @import "layout/container";
 @import "layout/header";
 @import "layout/navigation";
-@import "layout/call-to";
+// @import "layout/call-to";
 @import "layout/newsletter";
 @import "layout/footer";
 
@@ -49,6 +50,8 @@ Description: This theme is made soley and uniquely for TTCombat.
 --------------------------------------------------------------*/
 @import "pages/index";
 @import "pages/about";
+@import "pages/faq";
+@import "pages/contact";
 @import "vendor/cf7";
 @import "layout/ranges";
 /* --------------- Errors --------------- */

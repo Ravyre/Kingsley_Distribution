@@ -1,0 +1,84 @@
+@import "../base/colours";
+@import "../utils/mixins";
+@import "../layout/grid";
+
+/* General Enquiries
+================================================== */
+.general {
+  padding: 0 2rem;
+  text-align: center;
+  span, input, textarea {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+  }
+  input[type="submit"] {
+    width: auto;
+  }
+  input, textarea {
+    border: 2px solid rgba($color-grylht, .5);
+    padding: .7rem;
+    -webkit-transition: .3s ease;
+    transition: .3s ease;
+
+    &:active, &:focus {
+      border-color: rgba($color-grylht, .9);
+    }
+    &::-webkit-input-placeholder {
+      color: rgba($color-grylht, 1);
+    }
+    &::-moz-placeholder {
+      color: rgba($color-grylht, 1);
+    }
+    &:-ms-input-placeholder {
+      color: rgba($color-grylht, 1);
+    }
+    &::-ms-input-placeholder {
+      color: rgba($color-grylht, 1);
+    }
+    &::placeholder {
+      color: rgba($color-grylht, 1);
+    }
+  }
+} // general enquiries
+
+
+/* Open An Account
+================================================== */
+.open-account {
+  max-width: 700px !important;
+  padding: 3rem 0;
+
+  .col-2 {
+    @include grid(2, 2rem);
+    .open-account__address, .open-account__message {
+      width: 100%;
+    }
+  }
+  input, textarea {
+    background: transparent;
+    border: 1px solid rgba($color-wht, .5);
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    color: $color-wht;
+    padding: .5em 1em;
+    width: 100%;
+    &::-webkit-input-placeholder {
+      color: rgba($color-wht, .8);
+    }
+    &::-moz-placeholder {
+      color: rgba($color-wht, .8);
+    }
+    &:-ms-input-placeholder {
+      color: rgba($color-wht, .8);
+    }
+    &::-ms-input-placeholder {
+      color: rgba($color-wht, .8);
+    }
+    &::placeholder {
+      color: rgba($color-wht, .8);
+    }
+  }
+} // open an account

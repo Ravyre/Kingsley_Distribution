@@ -26,10 +26,6 @@
         font-weight: 700;
       }
 
-      hr {
-        margin: 2em auto;
-        width: calc(100% / 1.2);
-      }
     } // head
     @include m(sub) {
       font-size: 15px;
@@ -50,9 +46,6 @@
     @include container;
     position: relative;
     text-align: center;
-    span {
-      position: relative;
-    }
   } // about
 
   /* Why Choose Kingsley
@@ -119,27 +112,27 @@
     }
   } // ranges
 
-  /* Blog
-  ================================================== */
-  @include e(blog) {
-    @include container;
-    @include m(date) {
-      font-size: 14px;
-    } // date
-    .head::before {
-      color: rgba($color-blk, .1);
-      content: "L";
-    }
-    .row {
-      @include grid(3, 4rem);
-      .col-3 {
-        min-width: 250px;
-      }
-      h4 {
-        font-weight: 900;
-      }
-    } // row
-  } // blog
+  // /* Blog
+  // ================================================== */
+  // @include e(blog) {
+  //   @include container;
+  //   @include m(date) {
+  //     font-size: 14px;
+  //   } // date
+  //   .head::before {
+  //     color: rgba($color-blk, .1);
+  //     content: "L";
+  //   }
+  //   .row {
+  //     @include grid(3, 4rem);
+  //     .col-3 {
+  //       min-width: 250px;
+  //     }
+  //     h4 {
+  //       font-weight: 900;
+  //     }
+  //   } // row
+  // } // blog
 
   /* FAQ
   ================================================== */
@@ -180,7 +173,7 @@
       &::after {
         @include vertical-align($justify:center);
         color: $color-gry666;
-        content: "\e90d";
+        content: "\e908";
         font-family: "icomoon";
         height: 100%;
         position: absolute;
@@ -201,6 +194,10 @@
       margin: 0;
       padding: 1em 2em;
       text-align: left;
+
+      &.active {
+        display: block;
+      }
     } // panel
   } // acc
 
@@ -216,40 +213,6 @@
         color: rgba($color-wht, .1);
       }
     }
-    form {
-      max-width: 700px !important;
-      padding: 3rem 0;
-      .col-2 {
-        @include grid(2, 2rem);
-        .form__message, .form__address {
-          width: 100%;
-        }
-      }
-      input, textarea {
-        background: transparent;
-        border: 1px solid rgba($color-wht, .5);
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        box-sizing: border-box;
-        color: $color-wht;
-        padding: .5em 1em;
-        &::-webkit-input-placeholder {
-          color: rgba($color-wht, .8);
-        }
-        &::-moz-placeholder {
-          color: rgba($color-wht, .8);
-        }
-        &:-ms-input-placeholder {
-          color: rgba($color-wht, .8);
-        }
-        &::-ms-input-placeholder {
-          color: rgba($color-wht, .8);
-        }
-        &::placeholder {
-          color: rgba($color-wht, .8);
-        }
-      }
-    } // form
   } // open an account
 
   /* Contact

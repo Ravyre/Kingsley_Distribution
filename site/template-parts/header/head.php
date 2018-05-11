@@ -24,7 +24,8 @@
     <link rel="manifest" href="<?php echo $local ?>manifest.json">
     <link rel="stylesheet" href="<?php echo $local ?>assets/css/style.min.css">
     <!-- <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" /> -->
-    <!-- <link rel="stylesheet" type="text/css" href="<?php echo $local ?>assets/css/cookieconsent.min.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="<?php echo $local ?>/cookieconsent.min.css" /> -->
+    <?php include $root_doc . ('cookieconsent.php'); ?>
   </head>
   <body>
 
@@ -71,8 +72,16 @@ HTML;
         echo '';
 
       elseif (strpos($_SERVER['SCRIPT_NAME'], 'about') !== false):
-          include $root_doc . ('template-parts/nav/nav__main.php');
-          pagesHead("about", "World Class Wargaming Distribution", "Because we believe that the customer comes first, we will do our very best to ensure customer satisfacton at all times");
+        include $root_doc . ('template-parts/nav/nav__main.php');
+        pagesHead("about", "World Class Wargaming Distribution", "Because we believe that the customer comes first, we will do our very best to ensure customer satisfacton at all times");
+
+    elseif (strpos($_SERVER['SCRIPT_NAME'], 'faq') !== false):
+      include $root_doc . ('template-parts/nav/nav__main.php');
+      pagesHead("faq", "Have a Question?", "If you're unsure on anything, please take a moment to read through our FAQ");
+
+    elseif (strpos($_SERVER['SCRIPT_NAME'], 'contact') !== false):
+      include $root_doc . ('template-parts/nav/nav__main.php');
+      pagesHead("contact", "How can we help?", "Have a question or would like to open an account? Drop us a line below; we love to help");
 
       elseif (strpos($_SERVER['REQUEST_URI'], 'ranges') == true):
         include $root_doc . ('template-parts/nav/nav__main.php');

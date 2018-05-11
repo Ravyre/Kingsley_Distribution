@@ -38,6 +38,7 @@ $alphabet: (
   .letter-#{$id} {
     @include vertical-align($justify:center);
     position: relative;
+    text-align: center;
     &::before {
       color: rgba($color-blk, .1);
       content: "#{$letter}";

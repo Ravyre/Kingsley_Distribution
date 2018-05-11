@@ -5,7 +5,7 @@
 /*--------------------------------------------------------------
   Index
 --------------------------------------------------------------*/
-.about {
+.faq {
 
   /* Hero
   ================================================== */
@@ -22,43 +22,68 @@
     }
   } // hero
 
-  /* Mission
+
+  /* Accordion
   ================================================== */
-  @include e(mission) {
+  @include e(acc) {
     @include container;
-    position: relative;
     text-align: center;
-    span {
+
+    margin: 0 auto;
+    max-width: 800px;
+
+    @include m(card) {
+      margin: 2em;
       position: relative;
-    }
-  } // mission
+    } // card
 
-  /* Why Choose Kingsley
-  ================================================== */
-  @include e(why-us) {
-    @include container;
-    background: $color-blu;
-    color: $color-wht;
-    text-align: center;
-    [class^="letter"] {
-      &::before {
-        color: rgba($color-wht, .1);
-      }
-    }
-    .row {
-      @include grid(3, 5rem);
-      max-width: 1200px;
-      .col-3 {
-        min-width: 300px;
-      }
-    }
+    @include m(title) {
+      background: $color-wht;
+      border-bottom: 1px solid #cfc9c9;
+      color: $color-blu;
+      cursor: pointer;
+      display: block;
+      font-size: 21px;
+      font-weight: 400;
+      padding: 1em 1.5em;
+      position: relative;
+      text-align: left;
 
-    [class^="icon"] {
-      display: inline-block;
-      font-size: 3em;
-      margin: 0 0 .5em;
-    }
-  } // why us
+      &.active {
+        color: $color-ylw;
+      }
+
+      &::after {
+        @include vertical-align($justify:center);
+        color: $color-gry666;
+        content: "\e908";
+        font-family: "icomoon";
+        height: 100%;
+        position: absolute;
+        right: 1rem;
+        top: 0;
+        -webkit-transition: .2s linear;
+        transition: .2s linear;
+      }
+      &.active::after {
+        -webkit-transform: rotate(-180deg);
+        transform: rotate(-180deg);
+      }
+    } // title
+    @include m(panel) {
+      background: $color-wht;
+      color: $color-gry;
+      display: none;
+      margin: 0;
+      padding: 1em 2em;
+      text-align: left;
+
+      &.active {
+        display: block;
+      }
+    } // panel
+  } // accordion
+
 
   /* Contact
   ================================================== */

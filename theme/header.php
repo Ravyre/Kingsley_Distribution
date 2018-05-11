@@ -63,6 +63,22 @@ HTML;
 			<?php pagesHead("about", "World Class Wargaming Distribution", "Because we believe that the customer comes first, we will do our very best to ensure customer satisfacton at all times"); ?>
 
 		<?php
+		// ABOUT PAGE
+		elseif (is_page('faq')) : ?>
+			<!-- Navigation -->
+			<?php get_template_part( '/template-parts/navigation/nav__main', get_post_format() ); ?>
+			<!-- Hero -->
+			<?php pagesHead("faq", "Have a Question?", "If you're unsure on anything, please take a moment to read through our FAQ"); ?>
+
+		<?php
+		// ABOUT PAGE
+		elseif (is_page('contact')) : ?>
+			<!-- Navigation -->
+			<?php get_template_part( '/template-parts/navigation/nav__main', get_post_format() ); ?>
+			<!-- Hero -->
+			<?php pagesHead("contact", "How can we help?", "Have a question or would like to open an account? Drop us a line below; we love to help"); ?>
+
+		<?php
 		// RANGES
 		elseif (!is_404() && !is_front_page()) : ?>
 			<!-- Navigation -->

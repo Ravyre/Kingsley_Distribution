@@ -20,11 +20,11 @@ $(function() {
     $(this).parent().children('label').remove();
 
     if ($(this).is('#user_login')) {
-      $(this).parent().prepend('<span class="icon-user2"></span>');
+      $(this).parent().prepend('<span class="icon-user"></span>');
     } else if ($(this).is('#user_pass')) {
-      $(this).parent().prepend('<span class="icon-lock4"></span>');
+      $(this).parent().prepend('<span class="icon-lock"></span>');
     } else if ($(this).is('#user_email')) {
-      $(this).parent().prepend('<span class="icon-mail3"></span>');
+      $(this).parent().prepend('<span class="icon-mail2"></span>');
     }
 
     // remove forgetmenot

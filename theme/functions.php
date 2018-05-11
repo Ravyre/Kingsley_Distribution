@@ -15,18 +15,6 @@ function theme_styles() {
 }
 add_action( 'wp_enqueue_scripts', 'theme_styles');
 
-  /* Use Minified Styles instead
-  ============================================= */
-  function style_or_min_style() {
-    $located = locate_template( 'style.min.css' );
-    if ($located != '' ) {
-      echo '<link rel="stylesheet" href="'.get_template_directory_uri().'/style.min.css" />';
-    } else {
-      echo '<link rel="stylesheet" href="'.get_template_directory_uri().'/style.css" />';
-    }
-  }
-  add_action( 'wp_head', 'style_or_min_style');
-
 
 /*--------------------------------------------------------------*\
   JavaScript

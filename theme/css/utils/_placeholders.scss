@@ -32,30 +32,3 @@
   background-attachment: fixed; /*scroll on mobile*/
   // width: 100%;
 }
-
-/* Background Letter
-================================================== */
-// %letter {
-//   @extend %vertical-align;
-//   text-align: center;
-//   z-index: 1;
-//   &::before {
-//     font: 700 180px "Roboto Condensed", sans-serif;
-//   }
-//   h2 {
-//     left: 0;
-//     margin: 0 auto;
-//     position: absolute;
-//     right: 0;
-//     z-index: 2;
-//   }
-// }
-// .heading {
-//   &.letter-t {
-//     @extend %letter;
-//     &::before {
-//       color: rgba($color-blk, .1);
-//       content: "T";
-//     }
-//   }
-// }

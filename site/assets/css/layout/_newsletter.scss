@@ -12,29 +12,17 @@ input {
   @include container;
   text-align: center;
 
-  // .head::before {
-  //   color: rgba($color-blk, .1);
-  //   content: "N";
-  // }
-
   @include e(input) {
-    // border: 1px solid rgba($color-blk, .2);
     border: 0;
     margin: 2rem auto 0;
     max-width: 400px;
-    // padding: .75rem;
     text-transform: uppercase;
     -webkit-transition: all .5s ease;
     -webkit-transition: all 1s ease;
     transition: all 1s ease;
     width: 100%;
 
-    // &:hover {
-    //   border: 1px solid rgba($color-blk, .8);
-    // }
-
     &:focus ~ .newsletter__border {
-      // background: $color-blu;
       background-position: left bottom;
       height: 2px;
       -webkit-transition: .4s;
@@ -50,8 +38,8 @@ input {
     height: 2px;
     margin: 1rem auto 2rem;
     max-width: 400px;
-    -webkit-transition: 0.4s;
-    transition: 0.4s;
+    -webkit-transition: .4s;
+    transition: .4s;
     width: 100%;
 
   }
@@ -61,7 +49,7 @@ input {
     background: $color-blu;
     border: unset;
     cursor: pointer;
-    margin:  0 auto 2rem;
+    margin: 0 auto 2rem;
   }
 
   .btn-sub {

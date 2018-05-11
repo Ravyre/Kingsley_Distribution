@@ -1,5 +1,6 @@
 @import "../base/colours";
 @import "../utils/mixins";
+@import "../utils/placeholders";
 @import "../layout/grid";
 
 /*--------------------------------------------------------------
@@ -109,32 +110,6 @@ $desktop: "only screen and (min-width: 1280px)";
     height: 45px;
     margin: 0 1rem 1rem;
     width: 45px;
-  }
-
-  /* Navigation
-  ================================================== */
-  .nav__cont {
-    &.active {
-      background: rgba($color-gry, .7);
-    }
-  }
-  .nav__desktop {
-    display: none;
-  }
-  .nav__mobile {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: -moz-box;
-    display: flex;
-  }
-  .nav__burger {
-    margin: 0 0 0 auto;
-  }
-  .logo {
-    margin: 0 auto 0 0;
-    max-width: 200px;
-    position: relative;
-    top: 0;
   }
 
   /* Ranges Template
@@ -296,26 +271,46 @@ $desktop: "only screen and (min-width: 1280px)";
   /* About
   ================================================== */
   .about {
-    @include e(hero) {
-      @include m(img) {
-        padding: 0;
-      }
-      @include m(txt) {
-        bottom: 0;
-        margin: 0 auto;
-        padding: 1rem;
-        position: relative;
-        text-align: left;
-        top: 80px;
-        width: auto;
-        h1 {
-          font-size: 25px;
-        }
-      }
-    }
     @include e(why-us) {
       .row {
         @include grid(1, 2rem);
+      }
+    }
+  }
+
+  /* About
+  ================================================== */
+  .faq {
+    @include e(acc) {
+      padding: 1rem .5rem;
+      @include m(card) {
+        margin: 2rem auto;
+      }
+      @include m(title) {
+        font-size: 16px;
+        padding: 1rem .5rem;
+      }
+    }
+  }
+
+  /* Contact
+  ================================================== */
+  .contact {
+    @include e(general) {
+      @include m(container) {
+        @include grid(1);
+        > div {
+          &:first-child {
+            padding: 0;
+          }
+        }
+      }
+    }
+    @include e(account) {
+      form {
+        .col-2 {
+          @include grid(1);
+        }
       }
     }
   }
@@ -351,11 +346,12 @@ $desktop: "only screen and (min-width: 1280px)";
         order: 2;
       }
     }
-  @each $range in city, eastern, fantasy, gaming, industrial, landscape, gothic, utopia, scifi-x, venice, wild-west, war {
-    .ttcombat__#{$range}--container {
-      @include grid(1);
+    @each $range in city, eastern, fantasy, gaming, industrial, landscape, gothic, utopia, scifi-x, venice, wild-west, war {
+      .ttcombat__#{$range}--container {
+        @include grid(1);
+      }
     }
-  }
+  } // ttcombat
 
   /* Range: RUMBLESLAM
   ================================================== */
@@ -825,4 +821,3 @@ $desktop: "only screen and (min-width: 1280px)";
     }
   }
 }
-} // why this curly bracket???

@@ -1,6 +1,6 @@
 <?php
 /**
- * About
+ * About Page
  */
 ?>
 

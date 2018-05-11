@@ -3,12 +3,9 @@
 /* Buttons
 ================================================== */
 %btn {
-  // border-radius: 4px;
   color: $color-wht;
   display: inline-block;
   font-size: 14px;
-  // font-family: 'PT Sans', sans-serif;
-  // margin: 3em 1em 0;
   min-width: 170px;
   padding: 1em;
   text-decoration: none;
@@ -32,6 +29,13 @@
     &:hover {
       background: rgba($color-wht, .2);
     }
+  }
+  @include e(gry) {
+    @extend %btn;
+    background: transparent;
+    color: rgba($color-grylht, .7);
+    margin-top: 2rem;
+    width: auto;
   }
   @include e(order) {
     @include m(ylw) {
@@ -94,44 +98,44 @@
   }
 }
 
-/* Arrow
-================================================== */
-.arw {
-
-  @include e(rht) {
-    border: 2px solid rgba($color-ylw, 1);
-    border-radius: 100%;
-    display: inline-block;
-    height: 30px;
-    margin: 12px;
-    margin-left: 1.5em;
-    margin-top: .5em;
-    position: relative;
-    vertical-align: middle;
-    width: 30px;
-    &::before {
-      @include pseudo;
-      background-color: rgba($color-ylw, 1);
-      border-radius: 1px;
-      height: 2px;
-      left: -12px;
-      position: absolute;
-      top: 50%;
-      -webkit-transform: translateY(-50%);
-      transform: translateY(-50%);
-      width: 30px;
-    }
-    &::after {
-      @include pseudo;
-      border: 1px solid rgba($color-ylw, 1);
-      border-width: 3px 3px 0 0;
-      height: 6px;
-      left: 8px;
-      position: absolute;
-      top: 50%;
-      -webkit-transform: translateY(-50%) rotateZ(45deg);
-      transform: translateY(-50%) rotateZ(45deg);
-      width: 6px;
-    }
-  }
-} // arrow
+// /* Arrow
+// ================================================== */
+// .arw {
+//
+//   @include e(rht) {
+//     border: 2px solid rgba($color-ylw, 1);
+//     border-radius: 100%;
+//     display: inline-block;
+//     height: 30px;
+//     margin: 12px;
+//     margin-left: 1.5em;
+//     margin-top: .5em;
+//     position: relative;
+//     vertical-align: middle;
+//     width: 30px;
+//     &::before {
+//       @include pseudo;
+//       background-color: rgba($color-ylw, 1);
+//       border-radius: 1px;
+//       height: 2px;
+//       left: -12px;
+//       position: absolute;
+//       top: 50%;
+//       -webkit-transform: translateY(-50%);
+//       transform: translateY(-50%);
+//       width: 30px;
+//     }
+//     &::after {
+//       @include pseudo;
+//       border: 1px solid rgba($color-ylw, 1);
+//       border-width: 3px 3px 0 0;
+//       height: 6px;
+//       left: 8px;
+//       position: absolute;
+//       top: 50%;
+//       -webkit-transform: translateY(-50%) rotateZ(45deg);
+//       transform: translateY(-50%) rotateZ(45deg);
+//       width: 6px;
+//     }
+//   }
+// } // arrow
