@@ -12,6 +12,7 @@
 │   │   │   │   └── _typography.scss
 │   │   │   ├── components/
 │   │   │   │   ├── _buttons.scss
+│   │   │   │   ├── _consent.scss
 │   │   │   │   ├── _forms.scss
 │   │   │   │   └── _letters.scss
 │   │   │   ├── layout/
@@ -42,6 +43,29 @@
 │   │   ├─── js/
 │   │   │   ├── scripts.js
 │   │   │   └── scripts.min.js
+│   ├── includes/
+│   │   ├── parts/
+│   │   │   ├── call-to/
+│   │   │   │   └── newsletter.php
+│   │   │   ├── forms/
+│   │   │   │   ├── general-enquiries.php
+│   │   │   │   └── open-account.php
+│   │   │   ├── header/
+│   │   │   │   ├── hero_index.php
+│   │   │   │   ├── hero_ranges.php
+│   │   │   ├──  navigation/
+│   │   │   │   ├── nav__main.php
+│   │   │   │   └── nav__to-top.php
+│   │   │   ├── ranges/
+│   │   │   │   └── ranges_grid.php
+│   │   │   ├── config.php
+│   │   │   ├── consent.php
+│   │   │   ├── footer.php
+│   │   │   ├── header.php
+│   │   │   ├── lazyload.php
+│   │   │   ├── schema.php
+│   │   │   ├── serviceworker.php
+│   │   │   ├── social.php
 │   ├── pages/
 │   │   ├── error/
 │   │   ├── ranges/
@@ -49,28 +73,6 @@
 │   │   ├── about.php
 │   │   ├── contact.php
 │   │   └── faq.php
-│   ├── template-parts/
-│   │   ├── call-to/
-│   │   │   └── newsletter.php
-│   │   ├── footer/
-│   │   │   ├── footer.php
-│   │   │   ├── lazyload.php
-│   │   │   └── serviceworker.php
-│   │   ├── forms/
-│   │   │   ├── general-enquiries.php
-│   │   │   └── open-account.php
-│   │   ├── header/
-│   │   │   ├── head.php
-│   │   │   ├── hero_index.php
-│   │   │   ├── hero_ranges.php
-│   │   │   ├── schema.php
-│   │   │   └── social.php
-│   │   ├──  nav/
-│   │   │   ├── nav__main.php
-│   │   │   └── nav__to-top.php
-│   │   ├── ranges/
-│   │   │   └── ranges_grid.php
-│   │   └── variables.php
 │   └── index.php
 ├── theme
 │   ├── css/
@@ -82,6 +84,7 @@
 │   │   │   └── _typography.scss
 │   │   ├── components/
 │   │   │   ├── _buttons.scss
+│   │   │   ├── _consent.scss
 │   │   │   ├── _forms.scss
 │   │   │   └── _letters.scss
 │   │   ├── layout/
@@ -120,15 +123,16 @@
 ├── template-parts/
 │   ├── call-to/
 │   │   └── newsletter.php
+│   ├── consent/
+│   │   └── consent.php
 │   ├── footer/
 │   │   ├── lazyload.php
 │   │   └── serviceworker.php
 │   ├── header/
-│   │   ├── hero.php
-│   │   ├── hero_index.php
-│   │   ├── hero_ranges.php
-│   │   ├── open-graph.php
-│   │   └── schema.php
+│   │   ├── hero__index.php
+│   │   ├── hero__ranges.php
+│   │   ├── schema.php
+│   │   └── social.php
 │   ├── nav/
 │   │   ├── nav__main.php
 │   │   └── nav__to-top.php
