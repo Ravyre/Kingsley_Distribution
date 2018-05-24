@@ -1,3 +1,25 @@
+# 1.7.0 - 2018-05-2
+
+### Added
+- GDPR; compliant banner
+- GDPR; javascript
+- Includes folder
+- config (php)
+
+### Changed
+- config - server directory (all pages updated)
+- logo; link to home page
+- nav; styles awkward for < 599px, changed height
+- burger cross; 3rd bar float right
+- variables; removed "color-" prefix
+- relocated files into includes, parts into includes
+- rename folder; template-parts -> parts
+
+### Removed
+- blog index page (unfinished)
+
+------------------------------------------------------------
+
 ## 1.6.4 - 2018-05-11
 
 ### Added
