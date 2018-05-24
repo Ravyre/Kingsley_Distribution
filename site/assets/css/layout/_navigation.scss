@@ -7,9 +7,9 @@
   Navigation
 --------------------------------------------------------------*/
 .nav {
-  background: $color-blu;
-  -webkit-box-shadow: 0 0 18px 4px rgba($color-blk, .25);
-  box-shadow: 0 0 18px 4px rgba($color-blk, .25);
+  background: $blu;
+  -webkit-box-shadow: 0 0 18px 4px rgba($blk, .25);
+  box-shadow: 0 0 18px 4px rgba($blk, .25);
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -30,20 +30,22 @@
   /* Logo
   ================================================== */
   @include e(logo) {
-    height: $idontknow;
     left: 2rem;
-    max-width: 200px;
     position: absolute;
-    img {
-      height: inherit;
-      width: auto;
+    picture {
+      height: $idontknow;
+      max-width: 200px;
+      img {
+        height: inherit;
+        width: auto;
+      }
     }
   }
 
   /* Contact Details
   ================================================== */
   @include e(links) {
-    color: $color-wht;
+    color: $wht;
     display: -webkit-box;
     display: -moz-box;
     display: -ms-flexbox;
@@ -56,7 +58,7 @@
           margin: 0 1.5rem;
         }
         > a {
-          color: $color-wht;
+          color: $wht;
           > [class^="icon-"] {
             margin-right: 1rem;
           }
@@ -89,7 +91,7 @@
     width: $burgerwidth;
 
     @include m(cross) {
-      background: $color-wht;
+      background: $wht;
       height: 0;
       left: 50%;
       // margin-left: -5px;
@@ -135,7 +137,7 @@
     }
 
     span {
-      background: $color-wht;
+      background: $wht;
       display: block;
       height: 2px;
       margin-top: 10px;
@@ -153,6 +155,7 @@
         transform: scaleX(1);
       }
       &:nth-child(3) {
+        float: right;
         -webkit-transition: width .2s cubic-bezier(.694, .048, .335, 1);
         transition: width .2s cubic-bezier(.694, .048, .335, 1);
         -webkit-transition-delay: .4s;
@@ -167,10 +170,10 @@
   ================================================== */
   @include e(menu) {
     @include vertical-align($justify: center);
-    background: $color-blu;
-    -webkit-box-shadow: 0 0 18px 4px rgba($color-blk, .25);
-    box-shadow: 0 0 18px 4px rgba($color-blk, .25);
-    color: $color-wht;
+    background: $blu;
+    -webkit-box-shadow: 0 0 18px 4px rgba($blk, .25);
+    box-shadow: 0 0 18px 4px rgba($blk, .25);
+    color: $wht;
     height: 100vh;
     margin: 0;
     // padding: 4.5rem;
@@ -188,7 +191,7 @@
 
     @include m(links) {
       @include vertical-align($justify: center);
-      background: #106385;
+      background: $blu-mid;
       height: calc(100% - #{$idontknow}*2);
       width: calc(100% - #{$idontknow}*2);
 
@@ -197,30 +200,27 @@
         padding: 0;
 
         li {
+          color: $wht;
           cursor: pointer;
           list-style-type: none;
 
-          a {
-            color: $color-wht;
-            
+          &::before, &::after {
+            @include pseudo;
+            border-top: 1px solid transparent;
+            margin: 2rem auto;
+            opacity: 0;
+            -webkit-transition: all .4s cubic-bezier(.23, 1, .32, 1);
+            transition: all .4s cubic-bezier(.23, 1, .32, 1);
+            width: 0;
+          }
+          &:hover {
+            color: $ylw;
+            font-weight: 700;
             &::before, &::after {
               @include pseudo;
-              border-top: 1px solid transparent;
-              margin: 2rem auto;
-              opacity: 0;
-              -webkit-transition: all .4s cubic-bezier(.23, 1, .32, 1);
-              transition: all .4s cubic-bezier(.23, 1, .32, 1);
-              width: 0;
-            }
-            &:hover {
-              color: $color-ylw;
-              font-weight: 700;
-              &::before, &::after {
-                @include pseudo;
-                border-top: 1px solid $color-wht;
-                opacity: 1;
-                width: 200px;
-              }
+              border-top: 1px solid $wht;
+              opacity: 1;
+              width: 200px;
             }
           }
         } // nav menu li
@@ -230,7 +230,7 @@
     @include m(footer) {
       @include grid(2);
       @include vertical-align($justify: space-between);
-      background: $color-blu;
+      background: $blu;
       -webkit-box-sizing: border-box;
       -moz-box-sizing: border-box;
       box-sizing: border-box;
@@ -245,18 +245,33 @@
       width: 100%;
 
       @include m(social) {
+        overflow: visible;
+        text-align: left;
         span {
+          color: $wht;
+          font-size: 20px;
           margin: 0 .5rem;
+          -webkit-transition: .3s ease;
+          transition: .3s ease;
+          &:hover {
+            color: $ylw;
+          }
         }
       }
       @include m(legal) {
+        overflow: visible;
+        text-align: right;
         span {
-          margin: 0 .5rem;
+          color: $wht;
+          // margin: 0 .5rem;
+          -webkit-transition: .3s;
+          -webkit-transition: .3s ease;
+          transition: .3s ease;
         }
       }
-      div {
-        display: inline-block;
-      }
+      // div {
+      //   display: inline-block;
+      // }
     } // footer
 
     &.active {
@@ -292,8 +307,8 @@
         top: 0;
         > div {
           &:first-child, &:nth-child(2) {
-            font-size: 21px;
-            margin: 0 .25rem;
+            font-size: 25px;
+            margin: 0 .5rem;
           }
         }
         .navinfo {
@@ -327,15 +342,24 @@
         }
       }
       @include m(footer) {
+        @include grid(1);
         padding: 0;
+
         @include m(social) {
           @include grid(2);
+          text-align: center;
+
           span {
             margin: 0;
           }
         }
         @include m(legal) {
           @include grid(2);
+          display: -webkit-inline-box;
+          display: -moz-inline-box;
+          display: -ms-inline-flexbox;
+          display: inline-flex;
+          text-align: center;
           span {
             margin: 0;
           }

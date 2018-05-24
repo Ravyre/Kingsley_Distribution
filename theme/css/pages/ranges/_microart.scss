@@ -19,8 +19,8 @@
     }
     @include m(img) {
       @extend %range__hero;
-      background: -webkit-gradient(linear, left top, left bottom, from(rgba($color-blk, .6)), to(rgba($color-blk, .6))), url("https://res.cloudinary.com/kingsley/image/upload/q_auto/ranges/microart/microart_bg_01.jpg") center center / cover no-repeat fixed padding-box border-box $color-wht;
-      background: linear-gradient(rgba($color-blk, .6), rgba($color-blk, .6)), url("https://res.cloudinary.com/kingsley/image/upload/q_auto/ranges/microart/microart_bg_01.jpg") center center / cover no-repeat fixed padding-box border-box $color-wht;
+      background: -webkit-gradient(linear, left top, left bottom, from(rgba($blk, .6)), to(rgba($blk, .6))), url("https://res.cloudinary.com/kingsley/image/upload/q_auto/ranges/microart/microart_bg_01.jpg") center center / cover no-repeat fixed padding-box border-box $wht;
+      background: linear-gradient(rgba($blk, .6), rgba($blk, .6)), url("https://res.cloudinary.com/kingsley/image/upload/q_auto/ranges/microart/microart_bg_01.jpg") center center / cover no-repeat fixed padding-box border-box $wht;
       -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 3vw));
       clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 3vw)); // was  6vw
     }

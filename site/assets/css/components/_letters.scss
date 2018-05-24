@@ -40,7 +40,7 @@ $alphabet: (
     position: relative;
     text-align: center;
     &::before {
-      color: rgba($color-blk, .1);
+      color: rgba($blk, .1);
       content: "#{$letter}";
       font: 700 180px "Roboto Condensed", sans-serif;
       text-align: center;

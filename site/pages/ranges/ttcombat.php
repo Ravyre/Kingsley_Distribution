@@ -5,11 +5,11 @@
 ?>
 
 <?php
-  require_once $_SERVER['DOCUMENT_ROOT'] . ('/Kingsley_Distribution/site/template-parts/variables.php');
+// config
+require_once __DIR__ . ('/../../includes/config.php');
+// header
+include ROOT_PATH . ('includes/header.php');
 ?>
-
-<!-- Headder -->
-<?php include $root_doc . ('template-parts/header/head.php'); ?>
 
 <!-- About -->
 <div class="ttcombat__about">
@@ -374,4 +374,4 @@
 </div> -->
 
 <!-- Footer -->
-<?php include $root_doc . ('template-parts/footer/footer.php'); ?>
+<?php include ROOT_PATH . ('includes/footer.php'); ?>

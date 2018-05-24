@@ -19,7 +19,7 @@
     }
     @include m(img) {
       @extend %range__hero;
-      background: url("https://res.cloudinary.com/kingsley/image/upload/ranges/dropfleet/dfc_bg-stars_01.jpg") center center / auto auto repeat fixed padding-box border-box $color-wht;
+      background: url("https://res.cloudinary.com/kingsley/image/upload/ranges/dropfleet/dfc_bg-stars_01.jpg") center center / auto auto repeat fixed padding-box border-box $wht;
       -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 3vw));
       clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 3vw));
     }

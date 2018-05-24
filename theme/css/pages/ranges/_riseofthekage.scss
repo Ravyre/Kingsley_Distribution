@@ -19,7 +19,7 @@
     }
     @include m(img) {
       @extend %range__hero;
-      background: url("https://res.cloudinary.com/kingsley/image/upload/ranges/kage/kage_bg-outside_01.jpg") center center / cover no-repeat scroll padding-box border-box $color-wht;
+      background: url("https://res.cloudinary.com/kingsley/image/upload/ranges/kage/kage_bg-outside_01.jpg") center center / cover no-repeat scroll padding-box border-box $wht;
       -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 3vw));
       clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 3vw)); // was  6vw
     }
@@ -52,15 +52,15 @@
   ================================================== */
   @include e(about) {
     @include container;
-    background: $color-wht;
+    background: $wht;
     position: relative;
     z-index: 2;
     @include m(container) {
       @include grid(2);
     }
     @include m(img) {
-      background: -webkit-gradient(linear, left top, left bottom, color-stop(100%, rgba($color-wht, .1)), to(rgba($color-wht, .1))), url("https://res.cloudinary.com/kingsley/image/upload/ranges/kage/kage_bg-outside_01.jpg") center center / cover no-repeat fixed padding-box border-box;
-      background: linear-gradient(rgba($color-wht, .1) 100%, rgba($color-wht, .1) 100%), url("https://res.cloudinary.com/kingsley/image/upload/ranges/kage/kage_bg-outside_01.jpg") center center / cover no-repeat fixed padding-box border-box;
+      background: -webkit-gradient(linear, left top, left bottom, color-stop(100%, rgba($wht, .1)), to(rgba($wht, .1))), url("https://res.cloudinary.com/kingsley/image/upload/ranges/kage/kage_bg-outside_01.jpg") center center / cover no-repeat fixed padding-box border-box;
+      background: linear-gradient(rgba($wht, .1) 100%, rgba($wht, .1) 100%), url("https://res.cloudinary.com/kingsley/image/upload/ranges/kage/kage_bg-outside_01.jpg") center center / cover no-repeat fixed padding-box border-box;
       height: 365px;
       margin: 150px 0;
       text-align: center;

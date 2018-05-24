@@ -4,10 +4,6 @@
  */
 ?>
 
-<?php
-  require_once $_SERVER['DOCUMENT_ROOT'] . ('/Kingsley_Distribution/site/template-parts/variables.php');
-?>
-
 <form action="" method="post" class="wpcf7-form general" novalidate="novalidate">
   <div style="display: none;">
     <input name="_wpcf7" value="64" type="hidden">

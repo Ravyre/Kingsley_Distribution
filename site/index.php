@@ -5,11 +5,10 @@
 ?>
 
 <?php
-  require_once $_SERVER['DOCUMENT_ROOT'] . ('/Kingsley_Distribution/site/template-parts/variables.php');
-?>
-
-<?php
-include $root_doc . ('template-parts/header/head.php');
+// config
+require_once __DIR__ . ('/includes/config.php');
+// header
+include ROOT_PATH . ('includes/header.php');
 ?>
 
 <!-- About -->
@@ -52,16 +51,8 @@ include $root_doc . ('template-parts/header/head.php');
 
 <!-- Product Ranges -->
 <div id="products" class="home__ranges scrollspy">
-  <?php include $root_doc . ('template-parts/ranges/ranges__grid.php'); ?>
+  <?php include ROOT_PATH . ('includes/parts/ranges/ranges__grid.php'); ?>
 </div>
-
-<!-- Blog -->
-  <!-- <div id="latest" class="home__blog scrollspy">
-    <div class="letter-l">
-    <h2>Keep up-to-date with our news and announcements</h2>
-  </div>
-    <?php // include $root_doc . ('template-parts/blog/blog__index.php'); ?>
-</div> -->
 
 <!-- FAQ -->
 <div id="faq" class="home__faq scrollspy">
@@ -120,7 +111,7 @@ include $root_doc . ('template-parts/header/head.php');
   <p>Alternatively, you can <a class="home__account--a" href="mailto:sales@kingsleydistribution.co.uk">email</a> or <a class="home__account--a" href="tel:+441726862670">call</a> us directly to open an account.</p>
   <div role="form" class="wpcf7" id="wpcf7-f7-p519-o1" dir="ltr" lang="en-GB">
     <div class="screen-reader-response"></div>
-    <?php include $root_doc . ('template-parts/forms/open-account.php'); ?>
+    <?php include ROOT_PATH . ('includes/parts/forms/open-account.php'); ?>
   </div>
 </div>
 
@@ -154,4 +145,4 @@ include $root_doc . ('template-parts/header/head.php');
 </div>
 
 <!-- Footer -->
-<?php include $root_doc . ('template-parts/footer/footer.php') ?>
+<?php include ROOT_PATH . ('includes/footer.php'); ?>

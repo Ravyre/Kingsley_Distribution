@@ -10,7 +10,7 @@
   /* Hero
   ================================================== */
   @include e(hero) {
-    color: $color-wht;
+    color: $wht;
     @include m(colour) {
       @include page-header--color;
     }
@@ -51,7 +51,7 @@
             margin: 0 0 .5rem;
           }
           %general-info__pseudo {
-            color: rgba($color-grylht, .7);
+            color: rgba($gry-lht, .7);
             font: 400 45px 'icomoon' !important;
             left: -65px;
             line-height: 1;
@@ -88,7 +88,7 @@
       } // address
       &-account {
         h3 {
-          color: $color-ylw;
+          color: $ylw;
           font: 700 18px 'Lato', sans-serif;
           margin: 0 0 .5rem;
           text-transform: none;
@@ -144,7 +144,7 @@
           .svg {
             @include e(arrow) {
               fill: none;
-              stroke: $color-ylw; //#F7B816;
+              stroke: $ylw; //#F7B816;
               stroke-miterlimit: 10;
               stroke-width: 4px;
             }
@@ -152,7 +152,7 @@
               clip-rule: evenodd;
               fill: none;
               fill-rule: evenodd;
-              stroke: $color-ylw; //#F7B816;
+              stroke: $ylw; //#F7B816;
               stroke-miterlimit: 10;
               stroke-width: 4px;
             }
@@ -167,12 +167,12 @@
   ================================================== */
   @include e(account) {
     @include container;
-    background: $color-blu;
-    color: $color-wht;
+    background: $blu;
+    color: $wht;
     text-align: center;
     [class^="letter"] {
       &::before {
-        color: rgba($color-wht, .1);
+        color: rgba($wht, .1);
       }
     }
   } // open an account

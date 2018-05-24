@@ -9,18 +9,25 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 	<head>
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-64908037-1"></script>
+		<?php get_template_part('/template-parts/header/schema', get_post_format()); ?>
+		<!-- meta data -->
 		<meta charset="<?php bloginfo('charset'); ?>">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="theme-color" content="#11749c">
 		<!-- Social Media Properties -->
 		<?php get_template_part('/template-parts/header/social', get_post_format()); ?>
 		<!-- Wordpress Head -->
-		<?php wp_head(); ?>
-		<!-- Analytics Tracking -->
-		<?php include_once('analyticstracking.php'); ?>
-		<?php get_template_part('/template-parts/header/schema', get_post_format()); ?>
+		<?php wp_head(); ?>	
 	</head>
 	<body <?php body_class(); ?>>
+
+		<!-- consent banner -->
+    <?php get_template_part('/template-parts/consent/consent', get_post_format()); ?>
+
+    <!-- scroll to top -->
+    <?php get_template_part('/template-parts/navigation/nav__to-top', get_post_format()); ?>
+
 	<!-- Header -->
   <header>
 

@@ -17,28 +17,28 @@
     width: auto;
   }
   input, textarea {
-    border: 2px solid rgba($color-grylht, .5);
+    border: 2px solid rgba($gry-lht, .5);
     padding: .7rem;
     -webkit-transition: .3s ease;
     transition: .3s ease;
 
     &:active, &:focus {
-      border-color: rgba($color-grylht, .9);
+      border-color: rgba($gry-lht, .9);
     }
     &::-webkit-input-placeholder {
-      color: rgba($color-grylht, 1);
+      color: rgba($gry-lht, 1);
     }
     &::-moz-placeholder {
-      color: rgba($color-grylht, 1);
+      color: rgba($gry-lht, 1);
     }
     &:-ms-input-placeholder {
-      color: rgba($color-grylht, 1);
+      color: rgba($gry-lht, 1);
     }
     &::-ms-input-placeholder {
-      color: rgba($color-grylht, 1);
+      color: rgba($gry-lht, 1);
     }
     &::placeholder {
-      color: rgba($color-grylht, 1);
+      color: rgba($gry-lht, 1);
     }
   }
 } // general enquiries
@@ -58,27 +58,27 @@
   }
   input, textarea {
     background: transparent;
-    border: 1px solid rgba($color-wht, .5);
+    border: 1px solid rgba($wht, .5);
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    color: $color-wht;
+    color: $wht;
     padding: .5em 1em;
     width: 100%;
     &::-webkit-input-placeholder {
-      color: rgba($color-wht, .8);
+      color: rgba($wht, .8);
     }
     &::-moz-placeholder {
-      color: rgba($color-wht, .8);
+      color: rgba($wht, .8);
     }
     &:-ms-input-placeholder {
-      color: rgba($color-wht, .8);
+      color: rgba($wht, .8);
     }
     &::-ms-input-placeholder {
-      color: rgba($color-wht, .8);
+      color: rgba($wht, .8);
     }
     &::placeholder {
-      color: rgba($color-wht, .8);
+      color: rgba($wht, .8);
     }
   }
 } // open an account

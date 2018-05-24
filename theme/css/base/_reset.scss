@@ -6,7 +6,7 @@
 ========================================================================== */
 
 %body {
-  color: lighten($color-gry, 20%);
+  color: lighten($gry, 20%);
   font: 300 16px 'Lato', sans-serif;
   margin: 0;
   overflow-x: hidden;
@@ -16,7 +16,7 @@ html, body {
   @extend %body;
 }
 a {
-  color: $color-ylw;
+  color: $ylw;
   text-decoration: none;
 }
 p {

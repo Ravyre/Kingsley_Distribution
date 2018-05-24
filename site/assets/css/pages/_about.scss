@@ -10,7 +10,7 @@
   /* Hero
   ================================================== */
   @include e(hero) {
-    color: $color-wht;
+    color: $wht;
     @include m(colour) {
       @include page-header--color;
     }
@@ -37,12 +37,12 @@
   ================================================== */
   @include e(why-us) {
     @include container;
-    background: $color-blu;
-    color: $color-wht;
+    background: $blu;
+    color: $wht;
     text-align: center;
     [class^="letter"] {
       &::before {
-        color: rgba($color-wht, .1);
+        color: rgba($wht, .1);
       }
     }
     .row {
@@ -65,9 +65,9 @@
   @include e(contact) {
     @include container($padding: 3rem 0 6rem);
     @include parallax;
-    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba($color-blk, .7)), to(rgba($color-blk, .7))), url("https://res.cloudinary.com/kingsley/image/upload/q_auto,f_auto/bg/bg_desk_01.jpg");
-    background-image: linear-gradient(rgba($color-blk, .7), rgba($color-blk, .7)), url("https://res.cloudinary.com/kingsley/image/upload/q_auto,f_auto/bg/bg_desk_01.jpg");
-    color: $color-wht;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba($blk, .7)), to(rgba($blk, .7))), url("https://res.cloudinary.com/kingsley/image/upload/q_auto,f_auto/bg/bg_desk_01.jpg");
+    background-image: linear-gradient(rgba($blk, .7), rgba($blk, .7)), url("https://res.cloudinary.com/kingsley/image/upload/q_auto,f_auto/bg/bg_desk_01.jpg");
+    color: $wht;
     text-align: center;
 
     @include m(txt) {
@@ -76,7 +76,7 @@
 
     [class^="letter"] {
       &::before {
-        color: rgba($color-wht, .1);
+        color: rgba($wht, .1);
       }
     }
   } // contact

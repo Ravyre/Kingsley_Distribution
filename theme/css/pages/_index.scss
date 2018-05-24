@@ -11,9 +11,9 @@
   ================================================== */
   @include e(hero) {
     @include vertical-align($justify:center);
-    background: -webkit-gradient(linear, left top, left bottom, from(rgba($color-blk, .6)), to(rgba($color-blk, .6))), url("https://res.cloudinary.com/kingsley/image/upload/q_auto,f_auto/bg/bg_hero-carne_01.jpg") center center / cover no-repeat fixed padding-box border-box;
-    background: linear-gradient(rgba($color-blk, .6), rgba($color-blk, .6)), url("https://res.cloudinary.com/kingsley/image/upload/q_auto,f_auto/bg/bg_hero-carne_01.jpg") center center / cover no-repeat fixed padding-box border-box;
-    color: $color-wht;
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba($blk, .6)), to(rgba($blk, .6))), url("https://res.cloudinary.com/kingsley/image/upload/q_auto,f_auto/bg/bg_hero-carne_01.jpg") center center / cover no-repeat fixed padding-box border-box;
+    background: linear-gradient(rgba($blk, .6), rgba($blk, .6)), url("https://res.cloudinary.com/kingsley/image/upload/q_auto,f_auto/bg/bg_hero-carne_01.jpg") center center / cover no-repeat fixed padding-box border-box;
+    color: $wht;
     height: 100vh;
     text-align: center;
 
@@ -22,7 +22,7 @@
       margin: 0 auto 2rem;
 
       span {
-        color: $color-ylw;
+        color: $ylw;
         font-weight: 700;
       }
 
@@ -52,12 +52,12 @@
   ================================================== */
   @include e(why-us) {
     @include container;
-    background: $color-blu;
-    color: $color-wht;
+    background: $blu;
+    color: $wht;
     text-align: center;
     [class^="letter"] {
       &::before {
-        color: rgba($color-wht, .1);
+        color: rgba($wht, .1);
       }
     }
     .row {
@@ -92,7 +92,7 @@
         display: block;
         position: relative;
         &::before {
-          background: rgba($color-wht, .3);
+          background: rgba($wht, .3);
           bottom: 0;
           content: "";
           left: 0;
@@ -103,7 +103,7 @@
           transition: .3s linear;
         }
         &:hover::before {
-          background: rgba($color-wht, 0);
+          background: rgba($wht, 0);
         }
       }
       img, source {
@@ -120,7 +120,7 @@
   //     font-size: 14px;
   //   } // date
   //   .head::before {
-  //     color: rgba($color-blk, .1);
+  //     color: rgba($blk, .1);
   //     content: "L";
   //   }
   //   .row {
@@ -138,13 +138,13 @@
   ================================================== */
   @include e(faq) {
     @include container;
-    background: -webkit-gradient(linear, left top, left bottom, from(rgba($color-blk, .6)), to(rgba($color-blk, .6))), url("https://res.cloudinary.com/kingsley/image/upload/q_auto,f_auto/bg/bg_office_01.jpg") center center / cover no-repeat fixed padding-box border-box;
-    background: linear-gradient(rgba($color-blk, .6), rgba($color-blk, .6)), url("https://res.cloudinary.com/kingsley/image/upload/q_auto,f_auto/bg/bg_office_01.jpg") center center / cover no-repeat fixed padding-box border-box;
-    color: $color-wht;
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba($blk, .6)), to(rgba($blk, .6))), url("https://res.cloudinary.com/kingsley/image/upload/q_auto,f_auto/bg/bg_office_01.jpg") center center / cover no-repeat fixed padding-box border-box;
+    background: linear-gradient(rgba($blk, .6), rgba($blk, .6)), url("https://res.cloudinary.com/kingsley/image/upload/q_auto,f_auto/bg/bg_office_01.jpg") center center / cover no-repeat fixed padding-box border-box;
+    color: $wht;
     text-align: center;
     [class^="letter"] {
       &::before {
-        color: rgba($color-wht, .1);
+        color: rgba($wht, .1);
       }
     }
   } // faq
@@ -160,10 +160,10 @@
       position: relative;
     } // card
     @include m(title) {
-      background: $color-wht;
-      -webkit-box-shadow: 0 0 20px rgba($color-blk, .2);
-      box-shadow: 0 0 20px rgba($color-blk, .2);
-      color: $color-gry;
+      background: $wht;
+      -webkit-box-shadow: 0 0 20px rgba($blk, .2);
+      box-shadow: 0 0 20px rgba($blk, .2);
+      color: $gry;
       cursor: pointer;
       display: block;
       padding: 1em 1.5em;
@@ -172,7 +172,7 @@
 
       &::after {
         @include vertical-align($justify:center);
-        color: $color-gry666;
+        color: $gry-666;
         content: "\e908";
         font-family: "icomoon";
         height: 100%;
@@ -188,8 +188,8 @@
       }
     } // title
     @include m(panel) {
-      background: $color-wht;
-      color: $color-gry;
+      background: $wht;
+      color: $gry;
       display: none;
       margin: 0;
       padding: 1em 2em;
@@ -205,12 +205,12 @@
   ================================================== */
   @include e(open-account) {
     @include container;
-    background: $color-blu;
-    color: $color-wht;
+    background: $blu;
+    color: $wht;
     text-align: center;
     [class^="letter"] {
       &::before {
-        color: rgba($color-wht, .1);
+        color: rgba($wht, .1);
       }
     }
   } // open an account
@@ -220,9 +220,9 @@
   @include e(contact) {
     @include container;
     @include parallax;
-    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba($color-blk, .7)), to(rgba($color-blk, .7))), url("https://res.cloudinary.com/kingsley/image/upload/q_auto,f_auto/bg/bg_desk_01.jpg");
-    background-image: linear-gradient(rgba($color-blk, .7), rgba($color-blk, .7)), url("https://res.cloudinary.com/kingsley/image/upload/q_auto,f_auto/bg/bg_desk_01.jpg");
-    color: $color-wht;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba($blk, .7)), to(rgba($blk, .7))), url("https://res.cloudinary.com/kingsley/image/upload/q_auto,f_auto/bg/bg_desk_01.jpg");
+    background-image: linear-gradient(rgba($blk, .7), rgba($blk, .7)), url("https://res.cloudinary.com/kingsley/image/upload/q_auto,f_auto/bg/bg_desk_01.jpg");
+    color: $wht;
     text-align: center;
 
     @include m(info) {
@@ -237,19 +237,19 @@
       }
 
       .a-wht {
-        color: $color-wht;
+        color: $wht;
         -webkit-transition: .3s linear;
         transition: .3s linear;
 
         &:hover {
-          color: $color-ylw;
+          color: $ylw;
         }
       }
     } // info
 
     [class^="letter"] {
       &::before {
-        color: rgba($color-wht, .1);
+        color: rgba($wht, .1);
       }
     }
     .icon {
@@ -257,7 +257,7 @@
       font-size: 20px;
       margin: 0 1rem;
       &::before {
-        background: $color-blu;
+        background: $blu;
         border-radius: 100%;
         display: block;
         height: 20px;

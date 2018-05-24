@@ -8,8 +8,8 @@
 
 footer {
   @include container;
-  background: $color-gry;
-  border-top: 6px solid $color-ylw;
+  background: $gry;
+  border-top: 6px solid $ylw;
   font-size: 14px;
   padding: 0;
   .row {
@@ -19,14 +19,14 @@ footer {
     }
   }
   .col-2:first-child {
-    color: $color-wht;
+    color: $wht;
     text-align: left;
   }
   .col-2:last-child {
-    color: $color-ylw;
+    color: $ylw;
     text-align: right;
     span {
-      color: $color-wht;
+      color: $wht;
       padding: 0 1em;
     }
   }

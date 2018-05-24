@@ -19,7 +19,7 @@
     }
     @include m(img) {
       @extend %range__hero;
-      background: url("https://res.cloudinary.com/kingsley/image/upload/ranges/rumbleslam/rumbleslam_bg_01.jpg") center center / auto auto repeat fixed padding-box border-box $color-wht;
+      background: url("https://res.cloudinary.com/kingsley/image/upload/ranges/rumbleslam/rumbleslam_bg_01.jpg") center center / auto auto repeat fixed padding-box border-box $wht;
       -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 3vw));
       clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 3vw));
     }
@@ -50,7 +50,7 @@
   @include e(about) {
     @include container($padding:8rem, $width:800px);
     background: url("https://res.cloudinary.com/kingsley/image/upload/ranges/rumbleslam/rumbleslam_art-big-brawl_01.jpg") top center / auto auto repeat fixed padding-box border-box;
-    color: $color-wht;
+    color: $wht;
 
     @include m(txt) {
       background: $rs-blu;
@@ -60,7 +60,7 @@
 
     [class^="letter"] {
       &::before {
-        color: rgba($color-wht, .1);
+        color: rgba($wht, .1);
       }
     }
   }

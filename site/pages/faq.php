@@ -5,11 +5,10 @@
 ?>
 
 <?php
-  require_once $_SERVER['DOCUMENT_ROOT'] . ('/Kingsley_Distribution/site/template-parts/variables.php');
-?>
-
-<?php
-include $root_doc . ('template-parts/header/head.php');
+// config
+require_once __DIR__ . ('/../includes/config.php');
+// header
+include ROOT_PATH . ('includes/header.php');
 ?>
 
 <!-- FAQ -->
@@ -71,4 +70,4 @@ include $root_doc . ('template-parts/header/head.php');
 </div>
 
 <!-- Footer -->
-<?php include $root_doc . ('template-parts/footer/footer.php') ?>
+<?php include ROOT_PATH . ('includes/footer.php') ?>

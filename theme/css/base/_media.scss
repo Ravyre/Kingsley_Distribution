@@ -214,6 +214,9 @@ $desktop: "only screen and (min-width: 1280px)";
     @include e(hero) {
       // background-attachment: scroll;
       height: 100%;
+      @include m(sub) {
+        margin: 2rem 0;
+      }
       @include m(cont) {
         margin: 100px 0 0;
       }
@@ -572,8 +575,8 @@ $desktop: "only screen and (min-width: 1280px)";
       }
     }
     @include e(about) {
-      background: -webkit-gradient(linear, left top, right top, color-stop(100%, rgba($color-wht, .85)), color-stop(100%, rgba($color-wht, .85)), to(rgba($color-wht, 1))), url("../img/ranges/infinity/infinity_art_01.jpg") center center / cover no-repeat scroll padding-box border-box $color-wht;
-      background: linear-gradient(to right, rgba($color-wht, .85) 100%, rgba($color-wht, .85) 100%, rgba($color-wht, 1) 100%), url("../img/ranges/infinity/infinity_art_01.jpg") center center / cover no-repeat scroll padding-box border-box $color-wht;
+      background: -webkit-gradient(linear, left top, right top, color-stop(100%, rgba($wht, .85)), color-stop(100%, rgba($wht, .85)), to(rgba($wht, 1))), url("../img/ranges/infinity/infinity_art_01.jpg") center center / cover no-repeat scroll padding-box border-box $wht;
+      background: linear-gradient(to right, rgba($wht, .85) 100%, rgba($wht, .85) 100%, rgba($wht, 1) 100%), url("../img/ranges/infinity/infinity_art_01.jpg") center center / cover no-repeat scroll padding-box border-box $wht;
       @include m(txt) {
         width: 100%;
       }

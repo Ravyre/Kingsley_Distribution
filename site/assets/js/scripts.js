@@ -6,35 +6,193 @@ document.addEventListener("DOMContentLoaded", function() {
   var KINGSLEY = window.KINGSLEY || {};
 
   /*--------------------------------------------------------------
-    IE 11 Conditional Statement
+    Cookie Consent
   --------------------------------------------------------------*/
-  KINGSLEY.ie = function() {
-    // Turn off Smooth Scrolling to remove "jitter" from Fixed Bg Attachment
-      // Turn off Smooth Scroll (working as of 2017-09-29)
-      if(navigator.userAgent.match(/Trident\/7\./)) {
-        $('body').on("mousewheel", function () {
-          event.preventDefault();
-          var wheelDelta = event.wheelDelta;
-          var currentScrollPosition = window.pageYOffset;
-          window.scrollTo(0, currentScrollPosition - wheelDelta);
-        });
+  KINGSLEY.consent = function() {
+
+    /* Variables
+    ================================================== */
+    var gaID = 'UA-64908037-1',
+        gaDisable = 'ga-disable-' + gaID,
+        consent = document.getElementById('consent'),
+        consentHeight = consent.scrollHeight,
+        options = document.getElementById('options'),
+        accept = document.getElementById('accept'),
+        decline = document.getElementById('decline'),
+        navConsent = document.getElementById('nav__link--consent');
+
+
+    /* Functions
+    ================================================== */
+
+    /* ---------- Let's make ourselves a nice little cookie ---------- */
+    function createCookie(name, value, days) {
+      if (days) {
+        var date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        var expires = "; expires=" + date.toGMTString();
       }
+      else var expires = "";
+      document.cookie = name + "=" + value + expires + "; path=/";
+    }
+
+    /* ---------- Actually, I'm on a diet. Remove the cookie ---------- */
+    function deleteCookie(name) {
+      createCookie(name, "", -1);
+      console.log("Cookie will be deleted on refresh.");
+    }
+
+    /* ---------- Consent Banner Toggle ---------- */
+    function consentToggle(transition) {
+      var consent = document.getElementById('consent');
+      consent.classList.toggle('active');
+      consent.style.transitionDelay = transition + "s";
+    }
+
+    /* ---------- Consent Banner Responses ---------- */
+    function consentResponse(responseParameter) {
+      var response = document.getElementById('response'),
+          responseModifier = document.getElementById(responseParameter);
+      response.classList.toggle('active');
+      responseModifier.classList.toggle('active');
+      // We don't want the response to forever be active
+      setTimeout(function() {
+        response.classList.toggle('active');
+        responseModifier.classList.toggle('active');
+      }, 3000);
+    }
+
+
+    /* Let's a go, Mario! (when page has loaded)
+    ================================================== */
+    window.addEventListener('load', function() {
+
+      var cookieAccept = document.cookie.indexOf('consentAccept'),
+          cookieDecline = document.cookie.indexOf('consentDecline');
+
+      /* ---------- Are there any cookies? ---------- */
+      if ( cookieAccept >= 0 || cookieDecline >= 0) {
+        // console.log('all the fucking cookies');
+      } else {
+        if (!consent.classList.contains('active')) {
+          consentToggle(0);
+        }
+      }
+
+    }); // load
+
+
+    /* Accepted Consent
+    ================================================== */
+    accept.addEventListener('click', yesToConsent);
+
+    function yesToConsent() {
+
+      /* ---------- Does the Decline Cookie exit? ---------- */
+      if (document.cookie.indexOf('consentDecline') >= 0) {
+        deleteCookie("consentDecline");
+        createCookie("consentAccept", "accept", 365);
+      } else {
+        createCookie("consentAccept", "accept", 365);
+      }
+
+      /* ---------- Google Cookies ---------- */
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', gaID);
+      gtag('config', gaID, {
+        'anonymize_ip': true,
+        'allow_display_features': false
+      });
+      // gtag('config', gaID, { 'anonymize_ip': true });
+      // gtag('config', gaID, { 'allow_display_features': false });
+
+
+      /* ---------- Banner, please leave ---------- */
+      consentToggle(1.5);
+      consentResponse('thankyou');
+
+    } // yesToConsent
+
+
+    /* Declined Consent
+    ================================================== */
+    decline.addEventListener('click', noToConsent);
+
+    function noToConsent() {
+
+      /* ---------- Does the Accept Cookie exit? ---------- */
+      if (document.cookie.indexOf('consentAccept') >= 0) {
+        deleteCookie("consentAccept");
+        createCookie("consentDecline", "accept", 365);
+      } else {
+        createCookie("consentDecline", "accept", 365);
+      }
+
+      /* ---------- Delete Cookies ---------- */
+      deleteCookie("_ga");
+      deleteCookie("_gid");
+      deleteCookie("_gat_gtag_UA_64908037_1");
+
+      /* ---------- Banner, please leave ---------- */
+      consentToggle(1.5);
+      consentResponse('noproblem');
+
+    } // noToConsent
+
+
+    /* Menu Re-Open Consent Banner
+    ================================================== */
+    navConsent.addEventListener('click', reopenConsentBanner);
+
+    function reopenConsentBanner() {
+      var navMenu = document.querySelector('.nav__menu'),
+          navBurger = document.querySelector('.nav__burger');
+      navMenu.classList.toggle('active');
+      navBurger.classList.toggle('active');
+      consentToggle(0);
+    }
+
   };
-  KINGSLEY.ie();
+  KINGSLEY.consent();
+
 
   /*--------------------------------------------------------------
     Burger Menu
   --------------------------------------------------------------*/
   KINGSLEY.burgerMenu = function() {
-    document.getElementById('burger').addEventListener('click', function() {
 
-      // console.log("You finally clicked without jQuery");
-      document.querySelector('.nav__menu').classList.toggle('active');
-      document.querySelector('.nav__burger').classList.toggle('active');
+    var burger = document.getElementById('burger');
 
-    });
+    burger.addEventListener('click', function() {
+
+      var navMenu = document.querySelector('.nav__menu'),
+          navBurger = document.querySelector('.nav__burger');
+
+      navMenu.classList.toggle('active');
+      navBurger.classList.toggle('active');
+
+    }); // Click Function
   };
   KINGSLEY.burgerMenu();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   /*--------------------------------------------------------------
     Index
@@ -46,25 +204,25 @@ document.addEventListener("DOMContentLoaded", function() {
       // https://stackoverflow.com/questions/40487117/
       // https://codepen.io/zomars/pen/jGKjxZ
 
-      var accordions,
-          i;
-
-      if (!document.querySelectorAll || !document.body.classList) return;
-
-      function makeAccordion(accordion) {
-        var targets,
-            currentTarget,
-            i;
-        targets = accordion.querySelectorall('.accorion > * > h1');
-        for(i = 0; i < targets.length; i++) {
-          targets[i].addEventListener('click', function() {
-            if (currentTarget)
-              currentTarget.classList.remove('expanded');
-              currentTarget = this.parentNode;
-              currentTarget.classList.add('expanded');
-          });
-        }
-      }
+      // var accordions,
+      //     i;
+      //
+      // if (!document.querySelectorAll || !document.body.classList) return;
+      //
+      // function makeAccordion(accordion) {
+      //   var targets,
+      //       currentTarget,
+      //       i;
+      //   targets = accordion.querySelectorall('.accorion > * > h1');
+      //   for(i = 0; i < targets.length; i++) {
+      //     targets[i].addEventListener('click', function() {
+      //       if (currentTarget)
+      //         currentTarget.classList.remove('expanded');
+      //         currentTarget = this.parentNode;
+      //         currentTarget.classList.add('expanded');
+      //     });
+      //   }
+      // }
 
 
       // Squeezebox Inspired
@@ -127,6 +285,24 @@ document.addEventListener("DOMContentLoaded", function() {
     KINGSLEY.accordionIndex();
 
 }); // end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

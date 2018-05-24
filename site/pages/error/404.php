@@ -5,11 +5,11 @@
 ?>
 
 <?php
-  require_once $_SERVER['DOCUMENT_ROOT'] . ('/Kingsley_Distribution/site/template-parts/variables.php');
+// config
+require_once __DIR__ . ('/../../includes/config.php');
+// header
+include ROOT_PATH . ('includes/header.php');
 ?>
-
-<!-- Header -->
-<?php include $root_doc . ('template-parts/header/head.php'); ?>
 
 <div id="error" class="error-fof">
   <div class="error-fof__overlay">

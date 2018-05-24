@@ -89,7 +89,7 @@ add_action( 'login_enqueue_scripts', 'login_page' );
  	Last Modified Headers
 \*--------------------------------------------------------------*/
 // https://wordpress.stackexchange.com/questions/172966/if-modified-since-http-header
-function cyb_add_last_modified_header($headers) {
+function last_modified_header($headers) {
   if( is_singular() ) {
     $post_id = get_queried_object_id();
     if( $post_id ) {
@@ -100,7 +100,7 @@ function cyb_add_last_modified_header($headers) {
     }
   }
 }
-add_action('template_redirect', 'cyb_add_last_modified_header');
+add_action('template_redirect', 'last_modified_header');
 
 
 /*--------------------------------------------------------------*\

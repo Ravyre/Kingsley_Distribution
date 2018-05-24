@@ -19,7 +19,7 @@
     }
     @include m(img) {
       @extend %range__hero;
-      background: url("https://res.cloudinary.com/kingsley/image/upload/ranges/bushido/bushido_bg_01.jpg") center center / cover no-repeat scroll padding-box border-box $color-wht;
+      background: url("https://res.cloudinary.com/kingsley/image/upload/ranges/bushido/bushido_bg_01.jpg") center center / cover no-repeat scroll padding-box border-box $wht;
       -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 3vw));
       clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 3vw)); // was  6vw
     }
@@ -48,7 +48,7 @@
   ================================================== */
   @include e(about) {
     @include container($width:1300px);
-    background: $color-wht;
+    background: $wht;
     position: relative;
     z-index: 2;
     @include m(container) {
@@ -64,8 +64,8 @@
   /* Miniatures
   ================================================== */
   @include e(minis) {
-    // background: -webkit-gradient(linear, left top, left bottom, from(rgba($color-wht, .5)), to(rgba($color-wht, .5))), url("../img/ranges/bushido/sw-cave_01.jpg") center center / cover no-repeat padding-box border-box $color-wht;
-    // background: linear-gradient(rgba($color-wht, .5), rgba($color-wht, .5)), url("../img/ranges/bushido/sw-cave_01.jpg") center center / cover no-repeat padding-box border-box $color-wht;
+    // background: -webkit-gradient(linear, left top, left bottom, from(rgba($wht, .5)), to(rgba($wht, .5))), url("../img/ranges/bushido/sw-cave_01.jpg") center center / cover no-repeat padding-box border-box $wht;
+    // background: linear-gradient(rgba($wht, .5), rgba($wht, .5)), url("../img/ranges/bushido/sw-cave_01.jpg") center center / cover no-repeat padding-box border-box $wht;
     // height: 100vh;
     @include m(container) {
       @include container;

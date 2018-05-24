@@ -5,11 +5,10 @@
 ?>
 
 <?php
-  require_once $_SERVER['DOCUMENT_ROOT'] . ('/Kingsley_Distribution/site/template-parts/variables.php');
-?>
-
-<?php
-include $root_doc . ('template-parts/header/head.php');
+// config
+require_once __DIR__ . ('/../includes/config.php');
+// header
+include ROOT_PATH . ('includes/header.php');
 ?>
 
 <!-- Contact Us -->
@@ -56,7 +55,7 @@ include $root_doc . ('template-parts/header/head.php');
     </div>
 
     <div class="contact__general--form">
-      <?php include $root_doc . ('template-parts/forms/general-enquiries.php'); ?>
+      <?php include ROOT_PATH . ('/includes/parts/forms/general-enquiries.php'); ?>
     </div>
 
   </div>
@@ -73,10 +72,10 @@ include $root_doc . ('template-parts/header/head.php');
   <p>Alternatively, you can <a class="contact__account--a" href="mailto:sales@kingsleydistribution.co.uk">email</a> or <a class="contact__account--a" href="tel:+441726862670">call</a> us directly to open an account.</p>
   <div role="form" class="wpcf7" id="wpcf7-f64-p65-o1" dir="ltr" lang="en-GB">
     <div class="screen-reader-response"></div>
-    <?php include $root_doc . ('template-parts/forms/open-account.php'); ?>
+    <?php include ROOT_PATH . ('/includes/parts/forms/open-account.php'); ?>
   </div>
 </div>
 
 
 <!-- Footer -->
-<?php include $root_doc . ('template-parts/footer/footer.php') ?>
+<?php include ROOT_PATH . ('includes/footer.php') ?>

@@ -10,7 +10,7 @@
   /* Hero
   ================================================== */
   @include e(hero) {
-    color: $color-wht;
+    color: $wht;
     @include m(colour) {
       @include page-header--color;
     }
@@ -27,10 +27,9 @@
   ================================================== */
   @include e(acc) {
     @include container;
-    text-align: center;
-
     margin: 0 auto;
     max-width: 800px;
+    text-align: center;
 
     @include m(card) {
       margin: 2em;
@@ -38,9 +37,9 @@
     } // card
 
     @include m(title) {
-      background: $color-wht;
-      border-bottom: 1px solid #cfc9c9;
-      color: $color-blu;
+      background: $wht;
+      border-bottom: 1px solid rgba($gry-lht, .3);
+      color: $blu;
       cursor: pointer;
       display: block;
       font-size: 21px;
@@ -50,12 +49,12 @@
       text-align: left;
 
       &.active {
-        color: $color-ylw;
+        color: $ylw;
       }
 
       &::after {
         @include vertical-align($justify:center);
-        color: $color-gry666;
+        color: $gry-666;
         content: "\e908";
         font-family: "icomoon";
         height: 100%;
@@ -71,8 +70,8 @@
       }
     } // title
     @include m(panel) {
-      background: $color-wht;
-      color: $color-gry;
+      background: $wht;
+      color: $gry;
       display: none;
       margin: 0;
       padding: 1em 2em;
@@ -90,9 +89,9 @@
   @include e(contact) {
     @include container($padding: 3rem 0 6rem);
     @include parallax;
-    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba($color-blk, .7)), to(rgba($color-blk, .7))), url("https://res.cloudinary.com/kingsley/image/upload/q_auto,f_auto/bg/bg_desk_01.jpg");
-    background-image: linear-gradient(rgba($color-blk, .7), rgba($color-blk, .7)), url("https://res.cloudinary.com/kingsley/image/upload/q_auto,f_auto/bg/bg_desk_01.jpg");
-    color: $color-wht;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba($blk, .7)), to(rgba($blk, .7))), url("https://res.cloudinary.com/kingsley/image/upload/q_auto,f_auto/bg/bg_desk_01.jpg");
+    background-image: linear-gradient(rgba($blk, .7), rgba($blk, .7)), url("https://res.cloudinary.com/kingsley/image/upload/q_auto,f_auto/bg/bg_desk_01.jpg");
+    color: $wht;
     text-align: center;
 
     @include m(txt) {
@@ -101,7 +100,7 @@
 
     [class^="letter"] {
       &::before {
-        color: rgba($color-wht, .1);
+        color: rgba($wht, .1);
       }
     }
   } // contact
