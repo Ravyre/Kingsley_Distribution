@@ -209,9 +209,13 @@
         padding: 0;
 
         li {
-          color: $wht;
+          // color: $wht;
           cursor: pointer;
           list-style-type: none;
+
+          a {
+            color: $wht;
+          }
 
           &::before, &::after {
             @include pseudo;
@@ -225,6 +229,9 @@
           &:hover {
             color: $ylw;
             font-weight: 700;
+            a {
+              color: $ylw;
+            }
             &::before, &::after {
               @include pseudo;
               border-top: 1px solid $wht;
