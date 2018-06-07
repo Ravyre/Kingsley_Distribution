@@ -1,4 +1,19 @@
-# 1.7.0 - 2018-05-2
+# 1.7.1 - 2018-06-07
+
+### Added
+- WP; login (functions)
+
+### Changed
+- WP; folders (assets + includes)
+- WP; login (swapped icon fonts for svgs)
+- WP; css (admin-bar was overlapping navigation)
+- htaccess; removed all caching due to massive conflicts with cloudflare
+- consent; w3c errors addressed
+- removed ids from index
+
+------------------------------------------------------------
+
+# 1.7.0 - 2018-05-21
 
 ### Added
 - GDPR; compliant banner
