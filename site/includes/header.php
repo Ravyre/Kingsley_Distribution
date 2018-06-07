@@ -21,7 +21,7 @@ require_once __DIR__ . ('/config.php');
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#11749c">
     <meta name="description" content="Kingsley Distribution are an honest, fast and reliable distributor with an incredible catalogue of ranges for the warming and tabletop industry. Since our start in 2009 we have quickly become etablished as one of the best in our field.">
-    <meta name="referrer" content="no-referrer">
+    <meta name="referrer" content="origin-when-crossorigin">
     <?php include __DIR__ . ('/social.php') ?>
     <title>Kingsley • <?php echo PAGE_NAME ?></title>
     <link rel="shortcut icon" href="<?php echo 'file:///' . $_SERVER["DOCUMENT_ROOT"] . '/Kingsley_Distribution/.includes/' ?>favicon.ico" type="image/x-icon">
@@ -29,6 +29,8 @@ require_once __DIR__ . ('/config.php');
     <link rel="stylesheet" href="<?php echo BASE_URL ?>assets/css/style.min.css">
   </head>
   <body>
+
+    <div id="overlay" class="overlay"></div>
 
     <?php include ROOT_PATH . ('/includes/consent.php'); ?>
     <?php // include ROOT_PATH . ('/includes/parts/navigation/nav__to-top.php'); ?>
@@ -69,6 +71,11 @@ HTML;
         include ROOT_PATH . ('/includes/parts/navigation/nav__main.php');
         include ROOT_PATH . ('/includes/parts/header/hero__index.php');
 
+      elseif (strpos($_SERVER['SCRIPT_NAME'], 'policies') !== false):
+        include ROOT_PATH . ('/includes/parts/navigation/nav__main.php');
+        include ROOT_PATH . ('/includes/parts/navigation/nav__policies.php');
+        include ROOT_PATH . ('/includes/parts/header/hero__policies.php');
+
       elseif (strpos($_SERVER['SCRIPT_NAME'], '404') !== false):
         echo '';
 
@@ -76,13 +83,13 @@ HTML;
         include ROOT_PATH . ('/includes/parts/navigation/nav__main.php');
         pagesHead("about", "World Class Wargaming Distribution", "Because we believe that the customer comes first, we will do our very best to ensure customer satisfacton at all times");
 
-    elseif (strpos($_SERVER['SCRIPT_NAME'], 'faq') !== false):
-      include ROOT_PATH . ('/includes/parts/navigation/nav__main.php');
-      pagesHead("faq", "Have a Question?", "If you're unsure on anything, please take a moment to read through our FAQ");
+      elseif (strpos($_SERVER['SCRIPT_NAME'], 'faq') !== false):
+        include ROOT_PATH . ('/includes/parts/navigation/nav__main.php');
+        pagesHead("faq", "Have a Question?", "If you're unsure on anything, please take a moment to read through our FAQ");
 
-    elseif (strpos($_SERVER['SCRIPT_NAME'], 'contact') !== false):
-      include ROOT_PATH . ('/includes/parts/navigation/nav__main.php');
-      pagesHead("contact", "How can we help?", "Have a question or would like to open an account? Drop us a line below; we love to help");
+      elseif (strpos($_SERVER['SCRIPT_NAME'], 'contact') !== false):
+        include ROOT_PATH . ('/includes/parts/navigation/nav__main.php');
+        pagesHead("contact", "How can we help?", "Have a question or would like to open an account? Drop us a line below; we love to help");
 
       elseif (strpos($_SERVER['REQUEST_URI'], 'ranges') == true):
         include ROOT_PATH . ('/includes/parts/navigation/nav__main.php');
@@ -92,6 +99,5 @@ HTML;
 
       ?>
     </header>
-
     <!-- content -->
     <div id="content" class="content">

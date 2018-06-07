@@ -4,11 +4,18 @@
  */
 ?>
 
-<!-- Config -->
-<?php require_once __DIR__ . ('/config.php'); ?>
+<?php
+// config
+require_once __DIR__ . ('/config.php');
+?>
 
+  <?php
 
-  <?php include ROOT_PATH . ('/includes/parts/call-to/newsletter.php') ?>
+  if (strpos($_SERVER['SCRIPT_NAME'], 'policies') == false):
+    include ROOT_PATH . ('/includes/parts/call-to/newsletter.php');
+  endif;
+
+  ?>
 
   </div>
     <!-- footer -->

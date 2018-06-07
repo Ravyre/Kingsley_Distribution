@@ -50,12 +50,12 @@
   <div class="nav__menu">
     <div class="nav__menu--links">
       <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="javascript:void(0);">Ranges</a></li>
-        <li><a href="/faq">FAQ</a></li>
-        <li><a href="/contact">Contact</a></li>
-        <li><a id="nav__link--consent" href="javascript:void(0);">Cookie Consent</a></li>
+        <a href="/"><li>Home</li></a>
+        <a href="/about"><li>About</li></a>
+        <a href="javascript:void(0);"><li>Ranges</li></a>
+        <a href="/faq"><li>FAQ</li></a>
+        <a href="/contact"><li>Contact</li></a>
+        <a id="nav__link--consent" href="javascript:void(0);"><li>Cookie Consent</li></a>
       </ul>
     </div>
     <div class="nav__menu--footer">

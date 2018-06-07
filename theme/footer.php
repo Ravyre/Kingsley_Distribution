@@ -8,7 +8,7 @@
 
     </div> <!-- content -->
   <?php if (!is_404()) : ?>
-    <?php get_template_part( '/template-parts/call-to/newsletter', get_post_format() ); ?>
+    <?php get_template_part( '/includes/parts/call-to/newsletter', get_post_format() ); ?>
     <!-- Footer -->
     <footer>
       <div class="row">
@@ -21,7 +21,7 @@
       wp_footer();
       wp_enqueue_style('dashicons');
     ?>
-    <?php get_template_part( '/template-parts/footer/lazyload', get_post_format() ); ?>
-    <?php get_template_part( '/template-parts/footer/serviceworker', get_post_format() ); ?>
+    <?php get_template_part( '/includes/parts/footer/lazyload', get_post_format() ); ?>
+    <?php get_template_part( '/includes/parts/footer/serviceworker', get_post_format() ); ?>
   </body>
 </html>

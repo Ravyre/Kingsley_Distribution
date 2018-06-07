@@ -13,7 +13,7 @@
 
 get_header();
 
-get_template_part( '/template-parts/navigation/nav__to-top', get_post_format() );
+get_template_part( '/includes/parts/navigation/nav__to-top', get_post_format() );
 
 while ( have_posts() ) : the_post();
   the_content();

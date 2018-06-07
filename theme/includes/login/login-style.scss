@@ -1,0 +1,228 @@
+/*
+*/
+
+/*--------------------------------------------------------------
+  Imports
+--------------------------------------------------------------*/
+@import "../../assets/css/base/colours";
+@import "../../assets/css/utils/mixins";
+
+
+/* Navigation
+============================================= */
+// elegantthemes.com/blog/divi-resources/free-divi-custom-login-page-extension-allows-you-to-easily-create-a-beautiful-login-experience-for-site-visitors
+// github.com/andyhqtran/Divi-100-Login-Page/blob/master/assets/css/style.css
+
+/*--------------------------------------------------------------
+  Pages
+--------------------------------------------------------------*/
+.login {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(100%, rgba($blu-drk, .85)), to(rgba($blu-drk, .85))), url("https://kingsleydistribution.co.uk/wp-content/uploads/bg/bg_office_01.jpg") center center / cover no-repeat fixed padding-box border-box;
+  background: linear-gradient(rgba($blu-drk, .85) 100%, rgba($blu-drk, .85) 100%), url("https://kingsleydistribution.co.uk/wp-content/uploads/bg/bg_office_01.jpg") center center / cover no-repeat fixed padding-box border-box;
+  overflow: hidden;
+
+
+  /* ---------- Login Contents (#login) ---------- */
+  #login {
+    max-width: 360px;
+    width: 100%;
+    h1 {
+      a {
+        background-image: none, url("https://kingsleydistribution.co.uk/wp-content/uploads/logo/kd_logo-shield_01.svg");
+        background-size: 120px;
+        height: 150px;
+        margin: 3rem auto 0;
+        width: 300px;
+        &:focus {
+          color: transparent;
+          -webkit-box-shadow: none;
+          box-shadow: none;
+        }
+      }
+    }
+
+    /* ---------- Error Loggin in ---------- */
+    .message, #login_error {
+      border: 0;
+      border-radius: 4px;
+      -webkit-box-shadow: none;
+      box-shadow: none;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+
+    /* ---------- Form for filling out Login Credentials (#loginform) ---------- */
+    #loginform.login__form, #lostpasswordform.login__form {
+      background: transparent;
+      -webkit-box-shadow: none;
+      box-shadow: none;
+      margin: 0 auto;
+      padding: 2rem;
+
+      .login__form--input {
+        margin: 1rem auto;
+        position: relative;
+
+        [class^="icon"] {
+          color: rgba($wht, .8);
+          font-size: 20px;
+          left: 8px;
+          position: absolute;
+          top: 50%;
+          -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+        }
+        svg {
+          color: rgba($wht, .8);
+          fill: currentColor;
+          font-size: 20px;
+          height: 20px;
+          left: 8px;
+          position: absolute;
+          top: 50%;
+          -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+          width: 20px;
+        }
+
+        .input {
+          background: rgba($wht, .15);
+          border: 0;
+          border-radius: 4px;
+          -webkit-box-shadow: none;
+          box-shadow: none;
+          color: $wht;
+          font-size: 20px;
+          margin: 0 auto;
+          padding: .5rem 35px;
+          -webkit-transition: all .3s ease-out;
+          transition: all .3s ease-out;
+          width: 100%;
+          &:focus {
+            border-color: transparent;
+            -webkit-box-shadow: 0 0 2px rgba($wht, .8);
+            box-shadow: 0 0 2px rgba($wht, .8);
+          }
+        }
+
+        #wp-submit.login__form--submit {
+          background: $blu;
+          border: 0;
+          border-radius: 2px;
+          -webkit-box-shadow: none;
+          box-shadow: none;
+          -webkit-box-sizing: border-box;
+          -moz-box-sizing: border-box;
+          box-sizing: border-box;
+          color: $wht;
+          display: block;
+          float: none;
+          font-size: 18px;
+          font-weight: 600;
+          height: auto;
+          margin: 0 auto;
+          padding: 12px 20px;
+          text-shadow: none;
+          width: 100%;
+        }
+      } // login__form--input
+    } // login__form
+
+    /* ---------- lost / Forgotten Password? (#nav) ---------- */
+    #nav.lost-pass {
+      font-weight: 600;
+      margin: 0;
+      text-align: center;
+      a {
+        color: rgba($wht, .2);
+        &:hover, &:active, &:focus, &:visited {
+          color: rgba($wht, .5);
+          -webkit-transition: 1s ease;
+          transition: 1s ease;
+        }
+      }
+    } // #nav
+
+    /* ---------- Back to Blog (#backtoblog) ---------- */
+    #backtoblog.backtoblog {
+      left: 40px;
+      margin: 0;
+      padding: 0;
+      position: fixed;
+      top: 40px;
+      a {
+        color: rgba($wht, .2);
+        &:hover, &:active, &:focus, &:visited {
+          color: rgba($wht, .5);
+          -webkit-transition: 1s ease;
+          transition: 1s ease;
+        }
+      }
+    }
+  } // .login
+
+/* ---------- Little Message for Users ---------- */
+.happymsg {
+  @include vertical-align($justify:center);
+  bottom: 40px;
+  color: rgba($wht, .25);
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  right: 40px;
+  svg {
+    color: rgba($wht, .25);
+    fill: currentColor;
+    padding: 0 .5rem;
+    width: 30px;
+  }
+  [class^="fontello"] {
+    padding: 0 .5rem;
+  }
+} // hapy message for users
+
+/*--------------------------------------------------------------
+  Media Queries
+--------------------------------------------------------------*/
+$smartphone: "only screen and (max-width: 599px)";
+$tablet: "only screen and (min-width: 600px) and (max-width: 1279px)";
+$desktop: "only screen and (min-width: 1280px)";
+
+/*--------------------------------------------------------------
+  Smartphone
+--------------------------------------------------------------*/
+@media #{$smartphone} {
+  .login {
+    #login {
+      h1 {
+        a {
+          background-size: 80px;
+          height: 100px;
+        }
+      }
+      .message, #login_error {
+        margin: 1rem 1rem 0;
+        padding: .5rem;
+      }
+      #loginform.login__form, #lostpasswordform.login__form {
+        padding: .5rem 1rem;
+      }
+      #backtoblog.backtoblog {
+        left: 20px;
+        top: 20px;
+      }
+      .happymsg {
+        bottom: 20px;
+        left: 0;
+        right: 0;
+        text-align: center;
+        width: 100%;
+      }
+    } // #login
+  } // .login
+} // $smartphone
+}

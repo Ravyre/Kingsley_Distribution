@@ -1,0 +1,236 @@
+@import "../base/colours";
+@import "../utils/mixins";
+@import "../layout/grid";
+
+/*--------------------------------------------------------------
+  Policies
+--------------------------------------------------------------*/
+.policy {
+  $margin: 2.5rem;
+  @include container($width:1200px);
+
+  @include e(nav) {
+    @include container($padding:0, $width:1200px);
+    background: $wht;
+    height: 60px;
+    margin-top: 65px;
+
+    ul {
+      height: inherit;
+      list-style: none;
+      padding: 0;
+      width: 100%;
+
+      li {
+        display: -webkit-inline-box;
+        display: -moz-inline-box;
+        display: -ms-inline-flexbox;
+        display: inline-flex;
+        height: inherit;
+        margin: 0 1rem;
+
+        a {
+          @include vertical-align($justify:center);
+          border-bottom: 4px solid transparent;
+          -webkit-box-sizing: border-box;
+          -moz-box-sizing: border-box;
+          box-sizing: border-box;
+          color: $gry;
+          font-weight: 600;
+          height: inherit;
+          -webkit-transition: .3s ease;
+          -webkit-transition: .5s ease;
+          transition: .5s ease;
+
+          &.active, &:hover {
+            border-bottom: 4px solid $blu;
+            color: $blu;
+            fill: currentColor;
+          }
+        }
+      }
+    }
+
+    svg {
+      display: none;
+      height: 80%;
+    }
+
+  }
+
+  @include e(hero) {
+    background: url("//res.cloudinary.com/kingsley/image/upload/v1527162638/bg/footer_lodyas_blue.jpg");
+    color: $wht;
+    padding: 4rem;
+    text-align: center;
+  } // hero
+
+  @include e(date) {
+    color: $gry-666;
+    font-size: 19px;
+    text-transform: none !important;
+  } // date
+
+  @include e(details) {
+    margin-right: $margin;
+    width: calc(2 * (100% / 3) - #{$margin});
+  } // details
+
+  @include e(meaning) {
+    margin-left: $margin;
+    width: calc(1 * (100% / 3) - #{$margin});
+
+    @include m(content) {
+      h3 {
+        font: 700 16px 'PT Sans', sans-serif;
+        margin: 0 0 .75rem;
+        text-transform: uppercase;
+      }
+      p {
+        font-family: 'PT Sans', sans-serif;
+      }
+    }
+    @include m(btn) {
+      cursor: pointer;
+      display: none;
+    }
+  } // meaning
+
+  section {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin: 0 0 3rem;
+    h2 {
+      -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+      margin: 0 0 1rem;
+      text-transform: capitalize;
+    }
+    svg {
+      display: none;
+    }
+    address {
+      font-style: normal;
+      ul {
+        li {
+          color: $ylw;
+          margin: 0 0 .5rem;
+          a {
+            color: $gry-666;
+          }
+        }
+      }
+    } // address
+  } // section
+
+} // policy
+
+
+$smartphone: "only screen and (max-width: 599px)";
+$tablet: "only screen and (min-width: 600px) and (max-width: 1279px)";
+$desktop: "only screen and (min-width: 1280px)";
+
+@media #{$smartphone} {
+
+  .policy {
+
+    @include e(nav) {
+      font-size: 14px;
+      padding: 0;
+      text-align: center;
+      ul {
+        li {
+          margin: 0 1rem;
+          a {
+            span {
+              display: none;
+            }
+          }
+        }
+      }
+      svg {
+        display: block;
+      }
+    }
+
+    @include e(hero) {
+      padding: 2rem 0;
+    } // hero
+
+    @include e(details) {
+      margin-right: 0;
+      width: 100%;
+    } // details
+
+    @include e(meaning) {
+      $policy-padd: 1.5rem;
+
+      display: none;
+      margin-left: 0;
+      width: 100%;
+
+      @include m(head) {
+        @include vertical-align($justify:center);
+        background: url("//res.cloudinary.com/kingsley/image/upload/v1527162638/bg/footer_lodyas_blue.jpg");
+        height: 70px;
+        margin-bottom: $policy-padd;
+        width: 100%;
+        svg {
+          color: $wht !important;
+          fill: currentColor !important;
+        }
+      }
+      @include m(content) {
+        padding: 0 $policy-padd;
+      }
+      @include m(btn) {
+        border-top: 1px solid rgba($gry-lht, .5);
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        color: $ylw;
+        display: block;
+        font-weight: 700;
+        margin: $policy-padd 0 0;
+        padding: $policy-padd 0;
+        text-align: center;
+        width: 100%;
+      }
+      &.active {
+        background: $wht;
+        display: block;
+        left: 0;
+        margin: 0 1rem;
+        position: fixed;
+        top: 50%;
+        -webkit-transform: translate(0, -50%);
+        transform: translate(0, -50%);
+        width: auto;
+        z-index: 999999;
+      }
+    } // meaning
+
+    section {
+      h2 {
+        -ms-flex-preferred-size: 80%;
+        flex-basis: 80%;
+      }
+      svg {
+        // background: rgba($gry, .3);
+        border-radius: 50%;
+        color: $gry-666;
+        cursor: pointer;
+        display: block;
+        fill: currentColor;
+        height: 40px;
+        margin: .5rem 0 0 .5rem;
+        padding: .3rem;
+        width: 35px;
+      }
+    }
+  }
+}

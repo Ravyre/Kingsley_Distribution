@@ -10,23 +10,21 @@
 <html <?php language_attributes(); ?>>
 	<head>
 		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-64908037-1"></script>
-		<?php get_template_part('/template-parts/header/schema', get_post_format()); ?>
+		<?php get_template_part('/includes/parts/header/schema', get_post_format()); ?>
 		<!-- meta data -->
 		<meta charset="<?php bloginfo('charset'); ?>">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="theme-color" content="#11749c">
 		<!-- Social Media Properties -->
-		<?php get_template_part('/template-parts/header/social', get_post_format()); ?>
+		<?php get_template_part('/includes/parts/header/social', get_post_format()); ?>
 		<!-- Wordpress Head -->
-		<?php wp_head(); ?>	
+		<?php wp_head(); ?>
 	</head>
 	<body <?php body_class(); ?>>
 
-		<!-- consent banner -->
-    <?php get_template_part('/template-parts/consent/consent', get_post_format()); ?>
+		<div id="overlay" class="overlay"></div>
 
-    <!-- scroll to top -->
-    <?php get_template_part('/template-parts/navigation/nav__to-top', get_post_format()); ?>
+    <?php get_template_part('/includes/parts/consent/consent', get_post_format()); ?>
 
 	<!-- Header -->
   <header>
@@ -57,31 +55,40 @@ HTML;
 		// INDEX PAGE
 		if (!is_404() && is_front_page()) : ?>
 			<!-- Navigation -->
-			<?php get_template_part( '/template-parts/navigation/nav__main', get_post_format() ); ?>
+			<?php get_template_part( '/includes/parts/navigation/nav__main', get_post_format() ); ?>
 			<!-- Hero -->
-			<?php get_template_part( '/template-parts/header/hero__index', get_post_format() ); ?>
+			<?php get_template_part( '/includes/parts/header/hero__index', get_post_format() ); ?>
+
+			<?php
+			// ABOUT PAGE
+			elseif (is_page('privacy')) : ?>
+				<!-- Navigation -->
+				<?php get_template_part( '/includes/parts/navigation/nav__main', get_post_format() ); ?>
+				<?php get_template_part( '/includes/parts/navigation/nav__policies', get_post_format() ); ?>
+				<!-- Hero -->
+				<?php get_template_part( '/includes/parts/header/hero__policies', get_post_format() ); ?>
 
 		<?php
 		// ABOUT PAGE
 		elseif (is_page('about')) : ?>
 			<!-- Navigation -->
-			<?php get_template_part( '/template-parts/navigation/nav__main', get_post_format() ); ?>
+			<?php get_template_part( '/includes/parts/navigation/nav__main', get_post_format() ); ?>
 			<!-- Hero -->
 			<?php pagesHead("about", "World Class Wargaming Distribution", "Because we believe that the customer comes first, we will do our very best to ensure customer satisfacton at all times"); ?>
 
 		<?php
-		// ABOUT PAGE
+		// FAQ PAGE
 		elseif (is_page('faq')) : ?>
 			<!-- Navigation -->
-			<?php get_template_part( '/template-parts/navigation/nav__main', get_post_format() ); ?>
+			<?php get_template_part( '/includes/parts/navigation/nav__main', get_post_format() ); ?>
 			<!-- Hero -->
 			<?php pagesHead("faq", "Have a Question?", "If you're unsure on anything, please take a moment to read through our FAQ"); ?>
 
 		<?php
-		// ABOUT PAGE
+		// CONTACT PAGE
 		elseif (is_page('contact')) : ?>
 			<!-- Navigation -->
-			<?php get_template_part( '/template-parts/navigation/nav__main', get_post_format() ); ?>
+			<?php get_template_part( '/includes/parts/navigation/nav__main', get_post_format() ); ?>
 			<!-- Hero -->
 			<?php pagesHead("contact", "How can we help?", "Have a question or would like to open an account? Drop us a line below; we love to help"); ?>
 
@@ -89,12 +96,12 @@ HTML;
 		// RANGES
 		elseif (!is_404() && !is_front_page()) : ?>
 			<!-- Navigation -->
-			<?php get_template_part( '/template-parts/navigation/nav__main', get_post_format() ); ?>
+			<?php get_template_part( '/includes/parts/navigation/nav__main', get_post_format() ); ?>
 			<!-- Hero -->
-			<?php get_template_part( '/template-parts/header/hero__ranges', get_post_format() );
+			<?php get_template_part( '/includes/parts/header/hero__ranges', get_post_format() );
 
 		endif; ?>
 
   </header>
 	<!-- content -->
-	<div class="content">
+	<div id="content" class="content">
